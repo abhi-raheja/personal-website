@@ -26,25 +26,26 @@ export default function Writings() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchPosts() {
-      try {
-        const response = await fetch('/api/posts');
-        if (response.ok) {
-          const postsData = await response.json();
-          setPosts(postsData);
-        } else {
-          console.error('Failed to fetch posts');
-          setPosts([]);
-        }
-      } catch (error) {
-        console.error('Error fetching posts:', error);
-        setPosts([]);
-      } finally {
-        setLoading(false);
+    // For static export, we'll use hardcoded sample data
+    const samplePosts = [
+      {
+        slug: 'first-thoughts',
+        title: 'First Thoughts',
+        excerpt: 'An introduction to this space and what you can expect to find here. Thoughts on writing, creating, and sharing ideas in the digital age.',
+        date: '2025-01-15',
+        readTime: '3 min read'
+      },
+      {
+        slug: 'on-creativity',
+        title: 'On Creativity and Daily Practice',
+        excerpt: 'Exploring the relationship between consistent practice and creative breakthrough. How small daily actions compound into meaningful work.',
+        date: '2025-01-12',
+        readTime: '5 min read'
       }
-    }
-
-    fetchPosts();
+    ];
+    
+    setPosts(samplePosts);
+    setLoading(false);
   }, []);
 
   if (loading) {
