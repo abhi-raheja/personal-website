@@ -2,35 +2,40 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { getAllPosts, formatDate } from '@/lib/posts';
 import { useEffect, useState } from 'react';
 
+interface PostMetadata {
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  readTime: string;
+}
+
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
 export default function Writings() {
-  const [posts, setPosts] = useState<any[]>([]);
+  const [posts, setPosts] = useState<PostMetadata[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchPosts() {
       try {
-        // Since getAllPosts is a server-side function, we'll need to create an API route
-        // For now, let's use the sample data and we'll convert this properly
-        const samplePosts = [
-          {
-            slug: 'first-thoughts',
-            title: 'First Thoughts',
-            excerpt: 'An introduction to this space and what you can expect to find here. Thoughts on writing, creating, and sharing ideas in the digital age.',
-            date: '2025-01-15',
-            readTime: '3 min read'
-          },
-          {
-            slug: 'on-creativity',
-            title: 'On Creativity and Daily Practice',
-            excerpt: 'Exploring the relationship between consistent practice and creative breakthrough. How small daily actions compound into meaningful work.',
-            date: '2025-01-12',
-            readTime: '5 min read'
-          }
-        ];
-        setPosts(samplePosts);
+        const response = await fetch('/api/posts');
+        if (response.ok) {
+          const postsData = await response.json();
+          setPosts(postsData);
+        } else {
+          console.error('Failed to fetch posts');
+          setPosts([]);
+        }
       } catch (error) {
         console.error('Error fetching posts:', error);
         setPosts([]);
