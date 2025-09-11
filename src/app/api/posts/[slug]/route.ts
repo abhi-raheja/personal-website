@@ -1,5 +1,14 @@
 import { NextResponse } from 'next/server';
-import { getPostBySlug } from '@/lib/posts';
+import { getPostBySlug, getAllPostSlugs } from '@/lib/posts';
+
+export const dynamic = 'force-static';
+
+export async function generateStaticParams() {
+  const slugs = getAllPostSlugs();
+  return slugs.map((slug) => ({
+    slug,
+  }));
+}
 
 export async function GET(
   request: Request,
