@@ -2,33 +2,53 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-
-// Sample posts data - later this will come from your markdown files
-const samplePosts = [
-  {
-    id: 'first-thoughts',
-    title: 'First Thoughts',
-    excerpt: 'An introduction to this space and what you can expect to find here. Thoughts on writing, creating, and sharing ideas in the digital age.',
-    date: 'January 2025',
-    readTime: '3 min read'
-  },
-  {
-    id: 'on-creativity',
-    title: 'On Creativity and Daily Practice',
-    excerpt: 'Exploring the relationship between consistent practice and creative breakthrough. How small daily actions compound into meaningful work.',
-    date: 'January 2025',
-    readTime: '5 min read'
-  },
-  {
-    id: 'minimalism-thinking',
-    title: 'Minimalism in Thinking',
-    excerpt: 'How applying minimalist principles to our thought processes can lead to clearer insights and better decision-making.',
-    date: 'December 2024',
-    readTime: '4 min read'
-  }
-];
+import { getAllPosts, formatDate } from '@/lib/posts';
+import { useEffect, useState } from 'react';
 
 export default function Writings() {
+  const [posts, setPosts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchPosts() {
+      try {
+        // Since getAllPosts is a server-side function, we'll need to create an API route
+        // For now, let's use the sample data and we'll convert this properly
+        const samplePosts = [
+          {
+            slug: 'first-thoughts',
+            title: 'First Thoughts',
+            excerpt: 'An introduction to this space and what you can expect to find here. Thoughts on writing, creating, and sharing ideas in the digital age.',
+            date: '2025-01-15',
+            readTime: '3 min read'
+          },
+          {
+            slug: 'on-creativity',
+            title: 'On Creativity and Daily Practice',
+            excerpt: 'Exploring the relationship between consistent practice and creative breakthrough. How small daily actions compound into meaningful work.',
+            date: '2025-01-12',
+            readTime: '5 min read'
+          }
+        ];
+        setPosts(samplePosts);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+        setPosts([]);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchPosts();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-gray-600 font-light">Loading...</div>
+      </div>
+    );
+  }
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -77,39 +97,45 @@ export default function Writings() {
 
             {/* Posts List */}
             <div className="space-y-8">
-              {samplePosts.map((post, index) => (
-                <motion.article
-                  key={post.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                  className="group cursor-pointer border-b border-gray-100 pb-8 last:border-b-0"
-                >
-                  <Link href={`/writings/${post.id}`} className="block">
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between">
-                        <h2 className="text-2xl font-light text-gray-900 group-hover:text-gray-600 transition-colors duration-200">
-                          {post.title}
-                        </h2>
-                        <span className="text-sm text-gray-400 font-light hidden sm:block">
-                          {post.readTime}
-                        </span>
+              {posts.length === 0 ? (
+                <div className="text-center py-12">
+                  <p className="text-gray-600 font-light">No posts yet. Check back soon!</p>
+                </div>
+              ) : (
+                posts.map((post, index) => (
+                  <motion.article
+                    key={post.slug}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                    className="group cursor-pointer border-b border-gray-100 pb-8 last:border-b-0"
+                  >
+                    <Link href={`/writings/${post.slug}`} className="block">
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between">
+                          <h2 className="text-2xl font-light text-gray-900 group-hover:text-gray-600 transition-colors duration-200">
+                            {post.title}
+                          </h2>
+                          <span className="text-sm text-gray-400 font-light hidden sm:block">
+                            {post.readTime}
+                          </span>
+                        </div>
+                        <p className="text-gray-600 font-light leading-relaxed max-w-3xl">
+                          {post.excerpt}
+                        </p>
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm text-gray-400 font-light">
+                            {formatDate(post.date)}
+                          </span>
+                          <span className="text-sm text-gray-400 font-light sm:hidden">
+                            {post.readTime}
+                          </span>
+                        </div>
                       </div>
-                      <p className="text-gray-600 font-light leading-relaxed max-w-3xl">
-                        {post.excerpt}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm text-gray-400 font-light">
-                          {post.date}
-                        </span>
-                        <span className="text-sm text-gray-400 font-light sm:hidden">
-                          {post.readTime}
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.article>
-              ))}
+                    </Link>
+                  </motion.article>
+                ))
+              )}
             </div>
 
             {/* Coming Soon Section */}
