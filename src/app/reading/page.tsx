@@ -18,16 +18,10 @@ export default function Reading() {
       <nav className="w-full py-6 px-6 md:px-12">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-lg font-normal tracking-tight hover:text-gray-600transition-colors">
+            <Link href="/" className="text-lg font-normal tracking-tight hover:text-gray-600 transition-colors">
               Abhi Raheja
             </Link>
             <div className="flex items-center space-x-8">
-              <Link 
-                href="/about" 
-                className="text-gray-700 hover:text-black transition-colors font-normal"
-              >
-                About
-              </Link>
               <Link 
                 href="/writings" 
                 className="text-gray-700 hover:text-black transition-colors font-normal"
