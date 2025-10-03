@@ -17,10 +17,7 @@ export default function Home() {
       {/* Simple, minimal navigation */}
       <nav className="w-full py-6 px-6 md:px-12">
         <div className="max-w-4xl mx-auto">
-          <div className="flex justify-between items-center">
-            <Link href="/" className="text-lg font-normal tracking-tight hover:text-gray-600 transition-colors">
-              Abhi Raheja
-            </Link>
+          <div className="flex justify-end items-center">
             <div className="flex items-center space-x-8">
               <Link 
                 href="/writings" 
@@ -50,39 +47,29 @@ export default function Home() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="mb-16"
           >
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-8 mb-8">
-              {/* Profile Photo with Liquid Glass Border */}
+            <div className="flex flex-col md:flex-row items-center gap-8 mb-8">
+              {/* Profile Photo */}
               <div className="flex-shrink-0">
-                <div className="relative w-32 h-32 md:w-40 md:h-40">
-                  {/* Liquid Glass Border */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/30 via-white/10 to-transparent backdrop-blur-sm border border-white/20 shadow-2xl"></div>
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent via-white/5 to-white/20"></div>
-                  
-                  {/* Inner Photo Container */}
-                  <div className="relative w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center transform-gpu shadow-xl ring-1 ring-white/10">
-                    <img 
-                      src="/profile-photo.jpg" 
-                      alt="Abhi Raheja"
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        // Fallback to styled initials if image doesn't exist
-                        const target = e.currentTarget as HTMLImageElement;
-                        target.style.display = 'none';
-                        if (target.parentElement) {
-                          target.parentElement.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-2xl md:text-3xl font-bold tracking-wide">AR</div>';
-                        }
-                      }}
-                    />
-                  </div>
-                  
-                  {/* Glass Reflection Effect */}
-                  <div className="absolute top-2 left-2 right-2 h-1/3 bg-gradient-to-b from-white/40 to-transparent rounded-full blur-sm"></div>
+                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg border-4 border-white">
+                  <img 
+                    src="/profile-photo.jpg" 
+                    alt="Abhi Raheja"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // Fallback to styled initials if image doesn't exist
+                      const target = e.currentTarget as HTMLImageElement;
+                      target.style.display = 'none';
+                      if (target.parentElement) {
+                        target.parentElement.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-2xl md:text-3xl font-bold tracking-wide">AR</div>';
+                      }
+                    }}
+                  />
                 </div>
               </div>
               
-              {/* Name and Professional Info */}
-              <div className="flex-1">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-black mb-3 leading-tight">
+              {/* Text Info (Center Aligned) */}
+              <div className="flex-1 flex flex-col justify-center">
+                <h1 className="text-xl md:text-2xl lg:text-3xl font-normal tracking-tight text-black mb-3 leading-tight">
                   Abhi Raheja
                 </h1>
                 
@@ -94,24 +81,93 @@ export default function Home() {
                   <span className="text-base font-normal">Montreal, QC</span>
                 </div>
                 
-                {/* Professional Title - Large and Prominent */}
-                <div className="mb-3">
-                  <h2 className="text-2xl md:text-3xl font-medium text-gray-900">
-                    COO at Sunscreen
+                {/* Professional Info */}
+                <div className="mb-2">
+                  <h2 className="text-lg md:text-xl font-medium text-gray-900">
+                    COO at <a href="https://www.sunscreen.tech" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors underline underline-offset-4">Sunscreen</a>
                   </h2>
                 </div>
                 
-                {/* Previous Experience */}
-                <div className="text-lg text-gray-600">
-                  <span>Prev. Cyber, Caldera, Goodable</span>
+                <div className="text-sm text-gray-600">
+                  <span>Prev. <a href="https://cyber.co" target="_blank" rel="noopener noreferrer" className="hover:text-gray-800 transition-colors underline underline-offset-4">Cyber</a>, <a href="https://caldera.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-gray-800 transition-colors underline underline-offset-4">Caldera</a>, <a href="https://goodable.co" target="_blank" rel="noopener noreferrer" className="hover:text-gray-800 transition-colors underline underline-offset-4">Goodable</a></span>
+                </div>
+              </div>
+              
+              {/* Social Media Icons (Right Side) */}
+              <div className="flex-shrink-0 flex flex-col justify-center">
+                <div className="flex items-center space-x-4">
+                  {/* Email */}
+                  <a 
+                    href="mailto:a@earlyasaservice.com" 
+                    className="text-gray-600 hover:text-black transition-colors"
+                    aria-label="Email"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                  </a>
+                  
+                  {/* X (Twitter) */}
+                  <a 
+                    href="https://x.com/abhihereandnow" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-black transition-colors"
+                    aria-label="X (Twitter)"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                  </a>
+                  
+                  {/* LinkedIn */}
+                  <a 
+                    href="https://www.linkedin.com/in/abhiraheja" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-black transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  </a>
+                  
+                  {/* GitHub */}
+                  <a 
+                    href="https://github.com/abhiraheja" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-black transition-colors"
+                    aria-label="GitHub"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
             
-            {/* Professional Description */}
-            <div className="max-w-4xl">
-              <p className="text-lg md:text-xl text-gray-700 font-normal leading-relaxed">
-                Former journalist, founder and operator passionate about freedom and high-impact technology.
+          </motion.div>
+
+          {/* About Me Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="mb-16"
+          >
+            <h2 className="text-xl md:text-2xl font-semibold text-black mb-6">
+              About Me
+            </h2>
+            
+            <div className="prose prose-lg max-w-none">
+              <p className="text-base text-gray-700 font-normal leading-relaxed mb-6">
+                I'm a former journalist, producer, writer and tech founder. I was born and raised in India and graduated from the Ryerson School of Journalism in Toronto.
+              </p>
+              <p className="text-base text-gray-700 font-normal leading-relaxed mb-6">
+                I'm passionate about history, technology, the underground dance music scene, anti-authoritarian technology, prediction markets, game and information theory, space, consciousness, psychedelics, and formula one racing.
               </p>
             </div>
           </motion.div>
@@ -120,10 +176,10 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
             className="mb-16"
           >
-            <h2 className="text-2xl md:text-3xl font-normal text-black mb-8">
+            <h2 className="text-xl md:text-2xl font-semibold text-black mb-8">
               Recent Writing
             </h2>
             
@@ -165,105 +221,47 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             className="mb-16"
           >
-            <h2 className="text-2xl md:text-3xl font-normal text-black mb-4">
+            <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">
               Currently Reading
             </h2>
-            <p className="text-gray-600 text-sm mb-6">
-              Books I've met and like to revisit often.
-            </p>
             
             <div className="space-y-3">
-              <p className="text-gray-700  hover:text-black  transition-colors">
-                <a href="https://www.amazon.com/Network-State-How-Start-Country/dp/1736721398" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
-                  The Network State
+              <p className="text-gray-700 hover:text-black transition-colors">
+                <a href="https://www.amazon.com/Sapiens-Humankind-Yuval-Noah-Harari/dp/0062316095" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
+                  Sapiens
                 </a>
-                <span className="text-gray-500  text-sm ml-2">— Balaji Srinivasan</span>
+                <span className="text-gray-500 text-sm ml-2">by Yuval Noah Harari</span>
               </p>
               
-              <p className="text-gray-700  hover:text-black  transition-colors">
-                <a href="https://www.amazon.com/Tao-Te-Ching-Lao-Tzu/dp/0061142662" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
-                  Tao Te Ching
+              <p className="text-gray-700 hover:text-black transition-colors">
+                <a href="https://www.amazon.com/When-Everyone-Knows-That-Knowledge-ebook/dp/B0DV6FDFT6" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
+                  When Everyone Knows that Everyone Knows
                 </a>
-                <span className="text-gray-500  text-sm ml-2">— Lao Tzu</span>
+                <span className="text-gray-500 text-sm ml-2">by Stephen Pinker</span>
               </p>
               
-              <p className="text-gray-700  hover:text-black  transition-colors">
-                <a href="https://www.amazon.com/Creative-Act-Way-Being/dp/0593652886" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
-                  The Creative Act
+              <p className="text-gray-700 hover:text-black transition-colors">
+                <a href="https://www.amazon.com/Platform-Revolution-Networked-Markets-Transforming/dp/0393249131" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
+                  Platform Revolution: How Networked Markets Are Transforming the Economy
                 </a>
-                <span className="text-gray-500  text-sm ml-2">— Rick Rubin</span>
+                <span className="text-gray-500 text-sm ml-2">by Geoffrey G. Parker, Marshall W. Van Alstyne, Sangeet Paul Choudary</span>
               </p>
             </div>
             
             <div className="mt-6">
               <Link 
                 href="/reading" 
-                className="text-gray-600 hover:text-black  transition-colors font-normal underline underline-offset-4"
+                className="text-gray-600 hover:text-black transition-colors font-normal underline underline-offset-4"
               >
-                View all books
+                Books I've met + like to revisit often, and recommend
               </Link>
             </div>
           </motion.div>
 
-          {/* Contact Section - nikunjk.com style */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-            className="mb-16"
-          >
-            <h2 className="text-2xl md:text-3xl font-normal text-black mb-6">
-              Connect
-            </h2>
-            <div className="space-y-3">
-              <p className="text-gray-700  font-normal">
-                <Link 
-                  href="mailto:a@earlyasaservice.com" 
-                  className="hover:text-black  transition-colors underline underline-offset-4"
-                >
-                  Email
-                </Link>
-              </p>
-              
-              {/* Social Links */}
-              <div className="flex flex-wrap gap-6">
-                <Link 
-                  href="https://x.com/abhihereandnow" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-700  hover:text-black  transition-colors underline underline-offset-4"
-                >
-                  X
-                </Link>
-                <Link 
-                  href="https://www.linkedin.com/in/abhiraheja" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-700  hover:text-black  transition-colors underline underline-offset-4"
-                >
-                  LinkedIn
-                </Link>
-                <Link 
-                  href="https://github.com/abhiraheja" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-700  hover:text-black  transition-colors underline underline-offset-4"
-                >
-                  GitHub
-                </Link>
-              </div>
-            </div>
-          </motion.div>
 
-          {/* Footer - minimal like nikunjk.com */}
-          <footer className="border-t border-gray-200 border-gray-700 pt-8 mt-16">
-            <p className="text-sm text-gray-500 ">
-              Made in Montreal
-            </p>
-          </footer>
 
         </div>
       </main>
