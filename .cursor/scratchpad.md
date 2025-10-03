@@ -2,81 +2,143 @@
 
 ## Background and Motivation
 
-The user wants to create a new personal website that will serve as both a portfolio/resume and a platform for their writings. Key requirements:
+The user wants to adapt their existing personal website to match the framework and design approach used by nikunjk.com. Current status:
 
-- **User Profile**: Non-technical user
-- **Design**: Minimalist yet artistic
-- **Technology**: Next.js for nice effects and fonts
-- **Hosting**: GitHub Pages
-- **Content**: About section + writings (no categorization needed)
-- **Navigation**: Very simple
-- **Contact**: No contact form needed
-- **Future Feature**: Email subscription for new posts
+- **Current Tech Stack**: Next.js + TypeScript + Tailwind CSS ✅
+- **Target Inspiration**: nikunjk.com - clean, professional portfolio style
+- **Goal**: Transform current design to match nikunjk.com's layout and aesthetic
+- **Hosting**: GitHub Pages (existing plan)
+- **Content**: About section + writings (current structure)
+- **Navigation**: Simple, professional navigation
+- **New Requirements**: Match nikunjk.com's professional, minimalist design patterns
 
 ## Key Challenges and Analysis
 
-1. **GitHub Pages + Next.js**: GitHub Pages has limitations with Next.js server-side features, so we need static export configuration
-2. **Non-technical maintenance**: Must be extremely easy to add new posts and content
-3. **Design inspiration**: satviksethi.com shows clean typography, subtle animations, minimal navigation
-4. **Future email subscriptions**: Need to plan architecture that allows easy integration of email services later
+### nikunjk.com Design Analysis:
+1. **Layout Structure**: 
+   - Large, bold name/title at top
+   - Brief professional tagline/description
+   - Sectioned content (Recent Writing, Speaking, Investing)
+   - Clean typography hierarchy
+   - Minimal color palette (black, gray, white)
+
+2. **Typography & Spacing**:
+   - Sans-serif fonts (likely Inter or similar)
+   - Large headings with generous spacing
+   - Consistent vertical rhythm
+   - Subtle text weight variations
+
+3. **Navigation & UX**:
+   - Simple, text-based navigation
+   - "Skip to main content" accessibility feature
+   - Email contact integration
+   - "Pick random" functionality for content
+
+4. **Content Organization**:
+   - Clear sections with emoji headers (🗣️)
+   - Date-based content organization
+   - External links to podcasts/shows
+   - Professional focus areas clearly defined
+
+### Technical Challenges:
+1. **Font Migration**: Need to fix @next/font deprecation warning
+2. **Design System**: Create typography and spacing system matching nikunjk.com
+3. **Content Structure**: Reorganize current content to match professional portfolio format
+4. **Accessibility**: Add skip-to-content and proper semantic structure
 
 ## High-level Task Breakdown
 
-### Phase 1: Project Setup & Configuration
-- [ ] Initialize Next.js project with TypeScript
-- [ ] Configure Next.js for static export (GitHub Pages compatibility)
-- [ ] Set up GitHub Actions for automated deployment
-- [ ] Install and configure essential dependencies (fonts, styling)
+### Phase 1: Technical Foundation & Font Fix
+- [ ] Fix @next/font deprecation warning (migrate to next/font)
+- [ ] Set up Inter font system (matching nikunjk.com style)
+- [ ] Create base typography system
+- [ ] Test font rendering and performance
 
-### Phase 2: Core Design & Layout
-- [ ] Create minimalist design system (colors, typography, spacing)
-- [ ] Implement main layout component
-- [ ] Create simple navigation structure
-- [ ] Design responsive layout for mobile/desktop
+### Phase 2: Layout Restructure (nikunjk.com Style)
+- [ ] Create large hero section with name and tagline
+- [ ] Implement skip-to-content accessibility feature
+- [ ] Design new navigation structure (minimal, professional)
+- [ ] Create section-based content layout
 
-### Phase 3: Content Pages
-- [ ] Create About page structure
-- [ ] Create Writings/Blog listing page
-- [ ] Create individual post page template
-- [ ] Implement Markdown rendering for posts
+### Phase 3: Homepage Redesign
+- [ ] Large name/title header (similar to "Nikunj Kothari")
+- [ ] Professional tagline section
+- [ ] "Recent Writing" section with clean typography
+- [ ] Optional: "Speaking" or "Projects" section
+- [ ] Footer with professional links
 
-### Phase 4: Content Management System
-- [ ] Set up file-based content management (Markdown files)
-- [ ] Create simple scripts for adding new posts
-- [ ] Add metadata handling for posts (date, title, etc.)
+### Phase 4: Content Pages Adaptation
+- [ ] Redesign About page to match professional portfolio style
+- [ ] Update Writings page with cleaner, date-focused layout
+- [ ] Individual post pages with consistent typography
+- [ ] Add proper semantic HTML structure
 
-### Phase 5: Polish & Enhancement
-- [ ] Add subtle animations and effects
-- [ ] Optimize fonts and typography
+### Phase 5: Design System Refinement
+- [ ] Implement nikunjk.com color palette (black, gray, white)
+- [ ] Fine-tune typography hierarchy and spacing
+- [ ] Ensure consistent vertical rhythm
+- [ ] Add subtle hover effects and interactions
+
+### Phase 6: Testing & Polish
 - [ ] Test across devices and browsers
-- [ ] Prepare for future email subscription integration
-
-### Phase 6: Deployment & Testing
-- [ ] Deploy to GitHub Pages
-- [ ] Test live site functionality
-- [ ] Create documentation for content management
+- [ ] Verify accessibility features work
+- [ ] Performance optimization
+- [ ] Final design adjustments
 
 ## Project Status Board
 
-### Current Sprint: Planning Phase
-- [ ] Complete detailed technical planning
-- [ ] Get user approval for technical approach
-- [ ] Clarify content structure and requirements
+### Current Sprint: nikunjk.com Adaptation Planning 
+- [x] Analyze nikunjk.com design patterns and structure
+- [x] Create comprehensive task breakdown
+- [x] Identify key technical challenges
+- [ ] Begin Phase 1: Technical Foundation & Font Fix
 
-### Next Sprint: Setup
-- (Will be populated after planning approval)
+### Next Sprint: Implementation
+- [ ] Execute Phase 1 tasks (font migration, typography setup)
+- [ ] Begin homepage redesign to match nikunjk.com layout
 
 ## Current Status / Progress Tracking
 
-**Status**: Planning phase - awaiting user approval for technical approach
+**Status**: Phase 1-3 Complete ✅ - Homepage redesigned to match nikunjk.com
 
-**Current Focus**: Developing comprehensive implementation plan
+**Current Focus**: Homepage transformation complete, ready for user review
+
+**Completed Milestones**: 
+- ✅ Fixed font deprecation warning and set up Inter typography
+- ✅ Created large name header matching nikunjk.com style  
+- ✅ Implemented minimal, professional navigation
+- ✅ Added "Recent Writing" section with clean typography
+- ✅ Added accessibility "Skip to content" feature
+- ✅ Professional contact section and minimal footer
+
+**Next Milestone**: User review and feedback, then adapt About/Writings pages
 
 **Blockers**: None currently
 
 ## Executor's Feedback or Assistance Requests
 
-(To be filled by Executor during implementation)
+**Milestone Complete**: Homepage has been successfully transformed to match nikunjk.com's design approach:
+
+1. **Layout Match**: Large name header, professional tagline, sectioned content
+2. **Typography**: Inter font system with nikunjk.com-style hierarchy 
+3. **Navigation**: Minimal, professional navigation structure
+4. **Accessibility**: Added skip-to-content feature like nikunjk.com
+5. **Color Palette**: Clean black/gray/white matching target site
+
+**MAJOR MILESTONE COMPLETE**: Homepage fully populated with Abhi's personal information! 
+
+**Completed Updates**:
+- ✅ Personal name and branding: "Abhi Raheja" 
+- ✅ Location with check-in icon: "Montreal, QC"
+- ✅ Professional tagline: "COO at Sunscreen. Former journalist, founder and operator..."
+- ✅ Previous experience: "Previously at Cyber, Caldera and Goodable"
+- ✅ Reading section: 30+ books with Amazon links and author names
+- ✅ Contact: Updated email (a@earlyasaservice.com) + social links (X, LinkedIn, GitHub)
+- ✅ Footer: "Made in Montreal"
+
+**Ready for Review**: Please test the fully personalized website at http://localhost:3000! The homepage now matches nikunjk.com's structure with all your personal content.
+
+**Next Steps**: Update About page with professional background details, then adapt Writings page structure.
 
 ## Lessons
 
