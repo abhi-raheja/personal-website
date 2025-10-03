@@ -51,22 +51,32 @@ export default function Home() {
             className="mb-16"
           >
             <div className="flex flex-col md:flex-row items-start md:items-center gap-8 mb-8">
-              {/* Profile Photo */}
+              {/* Profile Photo with Liquid Glass Border */}
               <div className="flex-shrink-0">
-                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                  <img 
-                    src="/profile-photo.jpg" 
-                    alt="Abhi Raheja"
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      // Fallback to styled initials if image doesn't exist
-                      const target = e.currentTarget as HTMLImageElement;
-                      target.style.display = 'none';
-                      if (target.parentElement) {
-                        target.parentElement.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-2xl md:text-3xl font-bold tracking-wide">AR</div>';
-                      }
-                    }}
-                  />
+                <div className="relative w-32 h-32 md:w-40 md:h-40">
+                  {/* Liquid Glass Border */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/30 via-white/10 to-transparent backdrop-blur-sm border border-white/20 shadow-2xl"></div>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent via-white/5 to-white/20"></div>
+                  
+                  {/* Inner Photo Container */}
+                  <div className="relative w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center transform-gpu shadow-xl ring-1 ring-white/10">
+                    <img 
+                      src="/profile-photo.jpg" 
+                      alt="Abhi Raheja"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        // Fallback to styled initials if image doesn't exist
+                        const target = e.currentTarget as HTMLImageElement;
+                        target.style.display = 'none';
+                        if (target.parentElement) {
+                          target.parentElement.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-2xl md:text-3xl font-bold tracking-wide">AR</div>';
+                        }
+                      }}
+                    />
+                  </div>
+                  
+                  {/* Glass Reflection Effect */}
+                  <div className="absolute top-2 left-2 right-2 h-1/3 bg-gradient-to-b from-white/40 to-transparent rounded-full blur-sm"></div>
                 </div>
               </div>
               
