@@ -18,7 +18,7 @@ export default function Home() {
       <nav className="w-full py-6 px-6 md:px-12">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-lg font-normal tracking-tight hover:text-gray-600 transition-colors">
+            <Link href="/" className="text-lg font-normal tracking-tight hover:text-gray-600transition-colors">
               Abhi Raheja
             </Link>
             <div className="flex items-center space-x-8">
@@ -56,12 +56,12 @@ export default function Home() {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <div className="mb-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-black text-white mb-4 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-black mb-4 leading-tight">
               Abhi Raheja
             </h1>
             
             {/* Location with check-in icon */}
-            <div className="flex items-center text-gray-600  mb-8">
+            <div className="flex items-center text-gray-600mb-8">
               <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
               </svg>
@@ -71,10 +71,10 @@ export default function Home() {
           
           {/* Professional tagline */}
           <div className="mb-16">
-            <p className="text-lg md:text-xl text-gray-700  font-normal leading-relaxed max-w-3xl">
-              COO at <a href="https://www.sunscreen.tech" target="_blank" rel="noopener noreferrer" className="hover:text-black  transition-colors underline underline-offset-4">Sunscreen</a>. Former journalist, founder and operator passionate about freedom and high-impact technology.
+            <p className="text-lg md:text-xl text-gray-700 font-normal leading-relaxed max-w-3xl">
+              COO at <a href="https://www.sunscreen.tech" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors underline underline-offset-4">Sunscreen</a>. Former journalist, founder and operator passionate about freedom and high-impact technology.
             </p>
-            <p className="text-base text-gray-600  font-normal mt-4">
+            <p className="text-base text-gray-600font-normal mt-4">
               Previously at Cyber, Caldera and Goodable.
             </p>
           </div>
@@ -87,28 +87,28 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             className="mb-16"
           >
-            <h2 className="text-2xl md:text-3xl font-normal text-black text-white mb-8">
+            <h2 className="text-2xl md:text-3xl font-normal text-black mb-8">
               Recent Writing
             </h2>
             
             <div className="space-y-6">
               <div className="group">
-                <Link href="/writings/sample-post" className="block hover:bg-gray-50 hover:bg-gray-800 -mx-4 px-4 py-3 rounded-sm transition-colors">
-                  <h3 className="text-lg font-normal text-black text-white group-hover:text-gray-600 group-hover: transition-colors mb-2">
+                <Link href="/writings/sample-post" className="block hover:bg-gray-50 -mx-4 px-4 py-3 rounded-sm transition-colors">
+                  <h3 className="text-lg font-normal text-black group-hover:text-gray-800text-gray-600group-hover:text-gray-800 transition-colors mb-2">
                     Your First Blog Post Title
                   </h3>
-                  <p className="text-gray-600  text-sm">
+                  <p className="text-gray-600 text-sm">
                     January 2025
                   </p>
                 </Link>
               </div>
               
               <div className="group">
-                <Link href="/writings" className="block hover:bg-gray-50 hover:bg-gray-800 -mx-4 px-4 py-3 rounded-sm transition-colors">
-                  <h3 className="text-lg font-normal text-black text-white group-hover:text-gray-600 group-hover: transition-colors mb-2">
+                <Link href="/writings" className="block hover:bg-gray-50  -mx-4 px-4 py-3 rounded-sm transition-colors">
+                  <h3 className="text-lg font-normal text-black group-hover:text-gray-800text-gray-600group-hover:text-gray-800 transition-colors mb-2">
                     Another Blog Post
                   </h3>
-                  <p className="text-gray-600  text-sm">
+                  <p className="text-gray-600 text-sm">
                     December 2024
                   </p>
                 </Link>
@@ -118,7 +118,7 @@ export default function Home() {
             <div className="mt-6">
               <Link 
                 href="/writings" 
-                className="text-gray-600  hover:text-black  transition-colors font-normal underline underline-offset-4"
+                className="text-gray-600 hover:text-black  transition-colors font-normal underline underline-offset-4"
               >
                 View all writings
               </Link>
@@ -132,10 +132,10 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
             className="mb-16"
           >
-            <h2 className="text-2xl md:text-3xl font-normal text-black text-white mb-4">
+            <h2 className="text-2xl md:text-3xl font-normal text-black mb-4">
               Currently Reading
             </h2>
-            <p className="text-gray-600  text-sm mb-6">
+            <p className="text-gray-600 text-sm mb-6">
               Books I've met and like to revisit often.
             </p>
             
@@ -165,7 +165,7 @@ export default function Home() {
             <div className="mt-6">
               <Link 
                 href="/reading" 
-                className="text-gray-600  hover:text-black  transition-colors font-normal underline underline-offset-4"
+                className="text-gray-600 hover:text-black  transition-colors font-normal underline underline-offset-4"
               >
                 View all books
               </Link>
@@ -179,7 +179,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             className="mb-16"
           >
-            <h2 className="text-2xl md:text-3xl font-normal text-black text-white mb-6">
+            <h2 className="text-2xl md:text-3xl font-normal text-black mb-6">
               Connect
             </h2>
             <div className="space-y-3">

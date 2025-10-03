@@ -18,7 +18,7 @@ export default function Reading() {
       <nav className="w-full py-6 px-6 md:px-12">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-lg font-normal tracking-tight hover:text-gray-600 transition-colors">
+            <Link href="/" className="text-lg font-normal tracking-tight hover:text-gray-600transition-colors">
               Abhi Raheja
             </Link>
             <div className="flex items-center space-x-8">
@@ -56,7 +56,7 @@ export default function Reading() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="mb-16"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-black text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-black mb-6 leading-tight">
               Reading
             </h1>
             <p className="text-lg md:text-xl text-gray-700  font-normal leading-relaxed max-w-3xl">
