@@ -138,7 +138,19 @@ The user wants to adapt their existing personal website to match the framework a
 
 **Ready for Review**: Please test the fully personalized website at http://localhost:3000! The homepage now matches nikunjk.com's structure with all your personal content.
 
-**Next Steps**: Update About page with professional background details, then adapt Writings page structure.
+**COMMITTED TO GITHUB**: All changes safely pushed to repository (commit ee12d81)
+
+**MAJOR UPDATE COMPLETE**: Reading reorganization and dark mode implementation! 
+
+**Latest Changes**:
+- ✅ Added Reading tab to navigation 
+- ✅ Created dedicated /reading page with all books
+- ✅ Homepage now shows only "Currently Reading" (3 books) with subtitle
+- ✅ Full dark mode implementation with theme toggle
+- ✅ All pages updated with dark mode support
+- ✅ Build tested and working perfectly
+
+**Next Steps**: Ready for user testing and feedback, then potential About page updates.
 
 ## Lessons
 
