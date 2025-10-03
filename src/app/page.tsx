@@ -53,17 +53,17 @@ export default function Home() {
             <div className="flex flex-col md:flex-row items-start md:items-center gap-8 mb-8">
               {/* Profile Photo */}
               <div className="flex-shrink-0">
-                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-gray-200">
+                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
                   <img 
                     src="/profile-photo.jpg" 
                     alt="Abhi Raheja"
                     className="w-full h-full object-cover"
                     onError={(e) => {
-                      // Fallback to initials if image doesn't exist
+                      // Fallback to styled initials if image doesn't exist
                       const target = e.currentTarget as HTMLImageElement;
                       target.style.display = 'none';
                       if (target.parentElement) {
-                        target.parentElement.innerHTML = '<div class="w-full h-full bg-gray-300 flex items-center justify-center text-gray-600 text-2xl md:text-3xl font-medium">AR</div>';
+                        target.parentElement.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-2xl md:text-3xl font-bold tracking-wide">AR</div>';
                       }
                     }}
                   />
