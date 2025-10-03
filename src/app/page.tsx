@@ -43,35 +43,67 @@ export default function Home() {
       <main id="main-content" className="px-6 md:px-12 py-12">
         <div className="max-w-4xl mx-auto">
           
-          {/* Large Name Header - like "Nikunj Kothari" */}
+          {/* Hero Section with Profile Photo */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
+            className="mb-16"
           >
-            <div className="mb-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-black mb-4 leading-tight">
-              Abhi Raheja
-            </h1>
-            
-            {/* Location with check-in icon */}
-            <div className="flex items-center text-gray-600mb-8">
-              <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-              </svg>
-              <span className="text-sm font-normal">Montreal, QC</span>
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-8 mb-8">
+              {/* Profile Photo */}
+              <div className="flex-shrink-0">
+                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-gray-200">
+                  <img 
+                    src="/profile-photo.jpg" 
+                    alt="Abhi Raheja"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // Fallback to initials if image doesn't exist
+                      const target = e.currentTarget as HTMLImageElement;
+                      target.style.display = 'none';
+                      if (target.parentElement) {
+                        target.parentElement.innerHTML = '<div class="w-full h-full bg-gray-300 flex items-center justify-center text-gray-600 text-2xl md:text-3xl font-medium">AR</div>';
+                      }
+                    }}
+                  />
+                </div>
+              </div>
+              
+              {/* Name and Professional Info */}
+              <div className="flex-1">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-black mb-3 leading-tight">
+                  Abhi Raheja
+                </h1>
+                
+                {/* Location */}
+                <div className="flex items-center text-gray-600 mb-4">
+                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                  <span className="text-base font-normal">Montreal, QC</span>
+                </div>
+                
+                {/* Professional Title - Large and Prominent */}
+                <div className="mb-3">
+                  <h2 className="text-2xl md:text-3xl font-medium text-gray-900">
+                    COO at Sunscreen
+                  </h2>
+                </div>
+                
+                {/* Previous Experience */}
+                <div className="text-lg text-gray-600">
+                  <span>Prev. Cyber, Caldera, Goodable</span>
+                </div>
+              </div>
             </div>
-          </div>
-          
-          {/* Professional tagline */}
-          <div className="mb-16">
-            <p className="text-lg md:text-xl text-gray-700 font-normal leading-relaxed max-w-3xl">
-              COO at <a href="https://www.sunscreen.tech" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors underline underline-offset-4">Sunscreen</a>. Former journalist, founder and operator passionate about freedom and high-impact technology.
-            </p>
-            <p className="text-base text-gray-600font-normal mt-4">
-              Previously at Cyber, Caldera and Goodable.
-            </p>
-          </div>
+            
+            {/* Professional Description */}
+            <div className="max-w-4xl">
+              <p className="text-lg md:text-xl text-gray-700 font-normal leading-relaxed">
+                Former journalist, founder and operator passionate about freedom and high-impact technology.
+              </p>
+            </div>
           </motion.div>
 
           {/* Recent Writing Section - nikunjk.com style */}
