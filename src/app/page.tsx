@@ -135,7 +135,7 @@ export default function Home() {
                   
                   {/* GitHub */}
                   <a 
-                    href="https://github.com/abhiraheja" 
+                    href="https://github.com/abhi-raheja" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-black transition-colors"
@@ -185,25 +185,19 @@ export default function Home() {
             
             <div className="space-y-6">
               <div className="group">
-                <Link href="/writings/sample-post" className="block hover:bg-gray-50 -mx-4 px-4 py-3 rounded-sm transition-colors">
-                  <h3 className="text-lg font-normal text-black group-hover:text-gray-800text-gray-600group-hover:text-gray-800 transition-colors mb-2">
-                    Your First Blog Post Title
+                <a 
+                  href="https://abhihereandnow.medium.com/the-price-i-paid-for-a-university-degree-f9a04d4eae69" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block hover:bg-gray-50 -mx-4 px-4 py-3 rounded-sm transition-colors"
+                >
+                  <h3 className="text-lg font-normal text-black group-hover:text-gray-800 transition-colors mb-2">
+                    The Price I Paid for a University Degree
                   </h3>
                   <p className="text-gray-600 text-sm">
-                    January 2025
+                    March 2021
                   </p>
-                </Link>
-              </div>
-              
-              <div className="group">
-                <Link href="/writings" className="block hover:bg-gray-50  -mx-4 px-4 py-3 rounded-sm transition-colors">
-                  <h3 className="text-lg font-normal text-black group-hover:text-gray-800text-gray-600group-hover:text-gray-800 transition-colors mb-2">
-                    Another Blog Post
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    December 2024
-                  </p>
-                </Link>
+                </a>
               </div>
             </div>
             
@@ -265,6 +259,15 @@ export default function Home() {
 
         </div>
       </main>
+      
+      {/* Footer */}
+      <footer className="px-6 md:px-12 py-8">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-sm text-gray-500 text-center">
+            © 2025 Abhi Raheja
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
