@@ -10,11 +10,11 @@ const quicksand = Quicksand({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name - Personal Website",
-  description: "Personal website and writings of [Your Name]. Exploring thoughts, ideas, and creative work.",
-  keywords: ["personal website", "blog", "writings", "portfolio"],
-  authors: [{ name: "Your Name" }],
-  creator: "Your Name",
+  title: "Abhi Raheja - Personal Website",
+  description: "Personal website and writings of Abhi Raheja. Exploring thoughts on technology, privacy, crypto, and the intersection of culture and innovation.",
+  keywords: ["Abhi Raheja", "personal website", "blog", "writings", "crypto", "FHE", "technology", "privacy"],
+  authors: [{ name: "Abhi Raheja" }],
+  creator: "Abhi Raheja",
 };
 
 export default function RootLayout({

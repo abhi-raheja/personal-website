@@ -2,8 +2,87 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+
+interface PostMetadata {
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  readTime: string;
+  externalLink?: string;
+}
+
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+  });
+}
 
 export default function Home() {
+  const [recentPosts, setRecentPosts] = useState<PostMetadata[]>([]);
+
+  useEffect(() => {
+    // Same data source as writings page - keep this in sync
+    const allPosts = [
+      {
+        slug: 'prediction-markets-are-trending-heres-my-experience',
+        title: 'Prediction Markets are Trending. Here\'s my Experience Building One.',
+        excerpt: 'Late 2023 to early 2024, I spent 6 months trying to build a prediction markets product called Ariina. At its peak, we had about 600 users in beta. I failed miserably but here is what I learned about market discovery, creation, liquidity, resolution, and contextualization.',
+        date: '2025-09-25',
+        readTime: '8 min read'
+      },
+      {
+        slug: 'the-biggest-challenge-facing-llms',
+        title: 'The Biggest Challenge Facing LLMs',
+        excerpt: 'One thing that\'s common among recent statements by leads of all top AI labs is that they\'ve used all the publicly available data for training frontier models. The next frontier is private, proprietary data.',
+        date: '2025-09-19',
+        readTime: '4 min read'
+      },
+      {
+        slug: 'why-im-excited-about-morpho-on-base',
+        title: 'Why I\'m excited about Morpho on Base',
+        excerpt: 'I recently learned that Coinbase lets you borrow money using Bitcoin as collateral (powered by Morpho). This led me down the Morpho rabbit hole and I was surprised to learn that there\'s a lot I didn\'t know about them.',
+        date: '2025-09-03',
+        readTime: '5 min read'
+      },
+      {
+        slug: 'jevons-paradox-and-fhe',
+        title: 'Jevon\'s Paradox and FHE',
+        excerpt: 'Jevon\'s paradox is an economic principle that states that when technological advancements increase the efficiency with which a resource is used, the overall consumption of that resource may increase rather than decrease. I believe we\'re witnessing something similar with FHE.',
+        date: '2025-08-21',
+        readTime: '3 min read'
+      },
+      {
+        slug: 'what-i-like-and-dont-like-about-circles-new-blockchain-arc',
+        title: 'What I like and Don\'t like about Circle\'s new blockchain Arc',
+        excerpt: 'I read the Arc litepaper so you don\'t have to. When my friend Sanket and his cracked team joined Circle a few months back, I knew something new was coming. Well, now Arc is here and here\'s what stands out for me.',
+        date: '2025-08-13',
+        readTime: '6 min read'
+      },
+      {
+        slug: 'state-of-fhe-2025',
+        title: 'State of FHE | 2025',
+        excerpt: 'Imagine being able to compute on secrets, without ever seeing them. That\'s the magic of Fully Homomorphic Encryption (FHE), a cryptography technique that lets you process encrypted data as if it were unlocked. It\'s privacy\'s holy grail.',
+        date: '2025-08-09',
+        readTime: '7 min read'
+      },
+      {
+        slug: 'the-price-i-paid-for-a-university-degree',
+        title: 'The Price I Paid for a University Degree',
+        excerpt: 'A personal story about family, sacrifice, and the true cost of education. On March 27, 2017, I sat facing my father in our living room during an evening that would alter the course of my life.',
+        date: '2021-03-09',
+        readTime: '7 min read',
+        externalLink: 'https://abhihereandnow.medium.com/the-price-i-paid-for-a-university-degree-f9a04d4eae69'
+      },
+    ];
+    
+    // Get the latest 3 posts
+    setRecentPosts(allPosts.slice(0, 3));
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Skip to main content - accessibility feature like nikunjk.com */}
@@ -184,21 +263,37 @@ export default function Home() {
             </h2>
             
             <div className="space-y-6">
-              <div className="group">
-                <a 
-                  href="https://abhihereandnow.medium.com/the-price-i-paid-for-a-university-degree-f9a04d4eae69" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="block hover:bg-gray-50 -mx-4 px-4 py-3 rounded-sm transition-colors"
-                >
-                  <h3 className="text-lg font-normal text-black group-hover:text-gray-800 transition-colors mb-2">
-                    The Price I Paid for a University Degree
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    March 2021
-                  </p>
-                </a>
-              </div>
+              {recentPosts.map((post, index) => (
+                <div key={post.slug} className="group">
+                  {post.externalLink ? (
+                    <a 
+                      href={post.externalLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block hover:bg-gray-50 -mx-4 px-4 py-3 rounded-sm transition-colors"
+                    >
+                      <h3 className="text-lg font-normal text-black group-hover:text-gray-800 transition-colors mb-2">
+                        {post.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm">
+                        {formatDate(post.date)}
+                      </p>
+                    </a>
+                  ) : (
+                    <Link 
+                      href={`/writings/${post.slug}`}
+                      className="block hover:bg-gray-50 -mx-4 px-4 py-3 rounded-sm transition-colors"
+                    >
+                      <h3 className="text-lg font-normal text-black group-hover:text-gray-800 transition-colors mb-2">
+                        {post.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm">
+                        {formatDate(post.date)}
+                      </p>
+                    </Link>
+                  )}
+                </div>
+              ))}
             </div>
             
             <div className="mt-6">
