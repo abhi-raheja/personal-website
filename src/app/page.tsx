@@ -67,14 +67,14 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Text Info (Center Aligned) */}
-              <div className="flex-1 flex flex-col justify-center">
+              {/* Text Info (Center Aligned on Mobile, Left on Desktop) */}
+              <div className="flex-1 flex flex-col justify-center text-center md:text-left">
                 <h1 className="text-xl md:text-2xl lg:text-3xl font-normal tracking-tight text-black mb-3 leading-tight">
                   Abhi Raheja
                 </h1>
                 
                 {/* Location */}
-                <div className="flex items-center text-gray-600 mb-4">
+                <div className="flex items-center justify-center md:justify-start text-gray-600 mb-4">
                   <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                   </svg>
