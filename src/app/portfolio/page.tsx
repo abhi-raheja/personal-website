@@ -90,7 +90,7 @@ export default function Portfolio() {
                   <a href="https://sunscreen.tech" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
                     Sunscreen
                   </a>
-                  <span className="text-gray-500 text-base font-normal ml-2">(Backed by Polychain, Coinbase, Naval Ravikant)</span>
+                  <span className="text-gray-500 text-base font-normal ml-2">(Backed by Coinbase, Naval Ravikant)</span>
                 </h3>
                 <p className="text-gray-500 text-base mb-2">Privacy-focused applied cryptography lab</p>
                 
@@ -102,133 +102,46 @@ export default function Portfolio() {
                   <div className="flex flex-col">
                     <div className="flex flex-col -mt-1">
                       <p className="font-medium text-sm text-gray-600">COO</p>
-                      <p className="text-xs text-gray-500">2025</p>
+                      <p className="text-xs text-gray-500">April 2025 - Present</p>
                     </div>
                   </div>
                 </div>
               </div>
               
-              {/* Achievement Categories */}
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                {/* Leadership & Strategy */}
-                <div className="bg-gradient-to-br from-orange-50 to-red-50 border border-orange-100 rounded-xl p-4">
-                  <h4 className="text-sm font-semibold text-orange-900 mb-3 flex items-center">
-                    <span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
-                    Leadership & Strategy
-                  </h4>
-                  <div className="space-y-2">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-orange-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">CEO Partnership</span>
-                        <div className="flex items-center text-orange-700 font-semibold text-sm">
-                          <span>Sounding Board</span>
-                          <svg className="w-3 h-3 ml-1 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-orange-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Series A Prep</span>
-                        <div className="flex items-center text-orange-700 font-semibold text-sm">
-                          <span>In Progress</span>
-                          <svg className="w-3 h-3 ml-1 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-orange-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Company OKRs</span>
-                        <div className="flex items-center text-orange-700 font-semibold text-sm">
-                          <span>Implemented</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
+              {/* Key Accomplishments */}
+              <div className="space-y-4">
+                <h4 className="text-base font-semibold text-gray-900 mb-4">Key Accomplishments</h4>
+                
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Built sales & marketing functions from zero</p>
+                      <p className="text-xs text-gray-600">Signed first two customers, implemented CRM systems, campaign calendar, and brand identity</p>
                     </div>
                   </div>
-                </div>
-
-                {/* GTM & Sales */}
-                <div className="bg-gradient-to-br from-red-50 to-pink-50 border border-red-100 rounded-xl p-4">
-                  <h4 className="text-sm font-semibold text-red-900 mb-3 flex items-center">
-                    <span className="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
-                    GTM & Sales
-                  </h4>
-                  <div className="space-y-2">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-red-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">GTM Strategy</span>
-                        <div className="flex items-center text-red-700 font-semibold text-sm">
-                          <span>Measurable</span>
-                          <svg className="w-3 h-3 ml-1 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-red-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Sales Function</span>
-                        <div className="flex items-center text-red-700 font-semibold text-sm">
-                          <span>Ground Up</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-red-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Marketing Setup</span>
-                        <div className="flex items-center text-red-700 font-semibold text-sm">
-                          <span>CRM + Brand</span>
-                          <svg className="w-3 h-3 ml-1 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
+                  
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Prepared CEO for Series A fundraise</p>
+                      <p className="text-xs text-gray-600">Built investor materials, talking points, and data rooms; led due diligence coordination and financial storytelling</p>
                     </div>
                   </div>
-                </div>
-
-                {/* Investor Relations */}
-                <div className="bg-gradient-to-br from-yellow-50 to-orange-50 border border-yellow-100 rounded-xl p-4">
-                  <h4 className="text-sm font-semibold text-yellow-900 mb-3 flex items-center">
-                    <span className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
-                    Investor Relations
-                  </h4>
-                  <div className="space-y-2">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-yellow-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Leading IR</span>
-                        <div className="flex items-center text-yellow-700 font-semibold text-sm">
-                          <span>Active</span>
-                          <svg className="w-3 h-3 ml-1 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                      </div>
+                  
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Partner to CEO on company vision & strategy</p>
+                      <p className="text-xs text-gray-600">Operational right hand and leadership proxy in customer, investor discussions and lead on product initiatives</p>
                     </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-yellow-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Vision Alignment</span>
-                        <div className="flex items-center text-yellow-700 font-semibold text-sm">
-                          <span>Company-wide</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Managing operational rhythm of business</p>
+                      <p className="text-xs text-gray-600">Financial planning & forecasting, ensuring alignment between engineering and business expectations</p>
                     </div>
                   </div>
                 </div>
@@ -251,7 +164,7 @@ export default function Portfolio() {
                   <a href="https://caldera.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
                     Caldera
                   </a>
-                  <span className="text-gray-500 text-base font-normal ml-2">(Backed by Founders Fund, Sequoia, Dragonfly)</span>
+                  <span className="text-gray-500 text-base font-normal ml-2">(Backed by Founders Fund, Sequoia)</span>
                 </h3>
                 <p className="text-gray-500 text-base mb-2">Rollups-as-a-Service</p>
                 
@@ -263,149 +176,46 @@ export default function Portfolio() {
                   <div className="flex flex-col">
                     <div className="flex flex-col -mt-1">
                       <p className="font-medium text-sm text-gray-600">CMO</p>
-                      <p className="text-xs text-gray-500">2024 - 2025</p>
+                      <p className="text-xs text-gray-500">April 2024 - Dec 2024</p>
                     </div>
                   </div>
                 </div>
               </div>
               
-              {/* Achievement Categories */}
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                {/* Social and Brand */}
-                <div className="bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-100 rounded-xl p-4">
-                  <h4 className="text-sm font-semibold text-purple-900 mb-3 flex items-center">
-                    <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                    Social and Brand
-                  </h4>
-                  <div className="space-y-2">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-purple-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">X Followers</span>
-                        <div className="flex items-center text-purple-700 font-semibold text-sm">
-                          <span className="text-gray-400 line-through text-xs mr-1">20k</span>
-                          <span>350k</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-purple-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Telegram</span>
-                        <div className="flex items-center text-purple-700 font-semibold text-sm">
-                          <span className="text-gray-400 line-through text-xs mr-1">0</span>
-                          <span>100k</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-purple-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Discord</span>
-                        <div className="flex items-center text-purple-700 font-semibold text-sm">
-                          <span className="text-gray-400 line-through text-xs mr-1">50k</span>
-                          <span>250k</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
+              {/* Key Accomplishments */}
+              <div className="space-y-4">
+                <h4 className="text-base font-semibold text-gray-900 mb-4">Key Accomplishments</h4>
+                
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Advisor to CEO on growth, positioning, and community expansion</p>
+                      <p className="text-xs text-gray-600">Helping prepare for Series A fundraise, token launch and scale user base across X, Telegram, and Discord by 10x+</p>
                     </div>
                   </div>
-                </div>
-
-                {/* PR and Media */}
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-4">
-                  <h4 className="text-sm font-semibold text-blue-900 mb-3 flex items-center">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                    PR and Media
-                  </h4>
-                  <div className="space-y-2">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-blue-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Series A Impressions</span>
-                        <div className="flex items-center text-blue-700 font-semibold text-sm">
-                          <span>1.5M</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-blue-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Publications</span>
-                        <div className="flex items-center text-blue-700 font-semibold text-sm">
-                          <span>10+</span>
-                          <svg className="w-3 h-3 ml-1 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-blue-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Blog Growth</span>
-                        <div className="flex items-center text-blue-700 font-semibold text-sm">
-                          <span className="text-gray-400 line-through text-xs mr-1">2k</span>
-                          <span>30k</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
+                  
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Led company-wide comms for Series A</p>
+                      <p className="text-xs text-gray-600">Achieved 1.5M impressions online and coverage in 10+ tier-1 outlets; PR training for CEO for interviews and public appearances</p>
                     </div>
                   </div>
-                </div>
-
-                {/* Product GTM */}
-                <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-100 rounded-xl p-4">
-                  <h4 className="text-sm font-semibold text-emerald-900 mb-3 flex items-center">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
-                    Product GTM
-                  </h4>
-                  <div className="space-y-2">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-emerald-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Unique Wallets</span>
-                        <div className="flex items-center text-emerald-700 font-semibold text-sm">
-                          <span>7M</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
+                  
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Conceptualized and executed events and marketing strategy</p>
+                      <p className="text-xs text-gray-600">Brand ahead of the fundraise announcement and token launch, covering 9 countries, meeting 12,000+ people IRL</p>
                     </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-emerald-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Event Activations</span>
-                        <div className="flex items-center text-emerald-700 font-semibold text-sm">
-                          <span>10k+ people</span>
-                          <svg className="w-3 h-3 ml-1 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-emerald-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Products Launched</span>
-                        <div className="flex items-center text-emerald-700 font-semibold text-sm">
-                          <span>3 Major</span>
-                          <svg className="w-3 h-3 ml-1 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                      </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Developed GTM plan and launch frameworks for multiple products</p>
+                      <p className="text-xs text-gray-600">Vulcan, TrackMyYield (with Apecoin), Metalayer reaching 7M wallets; led execution across eng, growth and sales</p>
                     </div>
                   </div>
                 </div>
@@ -428,7 +238,7 @@ export default function Portfolio() {
                   <a href="https://cyber.co" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
                     Cyber
                   </a>
-                  <span className="text-gray-500 text-base font-normal ml-2">(Backed by Multicoin Capital, Animoca Brands)</span>
+                  <span className="text-gray-500 text-base font-normal ml-2">(Backed by Multicoin, Animoca)</span>
                 </h3>
                 <p className="text-gray-500 text-base mb-2">The L2 for Social</p>
                 
@@ -443,299 +253,43 @@ export default function Portfolio() {
                   <div className="flex flex-col">
                     <div className="flex flex-col -mt-1">
                       <p className="font-medium text-sm text-gray-600">CMO</p>
-                      <p className="text-xs text-gray-500">2022 - 2024</p>
+                      <p className="text-xs text-gray-500">2024</p>
                     </div>
                     
                     <div className="flex flex-col mt-8">
                       <p className="font-medium text-sm text-gray-600">Chief of Staff</p>
-                      <p className="text-xs text-gray-500">2022</p>
+                      <p className="text-xs text-gray-500">Feb 2022 - 2024</p>
                     </div>
                   </div>
                 </div>
               </div>
               
-              {/* Achievement Categories */}
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                {/* Social and Brand Category */}
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-4">
-                  <h4 className="text-sm font-semibold text-blue-900 mb-3 flex items-center">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                    Social and Brand
-                  </h4>
-                  <div className="space-y-2">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-blue-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">X Followers</span>
-                        <div className="flex items-center text-blue-700 font-semibold text-sm">
-                          <span className="text-gray-400 line-through text-xs mr-1">20k</span>
-                          <span>350k</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-blue-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Social Following</span>
-                        <div className="flex items-center text-blue-700 font-semibold text-sm">
-                          <span className="text-gray-400 line-through text-xs mr-1">0</span>
-                          <span>750k</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-blue-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Monthly Visitors</span>
-                        <div className="flex items-center text-blue-700 font-semibold text-sm">
-                          <span className="text-gray-400 line-through text-xs mr-1">0</span>
-                          <span>940k</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-blue-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">User Profiles</span>
-                        <div className="flex items-center text-blue-700 font-semibold text-sm">
-                          <span className="text-gray-400 line-through text-xs mr-1">0</span>
-                          <span>1.6M</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Content and PR Category */}
-                <div className="bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-100 rounded-xl p-4">
-                  <h4 className="text-sm font-semibold text-purple-900 mb-3 flex items-center">
-                    <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                    Content and PR
-                  </h4>
-                  <div className="space-y-2">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-purple-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Monthly Impressions</span>
-                        <div className="flex items-center text-purple-700 font-semibold text-sm">
-                          <span>5M</span>
-                          <svg className="w-3 h-3 ml-1 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-purple-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Newsletter Growth</span>
-                        <div className="flex items-center text-purple-700 font-semibold text-sm">
-                          <span className="text-gray-400 line-through text-xs mr-1">1.5k</span>
-                          <span>50k</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-purple-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Newsletter Editions</span>
-                        <div className="flex items-center text-purple-700 font-semibold text-sm">
-                          <span>20+</span>
-                          <svg className="w-3 h-3 ml-1 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-purple-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Active Wallets</span>
-                        <div className="flex items-center text-purple-700 font-semibold text-sm">
-                          <span className="text-gray-400 line-through text-xs mr-1">0</span>
-                          <span>300k</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Product and GTM Category */}
-                <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-100 rounded-xl p-4">
-                  <h4 className="text-sm font-semibold text-emerald-900 mb-3 flex items-center">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
-                    Product and GTM
-                  </h4>
-                  <div className="space-y-2">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-emerald-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Event Activations</span>
-                        <div className="flex items-center text-emerald-700 font-semibold text-sm">
-                          <span>12 events</span>
-                          <svg className="w-3 h-3 ml-1 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-emerald-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Hackathon Apps</span>
-                        <div className="flex items-center text-emerald-700 font-semibold text-sm">
-                          <span>2000+</span>
-                          <svg className="w-3 h-3 ml-1 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-emerald-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Ecosystem Teams</span>
-                        <div className="flex items-center text-emerald-700 font-semibold text-sm">
-                          <span>30+</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-emerald-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Grants Program</span>
-                        <div className="flex items-center text-emerald-700 font-semibold text-sm">
-                          <span>$500k</span>
-                          <svg className="w-3 h-3 ml-1 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Ariina Experience */}
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-xl font-semibold text-black mb-1 flex items-center">
-                  <div className="w-6 h-6 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center mr-3">
-                    <span className="text-white text-xs font-bold">🎰</span>
-                  </div>
-                  <span className="hover:text-gray-700 transition-colors">
-                    Ariina
-                  </span>
-                  <span className="text-gray-500 text-base font-normal ml-2">(Prediction Market Web3 Social)</span>
-                </h3>
-                <p className="text-gray-500 text-base mb-2">Founder, CEO - Raised $200k</p>
+              {/* Key Accomplishments */}
+              <div className="space-y-4">
+                <h4 className="text-base font-semibold text-gray-900 mb-4">Key Accomplishments</h4>
                 
-                <div className="flex gap-3 mb-3 mt-6">
-                  <div className="flex flex-col items-center relative">
-                    <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Partner to CEO and communication lead for the company</p>
+                      <p className="text-xs text-gray-600">Led internal and internal messaging across product, investor, and ecosystem channels</p>
+                    </div>
                   </div>
                   
-                  <div className="flex flex-col">
-                    <div className="flex flex-col -mt-1">
-                      <p className="font-medium text-sm text-gray-600">Founder, CEO</p>
-                      <p className="text-xs text-gray-500">2021 - 2022</p>
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Led global product launch and GTM for Link3.to, CyberConnect, and CyberWallet</p>
+                      <p className="text-xs text-gray-600">Growing to 1.6M user profiles and 300K active wallets</p>
                     </div>
                   </div>
-                </div>
-              </div>
-              
-              {/* Achievement Categories */}
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                {/* Product Development */}
-                <div className="bg-gradient-to-br from-pink-50 to-purple-50 border border-pink-100 rounded-xl p-4">
-                  <h4 className="text-sm font-semibold text-pink-900 mb-3 flex items-center">
-                    <span className="w-2 h-2 bg-pink-500 rounded-full mr-2"></span>
-                    Product Development
-                  </h4>
-                  <div className="space-y-2">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-pink-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Product</span>
-                        <div className="flex items-center text-pink-700 font-semibold text-sm">
-                          <span>Prototyped</span>
-                          <svg className="w-3 h-3 ml-1 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-pink-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Beta Users</span>
-                        <div className="flex items-center text-pink-700 font-semibold text-sm">
-                          <span>700</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Fundraising */}
-                <div className="bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-100 rounded-xl p-4">
-                  <h4 className="text-sm font-semibold text-purple-900 mb-3 flex items-center">
-                    <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                    Fundraising
-                  </h4>
-                  <div className="space-y-2">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-purple-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Angel Round</span>
-                        <div className="flex items-center text-purple-700 font-semibold text-sm">
-                          <span>$200k</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Learning */}
-                <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-100 rounded-xl p-4">
-                  <h4 className="text-sm font-semibold text-amber-900 mb-3 flex items-center">
-                    <span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>
-                    Learning
-                  </h4>
-                  <div className="space-y-2">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-amber-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Traction</span>
-                        <div className="flex items-center text-amber-700 font-semibold text-sm">
-                          <span>Limited</span>
-                          <svg className="w-3 h-3 ml-1 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
+                  
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Owned investor communications, lead writer on whitepaper, and strategic decks</p>
+                      <p className="text-xs text-gray-600">Including token launch materials; represented company in press appearances and conferences</p>
                     </div>
                   </div>
                 </div>
@@ -758,9 +312,9 @@ export default function Portfolio() {
                   <a href="https://goodable.co" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
                     Goodable
                   </a>
-                  <span className="text-gray-500 text-base font-normal ml-2">(Social Impact Media)</span>
+                  <span className="text-gray-500 text-base font-normal ml-2">(Backed by Techstars, Foundry Group)</span>
                 </h3>
-                <p className="text-gray-500 text-base mb-2">Good News Platform</p>
+                <p className="text-gray-500 text-base mb-2">Positive news and stories</p>
                 
                 <div className="flex gap-3 mb-3 mt-6">
                   <div className="flex flex-col items-center relative">
@@ -769,265 +323,47 @@ export default function Portfolio() {
                   
                   <div className="flex flex-col">
                     <div className="flex flex-col -mt-1">
-                      <p className="font-medium text-sm text-gray-600">Co-founder</p>
-                      <p className="text-xs text-gray-500">2018 - 2021</p>
+                      <p className="font-medium text-sm text-gray-600">Co-founder & COO</p>
+                      <p className="text-xs text-gray-500">May 2018 - Feb 2022</p>
                     </div>
                   </div>
                 </div>
               </div>
               
-              {/* Achievement Categories */}
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                {/* Fundraising & Revenue */}
-                <div className="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-100 rounded-xl p-4">
-                  <h4 className="text-sm font-semibold text-green-900 mb-3 flex items-center">
-                    <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                    Fundraising & Revenue
-                  </h4>
-                  <div className="space-y-2">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-green-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Total Raised</span>
-                        <div className="flex items-center text-green-700 font-semibold text-sm">
-                          <span>$2M</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-green-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Funding Rounds</span>
-                        <div className="flex items-center text-green-700 font-semibold text-sm">
-                          <span>2</span>
-                          <svg className="w-3 h-3 ml-1 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-green-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Enterprise Model</span>
-                        <div className="flex items-center text-green-700 font-semibold text-sm">
-                          <span>Developed</span>
-                          <svg className="w-3 h-3 ml-1 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Operations & Growth */}
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-4">
-                  <h4 className="text-sm font-semibold text-blue-900 mb-3 flex items-center">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                    Operations & Growth
-                  </h4>
-                  <div className="space-y-2">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-blue-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Business Functions</span>
-                        <div className="flex items-center text-blue-700 font-semibold text-sm">
-                          <span>Biz Dev, Hiring</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-blue-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">People Ops</span>
-                        <div className="flex items-center text-blue-700 font-semibold text-sm">
-                          <span>Managed</span>
-                          <svg className="w-3 h-3 ml-1 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-blue-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Investor Relations</span>
-                        <div className="flex items-center text-blue-700 font-semibold text-sm">
-                          <span>Led</span>
-                          <svg className="w-3 h-3 ml-1 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Marketing & Reach */}
-                <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-100 rounded-xl p-4">
-                  <h4 className="text-sm font-semibold text-emerald-900 mb-3 flex items-center">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
-                    Marketing & Reach
-                  </h4>
-                  <div className="space-y-2">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-emerald-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Global Reach</span>
-                        <div className="flex items-center text-emerald-700 font-semibold text-sm">
-                          <span>40M+ users</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-emerald-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Therapist Network</span>
-                        <div className="flex items-center text-emerald-700 font-semibold text-sm">
-                          <span>Enterprise</span>
-                          <svg className="w-3 h-3 ml-1 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Antica Productions Experience */}
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-xl font-semibold text-black mb-1 flex items-center">
-                  <div className="w-6 h-6 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mr-3">
-                    <span className="text-white text-xs font-bold">🎙</span>
-                  </div>
-                  <a href="http://www.anticaproductions.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
-                    Antica Productions
-                  </a>
-                  <span className="text-gray-500 text-base font-normal ml-2">(Audio Production Company)</span>
-                </h3>
-                <p className="text-gray-500 text-base mb-2">Producer/Journalist - Employee #7</p>
+              {/* Key Accomplishments */}
+              <div className="space-y-4">
+                <h4 className="text-base font-semibold text-gray-900 mb-4">Key Accomplishments</h4>
                 
-                <div className="flex gap-3 mb-3 mt-6">
-                  <div className="flex flex-col items-center relative">
-                    <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Scaled from 0 to 3M+ monthly users across iOS, Android, and web</p>
+                      <p className="text-xs text-gray-600">Built entire growth funnel from content creation to user acquisition and retention</p>
+                    </div>
                   </div>
                   
-                  <div className="flex flex-col">
-                    <div className="flex flex-col -mt-1">
-                      <p className="font-medium text-sm text-gray-600">Producer/Journalist</p>
-                      <p className="text-xs text-gray-500">2017 - 2018</p>
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Built and managed 15-person editorial team</p>
+                      <p className="text-xs text-gray-600">Covering 12 countries, producing 100+ stories daily with quality control and fact-checking processes</p>
                     </div>
                   </div>
-                </div>
-              </div>
-              
-              {/* Achievement Categories */}
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                {/* Content Production */}
-                <div className="bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-100 rounded-xl p-4">
-                  <h4 className="text-sm font-semibold text-indigo-900 mb-3 flex items-center">
-                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></span>
-                    Content Production
-                  </h4>
-                  <div className="space-y-2">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-indigo-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Programs Produced</span>
-                        <div className="flex items-center text-indigo-700 font-semibold text-sm">
-                          <span>25+</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-indigo-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Global Reach</span>
-                        <div className="flex items-center text-indigo-700 font-semibold text-sm">
-                          <span>1M+ people</span>
-                          <svg className="w-3 h-3 ml-1 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
+                  
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Developed AI-powered content discovery and curation system</p>
+                      <p className="text-xs text-gray-600">Automated story sourcing, fact-checking, and personalization algorithms improving engagement by 40%</p>
                     </div>
                   </div>
-                </div>
-
-                {/* Brand Strategy */}
-                <div className="bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-100 rounded-xl p-4">
-                  <h4 className="text-sm font-semibold text-purple-900 mb-3 flex items-center">
-                    <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                    Brand Strategy
-                  </h4>
-                  <div className="space-y-2">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-purple-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Podcast Brands</span>
-                        <div className="flex items-center text-purple-700 font-semibold text-sm">
-                          <span>15 shows</span>
-                          <svg className="w-3 h-3 ml-1 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-purple-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Top Publishers</span>
-                        <div className="flex items-center text-purple-700 font-semibold text-sm">
-                          <span>BBC, NBC, Audible</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Digital Growth */}
-                <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-100 rounded-xl p-4">
-                  <h4 className="text-sm font-semibold text-emerald-900 mb-3 flex items-center">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
-                    Digital Growth
-                  </h4>
-                  <div className="space-y-2">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-emerald-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Traffic Growth</span>
-                        <div className="flex items-center text-emerald-700 font-semibold text-sm">
-                          <span>350%</span>
-                          <svg className="w-3 h-3 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-emerald-200/50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600 text-xs">Portfolio Website</span>
-                        <div className="flex items-center text-emerald-700 font-semibold text-sm">
-                          <span>Developed</span>
-                          <svg className="w-3 h-3 ml-1 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                      </div>
+                  
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Led fundraising and investor relations</p>
+                      <p className="text-xs text-gray-600">Raised $2.3M across pre-seed and seed rounds; managed board communications and strategic partnerships</p>
                     </div>
                   </div>
                 </div>
