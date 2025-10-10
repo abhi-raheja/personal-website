@@ -30,6 +30,13 @@ export default function Writings() {
     // For static export, we'll use hardcoded sample data
     const samplePosts = [
       {
+        slug: 'the-productivity-myth-ft-vibe-coding',
+        title: 'The Productivity Myth (ft. Vibe Coding)',
+        excerpt: 'Lately, I\'ve been building small apps using Cursor. It\'s been oddly satisfying. I guess the kids call it \'vibe coding,\' but something strange started happening that I couldn\'t ignore.',
+        date: '2025-10-10',
+        readTime: '3 min read'
+      },
+      {
         slug: 'prediction-markets-are-trending-heres-my-experience',
         title: 'Prediction Markets are Trending. Here\'s my Experience Building One.',
         excerpt: 'Late 2023 to early 2024, I spent 6 months trying to build a prediction markets product called Ariina. At its peak, we had about 600 users in beta. I failed miserably but here is what I learned about market discovery, creation, liquidity, resolution, and contextualization.',

@@ -78,15 +78,21 @@ export default function Portfolio() {
             <div className="space-y-4">
               <div>
                 <h3 className="text-xl font-semibold text-black mb-1 flex items-center">
-                  <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-3">
-                    <span className="text-white text-xs font-bold">🧮</span>
-                  </div>
+                  <img 
+                    src="https://sunscreen.tech/favicon.ico" 
+                    alt="Sunscreen logo" 
+                    className="w-6 h-6 mr-3"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                    }}
+                  />
                   <a href="https://sunscreen.tech" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
                     Sunscreen
                   </a>
                   <span className="text-gray-500 text-base font-normal ml-2">(Backed by Polychain, Coinbase, Naval Ravikant)</span>
                 </h3>
-                <p className="text-gray-500 text-base mb-2">Deeptech Breakthroughs</p>
+                <p className="text-gray-500 text-base mb-2">Privacy-focused applied cryptography lab</p>
                 
                 <div className="flex gap-3 mb-3 mt-6">
                   <div className="flex flex-col items-center relative">
@@ -96,7 +102,7 @@ export default function Portfolio() {
                   <div className="flex flex-col">
                     <div className="flex flex-col -mt-1">
                       <p className="font-medium text-sm text-gray-600">COO</p>
-                      <p className="text-xs text-gray-500">2025 - Contract</p>
+                      <p className="text-xs text-gray-500">2025</p>
                     </div>
                   </div>
                 </div>
@@ -257,7 +263,7 @@ export default function Portfolio() {
                   <div className="flex flex-col">
                     <div className="flex flex-col -mt-1">
                       <p className="font-medium text-sm text-gray-600">CMO</p>
-                      <p className="text-xs text-gray-500">2024 - 2025 (Contract)</p>
+                      <p className="text-xs text-gray-500">2024 - 2025</p>
                     </div>
                   </div>
                 </div>
