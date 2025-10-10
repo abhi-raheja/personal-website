@@ -90,7 +90,7 @@ export default function Portfolio() {
                   <a href="https://sunscreen.tech" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
                     Sunscreen
                   </a>
-                  <span className="text-gray-500 text-base font-normal ml-2">(Backed by Coinbase, Naval Ravikant)</span>
+                  <span className="text-gray-500 text-base font-normal ml-2">(Backed by Polychain, Coinbase, Naval Ravikant)</span>
                 </h3>
                 <p className="text-gray-500 text-base mb-2">Privacy-focused applied cryptography lab</p>
                 
@@ -102,7 +102,7 @@ export default function Portfolio() {
                   <div className="flex flex-col">
                     <div className="flex flex-col -mt-1">
                       <p className="font-medium text-sm text-gray-600">COO</p>
-                      <p className="text-xs text-gray-500">April 2025 - Present</p>
+                      <p className="text-xs text-gray-500">2025</p>
                     </div>
                   </div>
                 </div>
@@ -116,32 +116,24 @@ export default function Portfolio() {
                   <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
                     <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900 mb-1">Built sales & marketing functions from zero</p>
-                      <p className="text-xs text-gray-600">Signed first two customers, implemented CRM systems, campaign calendar, and brand identity</p>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Partner and sounding board to Founder and CEO</p>
+                      <p className="text-xs text-gray-600">Responsible for rallying the company behind a shared vision, and crafting measurable GTM strategies to bring Sunscreen's deeptech breakthroughs to market</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
                     <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900 mb-1">Prepared CEO for Series A fundraise</p>
-                      <p className="text-xs text-gray-600">Built investor materials, talking points, and data rooms; led due diligence coordination and financial storytelling</p>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Built Sales and Marketing function from ground up</p>
+                      <p className="text-xs text-gray-600">CRM, Marketing Calendar, Social and Brand identity implementation; preparing CEO for Series A fundraise</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
                     <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900 mb-1">Partner to CEO on company vision & strategy</p>
-                      <p className="text-xs text-gray-600">Operational right hand and leadership proxy in customer, investor discussions and lead on product initiatives</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                    <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <div>
-                      <p className="text-sm font-medium text-gray-900 mb-1">Managing operational rhythm of business</p>
-                      <p className="text-xs text-gray-600">Financial planning & forecasting, ensuring alignment between engineering and business expectations</p>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Leading investor relations and company-wide OKRs</p>
+                      <p className="text-xs text-gray-600">Implementing measurable goals and key results across the organization while managing investor communications</p>
                     </div>
                   </div>
                 </div>
@@ -164,7 +156,7 @@ export default function Portfolio() {
                   <a href="https://caldera.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
                     Caldera
                   </a>
-                  <span className="text-gray-500 text-base font-normal ml-2">(Backed by Founders Fund, Sequoia)</span>
+                  <span className="text-gray-500 text-base font-normal ml-2">(Backed by Founders Fund, Sequoia, Dragonfly)</span>
                 </h3>
                 <p className="text-gray-500 text-base mb-2">Rollups-as-a-Service</p>
                 
@@ -176,7 +168,7 @@ export default function Portfolio() {
                   <div className="flex flex-col">
                     <div className="flex flex-col -mt-1">
                       <p className="font-medium text-sm text-gray-600">CMO</p>
-                      <p className="text-xs text-gray-500">April 2024 - Dec 2024</p>
+                      <p className="text-xs text-gray-500">2024 - 2025</p>
                     </div>
                   </div>
                 </div>
@@ -190,32 +182,32 @@ export default function Portfolio() {
                   <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
                     <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900 mb-1">Advisor to CEO on growth, positioning, and community expansion</p>
-                      <p className="text-xs text-gray-600">Helping prepare for Series A fundraise, token launch and scale user base across X, Telegram, and Discord by 10x+</p>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Built marketing and growth function from ground up</p>
+                      <p className="text-xs text-gray-600">Led social strategy: 20k → 350k X Followers, 0 → 100k Telegram Members, 50k → 250k Discord Members</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
                     <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900 mb-1">Led company-wide comms for Series A</p>
-                      <p className="text-xs text-gray-600">Achieved 1.5M impressions online and coverage in 10+ tier-1 outlets; PR training for CEO for interviews and public appearances</p>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Led PR and media relations for Series A</p>
+                      <p className="text-xs text-gray-600">1.5M social media impressions, coverage in 10+ publications including CoinTelegraph and Blockworks</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
                     <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900 mb-1">Conceptualized and executed events and marketing strategy</p>
-                      <p className="text-xs text-gray-600">Brand ahead of the fundraise announcement and token launch, covering 9 countries, meeting 12,000+ people IRL</p>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Led product GTM for initiatives engaging 7M unique wallets</p>
+                      <p className="text-xs text-gray-600">Vulcan, Trackmyyield (ApeChain), Meet the Metalayer; company blog growth: 2k → 30k monthly visitors</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
                     <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900 mb-1">Developed GTM plan and launch frameworks for multiple products</p>
-                      <p className="text-xs text-gray-600">Vulcan, TrackMyYield (with Apecoin), Metalayer reaching 7M wallets; led execution across eng, growth and sales</p>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Immersive events and thought leadership</p>
+                      <p className="text-xs text-gray-600">Directly engaged 10k+ people across 2 events; worked with 10+ industry leaders for podcasts and interviews</p>
                     </div>
                   </div>
                 </div>
@@ -238,27 +230,19 @@ export default function Portfolio() {
                   <a href="https://cyber.co" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
                     Cyber
                   </a>
-                  <span className="text-gray-500 text-base font-normal ml-2">(Backed by Multicoin, Animoca)</span>
+                  <span className="text-gray-500 text-base font-normal ml-2">(Backed by Multicoin, Animoca, Delphi)</span>
                 </h3>
                 <p className="text-gray-500 text-base mb-2">The L2 for Social</p>
                 
-                {/* Career Progression Timeline */}
                 <div className="flex gap-3 mb-3 mt-6">
                   <div className="flex flex-col items-center relative">
                     <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
-                    <div className="w-px h-16 bg-gray-300"></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
                   </div>
                   
                   <div className="flex flex-col">
                     <div className="flex flex-col -mt-1">
                       <p className="font-medium text-sm text-gray-600">CMO</p>
-                      <p className="text-xs text-gray-500">2024</p>
-                    </div>
-                    
-                    <div className="flex flex-col mt-8">
-                      <p className="font-medium text-sm text-gray-600">Chief of Staff</p>
-                      <p className="text-xs text-gray-500">Feb 2022 - 2024</p>
+                      <p className="text-xs text-gray-500">2022 - 2024</p>
                     </div>
                   </div>
                 </div>
@@ -272,24 +256,32 @@ export default function Portfolio() {
                   <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
                     <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900 mb-1">Partner to CEO and communication lead for the company</p>
-                      <p className="text-xs text-gray-600">Led internal and internal messaging across product, investor, and ecosystem channels</p>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Built marketing and growth function from ground up</p>
+                      <p className="text-xs text-gray-600">Led GTM for Link3.to, CyberConnect, and CyberWallet: 0→940k Monthly Visitors, 0→1.6M user profiles, 0→300k MAW</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
                     <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900 mb-1">Led global product launch and GTM for Link3.to, CyberConnect, and CyberWallet</p>
-                      <p className="text-xs text-gray-600">Growing to 1.6M user profiles and 300K active wallets</p>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Led Connected 2023 Web3 social hackathon</p>
+                      <p className="text-xs text-gray-600">2000+ applications, 70+ project submissions, $50,000+ in awards; grew Cyberletter from 1,500 to 50,000+ subscribers</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
                     <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900 mb-1">Owned investor communications, lead writer on whitepaper, and strategic decks</p>
-                      <p className="text-xs text-gray-600">Including token launch materials; represented company in press appearances and conferences</p>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Ecosystem growth and developer onboarding</p>
+                      <p className="text-xs text-gray-600">Resulted in 30+ teams building on CyberConnect protocol; launched $500k Cyber Grants program for Web3 social R&D</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Content strategy and $CYBER token launch communications</p>
+                      <p className="text-xs text-gray-600">0→750k social media following; lead writer on whitepaper and investor updates; global events strategy</p>
                     </div>
                   </div>
                 </div>
@@ -323,8 +315,8 @@ export default function Portfolio() {
                   
                   <div className="flex flex-col">
                     <div className="flex flex-col -mt-1">
-                      <p className="font-medium text-sm text-gray-600">Co-founder & COO</p>
-                      <p className="text-xs text-gray-500">May 2018 - Feb 2022</p>
+                      <p className="font-medium text-sm text-gray-600">Co-founder</p>
+                      <p className="text-xs text-gray-500">2018 - 2021</p>
                     </div>
                   </div>
                 </div>
@@ -338,32 +330,92 @@ export default function Portfolio() {
                   <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
                     <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900 mb-1">Scaled from 0 to 3M+ monthly users across iOS, Android, and web</p>
-                      <p className="text-xs text-gray-600">Built entire growth funnel from content creation to user acquisition and retention</p>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Raised $2M across two funding rounds</p>
+                      <p className="text-xs text-gray-600">Conceptualized and directed enterprise revenue model among several other key revenue-generating verticals</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
                     <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900 mb-1">Built and managed 15-person editorial team</p>
-                      <p className="text-xs text-gray-600">Covering 12 countries, producing 100+ stories daily with quality control and fact-checking processes</p>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Led marketing campaigns reaching 40+ million users worldwide</p>
+                      <p className="text-xs text-gray-600">Managed audience engagement and communication strategies across global markets</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
                     <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900 mb-1">Developed AI-powered content discovery and curation system</p>
-                      <p className="text-xs text-gray-600">Automated story sourcing, fact-checking, and personalization algorithms improving engagement by 40%</p>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Developed operational rhythm of business functions</p>
+                      <p className="text-xs text-gray-600">Including biz dev, hiring, people ops, fundraising and investor relations</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
                     <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900 mb-1">Led fundraising and investor relations</p>
-                      <p className="text-xs text-gray-600">Raised $2.3M across pre-seed and seed rounds; managed board communications and strategic partnerships</p>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Built enterprise revenue model for therapist network</p>
+                      <p className="text-xs text-gray-600">Led strategic cross-functional initiatives for professional therapists platform</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Antica Productions Experience */}
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold text-black mb-1 flex items-center">
+                  <div className="w-6 h-6 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mr-3">
+                    <span className="text-white text-xs font-bold">🎙</span>
+                  </div>
+                  <a href="http://www.anticaproductions.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
+                    Antica Productions
+                  </a>
+                  <span className="text-gray-500 text-base font-normal ml-2">(Audio Production Company)</span>
+                </h3>
+                <p className="text-gray-500 text-base mb-2">Producer/Journalist - Employee #7</p>
+                
+                <div className="flex gap-3 mb-3 mt-6">
+                  <div className="flex flex-col items-center relative">
+                    <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
+                  </div>
+                  
+                  <div className="flex flex-col">
+                    <div className="flex flex-col -mt-1">
+                      <p className="font-medium text-sm text-gray-600">Producer/Journalist</p>
+                      <p className="text-xs text-gray-500">Employee #7</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Key Accomplishments */}
+              <div className="space-y-4">
+                <h4 className="text-base font-semibold text-gray-900 mb-4">Key Accomplishments</h4>
+                
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Designed podcast branding strategy for 15 shows</p>
+                      <p className="text-xs text-gray-600">Top publishers including BBC, Thompson Reuters, NBC, Audible, Toronto Star</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Researcher/writer/producer on 25+ high impact programs</p>
+                      <p className="text-xs text-gray-600">Reaching over 1 million people worldwide; documented legal battles, cults in Florida, Malcolm Gladwell's Outliers</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 mb-1">Developed company portfolio website and social media</p>
+                      <p className="text-xs text-gray-600">Increased traffic and engagement by over 350% within 12 months</p>
                     </div>
                   </div>
                 </div>
