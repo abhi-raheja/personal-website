@@ -76,34 +76,31 @@ export default function Portfolio() {
           <div className="space-y-8">
             {/* Sunscreen Experience */}
             <div className="space-y-4">
-              <div>
-                <h3 className="text-xl font-semibold text-black mb-1 flex items-center">
-                  <img 
-                    src="https://sunscreen.tech/favicon.ico" 
-                    alt="Sunscreen logo" 
-                    className="w-6 h-6 mr-3"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                    }}
-                  />
-                  <a href="https://sunscreen.tech" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
-                    Sunscreen
-                  </a>
-                  <span className="text-gray-500 text-base font-normal ml-2">(Backed by Polychain, Coinbase, Naval Ravikant)</span>
-                </h3>
-                <p className="text-gray-500 text-base mb-2">Privacy-focused applied cryptography lab</p>
-                
-                <div className="flex gap-3 mb-3 mt-6">
-                  <div className="flex flex-col items-center relative">
-                    <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
-                  </div>
-                  
-                  <div className="flex flex-col">
-                    <div className="flex flex-col -mt-1">
-                      <p className="font-medium text-sm text-gray-600">COO</p>
-                      <p className="text-xs text-gray-500">2025</p>
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center">
+                    <img 
+                      src="https://sunscreen.tech/favicon.ico" 
+                      alt="Sunscreen logo" 
+                      className="w-6 h-6 mr-3"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                      }}
+                    />
+                    <div>
+                      <h3 className="text-xl font-semibold text-black mb-1 flex items-center">
+                        <a href="https://sunscreen.tech" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
+                          Sunscreen
+                        </a>
+                        <span className="text-gray-500 text-base font-normal ml-2">(Backed by Polychain, Coinbase, Naval Ravikant)</span>
+                      </h3>
+                      <p className="text-gray-600 text-sm">Privacy-focused applied cryptography lab</p>
                     </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-semibold text-gray-900">COO</p>
+                    <p className="text-sm text-gray-600">2025</p>
                   </div>
                 </div>
               </div>
@@ -142,34 +139,31 @@ export default function Portfolio() {
 
             {/* Caldera Experience */}
             <div className="space-y-4">
-              <div>
-                <h3 className="text-xl font-semibold text-black mb-1 flex items-center">
-                  <img 
-                    src="https://caldera.xyz/favicon.ico" 
-                    alt="Caldera logo" 
-                    className="w-6 h-6 mr-3"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                    }}
-                  />
-                  <a href="https://caldera.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
-                    Caldera
-                  </a>
-                  <span className="text-gray-500 text-base font-normal ml-2">(Backed by Founders Fund, Sequoia, Dragonfly)</span>
-                </h3>
-                <p className="text-gray-500 text-base mb-2">Rollups-as-a-Service</p>
-                
-                <div className="flex gap-3 mb-3 mt-6">
-                  <div className="flex flex-col items-center relative">
-                    <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
-                  </div>
-                  
-                  <div className="flex flex-col">
-                    <div className="flex flex-col -mt-1">
-                      <p className="font-medium text-sm text-gray-600">CMO</p>
-                      <p className="text-xs text-gray-500">2024 - 2025</p>
+              <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-100 rounded-xl p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center">
+                    <img 
+                      src="https://caldera.xyz/favicon.ico" 
+                      alt="Caldera logo" 
+                      className="w-6 h-6 mr-3"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                      }}
+                    />
+                    <div>
+                      <h3 className="text-xl font-semibold text-black mb-1 flex items-center">
+                        <a href="https://caldera.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
+                          Caldera
+                        </a>
+                        <span className="text-gray-500 text-base font-normal ml-2">(Backed by Founders Fund, Sequoia, Dragonfly)</span>
+                      </h3>
+                      <p className="text-gray-600 text-sm">Rollups-as-a-Service</p>
                     </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-semibold text-gray-900">CMO</p>
+                    <p className="text-sm text-gray-600">2024 - 2025</p>
                   </div>
                 </div>
               </div>
@@ -216,34 +210,31 @@ export default function Portfolio() {
 
             {/* Cyber Experience */}
             <div className="space-y-4">
-              <div>
-                <h3 className="text-xl font-semibold text-black mb-1 flex items-center">
-                  <img 
-                    src="https://cyber.co/favicon.ico" 
-                    alt="Cyber logo" 
-                    className="w-6 h-6 mr-3"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                    }}
-                  />
-                  <a href="https://cyber.co" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
-                    Cyber
-                  </a>
-                  <span className="text-gray-500 text-base font-normal ml-2">(Backed by Multicoin, Animoca, Delphi)</span>
-                </h3>
-                <p className="text-gray-500 text-base mb-2">The L2 for Social</p>
-                
-                <div className="flex gap-3 mb-3 mt-6">
-                  <div className="flex flex-col items-center relative">
-                    <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
-                  </div>
-                  
-                  <div className="flex flex-col">
-                    <div className="flex flex-col -mt-1">
-                      <p className="font-medium text-sm text-gray-600">CMO</p>
-                      <p className="text-xs text-gray-500">2022 - 2024</p>
+              <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-xl p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center">
+                    <img 
+                      src="https://cyber.co/favicon.ico" 
+                      alt="Cyber logo" 
+                      className="w-6 h-6 mr-3"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                      }}
+                    />
+                    <div>
+                      <h3 className="text-xl font-semibold text-black mb-1 flex items-center">
+                        <a href="https://cyber.co" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
+                          Cyber
+                        </a>
+                        <span className="text-gray-500 text-base font-normal ml-2">(Backed by Multicoin, Animoca, Delphi)</span>
+                      </h3>
+                      <p className="text-gray-600 text-sm">The L2 for Social</p>
                     </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-semibold text-gray-900">CMO</p>
+                    <p className="text-sm text-gray-600">2022 - 2024</p>
                   </div>
                 </div>
               </div>
@@ -290,34 +281,31 @@ export default function Portfolio() {
 
             {/* Goodable Experience */}
             <div className="space-y-4">
-              <div>
-                <h3 className="text-xl font-semibold text-black mb-1 flex items-center">
-                  <img 
-                    src="https://goodable.co/favicon.ico" 
-                    alt="Goodable logo" 
-                    className="w-6 h-6 mr-3"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                    }}
-                  />
-                  <a href="https://goodable.co" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
-                    Goodable
-                  </a>
-                  <span className="text-gray-500 text-base font-normal ml-2">(Backed by Techstars, Foundry Group)</span>
-                </h3>
-                <p className="text-gray-500 text-base mb-2">Positive news and stories</p>
-                
-                <div className="flex gap-3 mb-3 mt-6">
-                  <div className="flex flex-col items-center relative">
-                    <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
-                  </div>
-                  
-                  <div className="flex flex-col">
-                    <div className="flex flex-col -mt-1">
-                      <p className="font-medium text-sm text-gray-600">Co-founder</p>
-                      <p className="text-xs text-gray-500">2018 - 2021</p>
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-100 rounded-xl p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center">
+                    <img 
+                      src="https://goodable.co/favicon.ico" 
+                      alt="Goodable logo" 
+                      className="w-6 h-6 mr-3"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                      }}
+                    />
+                    <div>
+                      <h3 className="text-xl font-semibold text-black mb-1 flex items-center">
+                        <a href="https://goodable.co" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
+                          Goodable
+                        </a>
+                        <span className="text-gray-500 text-base font-normal ml-2">(Backed by Techstars, Foundry Group)</span>
+                      </h3>
+                      <p className="text-gray-600 text-sm">Positive news and stories</p>
                     </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-semibold text-gray-900">Co-founder</p>
+                    <p className="text-sm text-gray-600">2018 - 2021</p>
                   </div>
                 </div>
               </div>
@@ -364,28 +352,25 @@ export default function Portfolio() {
 
             {/* Antica Productions Experience */}
             <div className="space-y-4">
-              <div>
-                <h3 className="text-xl font-semibold text-black mb-1 flex items-center">
-                  <div className="w-6 h-6 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mr-3">
-                    <span className="text-white text-xs font-bold">🎙</span>
-                  </div>
-                  <a href="http://www.anticaproductions.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
-                    Antica Productions
-                  </a>
-                  <span className="text-gray-500 text-base font-normal ml-2">(Audio Production Company)</span>
-                </h3>
-                <p className="text-gray-500 text-base mb-2">Producer/Journalist - Employee #7</p>
-                
-                <div className="flex gap-3 mb-3 mt-6">
-                  <div className="flex flex-col items-center relative">
-                    <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
-                  </div>
-                  
-                  <div className="flex flex-col">
-                    <div className="flex flex-col -mt-1">
-                      <p className="font-medium text-sm text-gray-600">Producer/Journalist</p>
-                      <p className="text-xs text-gray-500">Employee #7</p>
+              <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100 rounded-xl p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center">
+                    <div className="w-6 h-6 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-white text-xs font-bold">🎙</span>
                     </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-black mb-1 flex items-center">
+                        <a href="http://www.anticaproductions.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
+                          Antica Productions
+                        </a>
+                        <span className="text-gray-500 text-base font-normal ml-2">(Audio Production Company)</span>
+                      </h3>
+                      <p className="text-gray-600 text-sm">Producer/Journalist - Employee #7</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-semibold text-gray-900">Producer/Journalist</p>
+                    <p className="text-sm text-gray-600">Employee #7</p>
                   </div>
                 </div>
               </div>
@@ -419,29 +404,6 @@ export default function Portfolio() {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Education & Background Section */}
-            <div className="border-t border-gray-100 pt-8">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-black">
-                  Ryerson School of Journalism
-                </h3>
-                <div className="text-right">
-                  <p className="text-gray-600 font-medium">Graduate</p>
-                  <p className="text-gray-500 text-sm">Toronto, Canada</p>
-                </div>
-              </div>
-              
-              <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-100 rounded-xl p-5">
-                <h4 className="text-base font-semibold text-amber-900 mb-4 flex items-center">
-                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3"></span>
-                  Focus & Expertise
-                </h4>
-                <p className="text-gray-700 font-normal leading-relaxed">
-                  Studied journalism with a focus on digital media and storytelling. Born and raised in India, graduated from one of Canada's premier journalism programs with expertise in multimedia storytelling and digital content creation. Unique story: Raised over $100k for university education as a 17-year-old from a small town in north India.
-                </p>
               </div>
             </div>
           </div>
