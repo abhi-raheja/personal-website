@@ -143,9 +143,9 @@ export default function Portfolio() {
                 <div className="flex justify-between items-start mb-4">
                   <div className="flex items-center">
                     <img 
-                      src="https://caldera.xyz/favicon.ico" 
+                      src="https://pbs.twimg.com/profile_images/1735396055812608000/tZ8QFXNl_400x400.jpg" 
                       alt="Caldera logo" 
-                      className="w-6 h-6 mr-3"
+                      className="w-6 h-6 mr-3 rounded-full"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.style.display = 'none';
@@ -285,9 +285,9 @@ export default function Portfolio() {
                 <div className="flex justify-between items-start mb-4">
                   <div className="flex items-center">
                     <img 
-                      src="https://goodable.co/favicon.ico" 
+                      src="https://pbs.twimg.com/profile_images/1077252616104706048/wqiNHqPf_400x400.jpg" 
                       alt="Goodable logo" 
-                      className="w-6 h-6 mr-3"
+                      className="w-6 h-6 mr-3 rounded-full"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.style.display = 'none';
