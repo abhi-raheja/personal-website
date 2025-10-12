@@ -142,15 +142,9 @@ export default function Portfolio() {
               <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-100 rounded-xl p-6">
                 <div className="flex justify-between items-start mb-4">
                   <div className="flex items-center">
-                    <img 
-                      src="https://pbs.twimg.com/profile_images/1735396055812608000/tZ8QFXNl_400x400.jpg" 
-                      alt="Caldera logo" 
-                      className="w-6 h-6 mr-3 rounded-full"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                      }}
-                    />
+                    <div className="w-6 h-6 mr-3 bg-purple-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">C</span>
+                    </div>
                     <div>
                       <h3 className="text-xl font-semibold text-black mb-1 flex items-center">
                         <a href="https://caldera.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
@@ -284,15 +278,9 @@ export default function Portfolio() {
               <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-100 rounded-xl p-6">
                 <div className="flex justify-between items-start mb-4">
                   <div className="flex items-center">
-                    <img 
-                      src="https://pbs.twimg.com/profile_images/1077252616104706048/wqiNHqPf_400x400.jpg" 
-                      alt="Goodable logo" 
-                      className="w-6 h-6 mr-3 rounded-full"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                      }}
-                    />
+                    <div className="w-6 h-6 mr-3 bg-green-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">G</span>
+                    </div>
                     <div>
                       <h3 className="text-xl font-semibold text-black mb-1 flex items-center">
                         <a href="https://goodable.co" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors underline underline-offset-4">
@@ -356,7 +344,7 @@ export default function Portfolio() {
                 <div className="flex justify-between items-start mb-4">
                   <div className="flex items-center">
                     <div className="w-6 h-6 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-white text-xs font-bold">🎙</span>
+                      <span className="text-white text-xs font-bold">A</span>
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold text-black mb-1 flex items-center">
@@ -411,27 +399,414 @@ export default function Portfolio() {
       
       case 'Passion Projects':
         return (
-          <div className="text-center py-12">
-            <div className="text-gray-500">
-              <svg className="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-              </svg>
-              <p className="text-lg font-medium mb-2">Passion Projects</p>
-              <p className="text-sm">Side projects and creative endeavors will appear here</p>
+          <div className="space-y-8">
+            {/* Neem */}
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-xl p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center">
+                    <div className="w-6 h-6 mr-3 bg-emerald-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">N</span>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-black mb-1">
+                        Neem
+                      </h3>
+                      <p className="text-gray-600 text-sm">Post-AI, post-scarcity nation state</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-semibold text-gray-900">Lead Contributor</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Project Description */}
+              <div className="space-y-3">
+                <p className="text-gray-700 leading-relaxed">
+                  Neem is a post-AI, post-scarcity nation state with both a digital and geographical presence. Founded upon a singular commandment of radical self-expression through self-exploration, arts, sustainability, and community, Neem is the first nation to embrace psychedelics and their powerful potential for its members.
+                </p>
+              </div>
+            </div>
+
+            {/* Soch */}
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center">
+                    <div className="w-6 h-6 mr-3 bg-blue-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">S</span>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-black mb-1">
+                        Soch
+                      </h3>
+                      <p className="text-gray-600 text-sm">AI app for knowledge workers</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-semibold text-gray-900">Founder</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Project Description */}
+              <div className="space-y-3">
+                <p className="text-gray-700 leading-relaxed">
+                  Soch is an AI app for knowledge workers to help augment their creative process by learning how you think. Professionals can fine tune their agents to teach how their thinking patterns and have Soch guide and nudge their thinking in more creative, connected thought streams.
+                </p>
+              </div>
+            </div>
+
+            {/* Conscious Turtles */}
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-100 rounded-xl p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center">
+                    <div className="w-6 h-6 mr-3 bg-green-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">CT</span>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-black mb-1">
+                        Conscious Turtles
+                      </h3>
+                      <p className="text-gray-600 text-sm">Cross-chain NFT collection</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-semibold text-gray-900">Lead</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Project Description */}
+              <div className="space-y-3">
+                <p className="text-gray-700 leading-relaxed">
+                  12,000 NFTs living on 6 blockchain that use LayerZero OFT protocol to help users experience cross-chain bridging.
+                </p>
+              </div>
+            </div>
+
+            {/* The Creative School */}
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-100 rounded-xl p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center">
+                    <div className="w-6 h-6 mr-3 bg-purple-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">TC</span>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-black mb-1">
+                        The Creative School
+                      </h3>
+                      <p className="text-gray-600 text-sm">Formerly Ryerson School of Journalism</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-semibold text-gray-900">Editor-in-Chief</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Project Description */}
+              <div className="space-y-3">
+                <p className="text-gray-700 leading-relaxed">
+                  Built and led a team of over 30 reporters, copywriters, editors, video and audio producers covering 15+ news stories daily over a period of 12 weeks.
+                </p>
+              </div>
+            </div>
+
+            {/* SAGE Canada */}
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-100 rounded-xl p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center">
+                    <div className="w-6 h-6 mr-3 bg-orange-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">SC</span>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-black mb-1">
+                        SAGE Canada
+                      </h3>
+                      <p className="text-gray-600 text-sm">Student entrepreneur mentorship</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-semibold text-gray-900">Startup Consultant</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Project Description */}
+              <div className="space-y-3">
+                <p className="text-gray-700 leading-relaxed">
+                  Mentored 5+ student entrepreneurs in building pitch decks, A/B testing, writing grant applications and refine elevator pitches as well as company moats.
+                </p>
+              </div>
+            </div>
+
+            {/* Not Just Another */}
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-rose-50 to-pink-50 border border-rose-100 rounded-xl p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center">
+                    <div className="w-6 h-6 mr-3 bg-rose-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">NJA</span>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-black mb-1">
+                        Not Just Another
+                      </h3>
+                      <p className="text-gray-600 text-sm">Social justice campaigns</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-semibold text-gray-900">Founder</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Project Description */}
+              <div className="space-y-3">
+                <p className="text-gray-700 leading-relaxed">
+                  Led a team of 250+ volunteers in organizing over 10 social justice campaigns including health, hygiene, and sex education awareness drives among low-income families and children.
+                </p>
+              </div>
             </div>
           </div>
         );
 
       case 'My Tools':
         return (
-          <div className="text-center py-12">
-            <div className="text-gray-500">
-              <svg className="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              <p className="text-lg font-medium mb-2">My Tools</p>
-              <p className="text-sm">Tech stack and tools I use will appear here</p>
+          <div className="space-y-8">
+            {/* My Weapons Section */}
+            <div className="space-y-6">
+              <div className="flex items-center mb-6">
+                <div className="w-6 h-6 mr-3 bg-green-600 rounded-full flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">MW</span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">My Weapons</h3>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Row 1 */}
+                <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-orange-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">A</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">Airtable</span>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-r from-red-50 to-pink-50 border border-red-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-red-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">T</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">Typeform</span>
+                  </div>
+                </div>
+                
+                {/* Row 2 */}
+                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-blue-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">W</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">Webflow</span>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-purple-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">S</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">Slack</span>
+                  </div>
+                </div>
+                
+                {/* Row 3 */}
+                <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-indigo-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">J</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">Jira</span>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-yellow-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">T</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">Trello</span>
+                  </div>
+                </div>
+                
+                {/* Row 4 */}
+                <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-green-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">M</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">Mailchimp</span>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-r from-teal-50 to-cyan-50 border border-teal-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-teal-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">ML</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">MailerLite</span>
+                  </div>
+                </div>
+                
+                {/* Row 5 */}
+                <div className="bg-gradient-to-r from-gray-50 to-slate-50 border border-gray-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-gray-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">Z</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">Zapier</span>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-amber-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">M</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">Monday.com</span>
+                  </div>
+                </div>
+                
+                {/* Row 6 */}
+                <div className="bg-gradient-to-r from-rose-50 to-pink-50 border border-rose-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-rose-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">A</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">Asana</span>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-r from-slate-50 to-gray-50 border border-slate-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-slate-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">N</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">Notion (Duh!)</span>
+                  </div>
+                </div>
+                
+                {/* Row 7 */}
+                <div className="bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-purple-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">AC</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">Adobe Creative Cloud (Ps, Ai, Ae, Pr, Id, Xd, Au, LrC)</span>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-r from-pink-50 to-rose-50 border border-pink-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-pink-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">F</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">Figma</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* AI Tools Section */}
+            <div className="space-y-6">
+              <div className="flex items-center mb-6">
+                <div className="w-6 h-6 mr-3 bg-blue-600 rounded-full flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">AI</span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">AI Tools</h3>
+              </div>
+              
+              <div className="grid grid-cols-1 gap-4">
+                {/* AI Tools List */}
+                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-emerald-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">C</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">ChatGPT, Claude, Gemini</span>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-blue-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">M</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">Midjourney, Veo, Sora, Nano Banana, NotebookLM</span>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-purple-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">E</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">ElevenLabs</span>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-r from-rose-50 to-pink-50 border border-rose-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-rose-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">W</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">wispr flow</span>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-green-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">C</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">Cursor</span>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-orange-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">D</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">Dia Browser</span>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-r from-pink-50 to-rose-50 border border-pink-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-pink-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">P</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">Poke (interaction company)</span>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100 rounded-xl p-4">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-3 bg-indigo-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">G</span>
+                    </div>
+                    <span className="text-gray-900 font-medium">Gumloop</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         );
