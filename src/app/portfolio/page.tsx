@@ -1153,9 +1153,9 @@ export default function Portfolio() {
                     <div className="px-5 py-4 bg-gradient-to-r from-gray-50 to-slate-50 border border-gray-200 rounded-2xl h-full relative">
                       <h3 className="text-sm font-semibold text-gray-700 mb-4">Personal</h3>
                       
-                      {/* Empty for now */}
-                      <div className="text-gray-500 text-sm">
-                        Coming soon...
+                      <div className="text-gray-800 text-sm leading-relaxed space-y-3">
+                        <p>Former journalist, producer, writer and tech founder.</p>
+                        <p>Passionate about history, technology, the underground dance music scene, anti-authoritarian technology, prediction markets, game and information theory, space, consciousness, psychedelics, and formula one racing.</p>
                       </div>
                     </div>
                   </div>
