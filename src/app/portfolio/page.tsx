@@ -12,8 +12,7 @@ export default function Portfolio() {
     { name: 'Professional Experience', count: null },
     { name: 'Passion Projects', count: null },  
     { name: 'My Tools', count: null },
-    { name: 'Who Am I Really', count: null },
-    { name: 'Links', count: null }
+    { name: 'Who Am I Really', count: null }
   ];
 
   const renderTabContent = () => {
@@ -579,145 +578,122 @@ export default function Portfolio() {
       case 'My Tools':
         return (
           <div className="space-y-8">
-            {/* My Weapons Section */}
+            {/* Tools I use daily Section */}
             <div className="space-y-6">
-              <div className="flex items-center mb-6">
-                <div className="w-6 h-6 mr-3 bg-green-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">MW</span>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900">My Weapons</h3>
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-gray-900">Tools I use daily</h3>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Row 1 */}
-                <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-orange-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">A</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/airtable.com" alt="Airtable logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">Airtable</span>
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-r from-red-50 to-pink-50 border border-red-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-red-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">T</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/typeform.com" alt="Typeform logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">Typeform</span>
                   </div>
                 </div>
                 
                 {/* Row 2 */}
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-blue-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">W</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/webflow.com" alt="Webflow logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">Webflow</span>
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-purple-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">S</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/slack.com" alt="Slack logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">Slack</span>
                   </div>
                 </div>
                 
                 {/* Row 3 */}
-                <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-indigo-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">J</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/atlassian.com" alt="Jira logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">Jira</span>
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-yellow-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">T</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/trello.com" alt="Trello logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">Trello</span>
                   </div>
                 </div>
                 
                 {/* Row 4 */}
-                <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-green-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">M</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/mailchimp.com" alt="Mailchimp logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">Mailchimp</span>
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-r from-teal-50 to-cyan-50 border border-teal-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-teal-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">ML</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/mailerlite.com" alt="MailerLite logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">MailerLite</span>
                   </div>
                 </div>
                 
                 {/* Row 5 */}
-                <div className="bg-gradient-to-r from-gray-50 to-slate-50 border border-gray-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-gray-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">Z</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/zapier.com" alt="Zapier logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">Zapier</span>
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-amber-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">M</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/monday.com" alt="Monday.com logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">Monday.com</span>
                   </div>
                 </div>
                 
                 {/* Row 6 */}
-                <div className="bg-gradient-to-r from-rose-50 to-pink-50 border border-rose-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-rose-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">A</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/asana.com" alt="Asana logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">Asana</span>
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-r from-slate-50 to-gray-50 border border-slate-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-slate-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">N</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/notion.so" alt="Notion logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">Notion (Duh!)</span>
                   </div>
                 </div>
                 
                 {/* Row 7 */}
-                <div className="bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-purple-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">AC</span>
-                    </div>
+                    <img 
+                      src="https://www.adobe.com/content/dam/cc/icons/Adobe_Corporate_Horizontal_Red_HEX.svg" 
+                      alt="Adobe logo" 
+                      className="w-5 h-5 mr-3"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/adobe/adobe-original.svg';
+                      }}
+                    />
                     <span className="text-gray-900 font-medium">Adobe Creative Cloud (Ps, Ai, Ae, Pr, Id, Xd, Au, LrC)</span>
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-r from-pink-50 to-rose-50 border border-pink-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-pink-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">F</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/figma.com" alt="Figma logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">Figma</span>
                   </div>
                 </div>
@@ -726,83 +702,64 @@ export default function Portfolio() {
             
             {/* AI Tools Section */}
             <div className="space-y-6">
-              <div className="flex items-center mb-6">
-                <div className="w-6 h-6 mr-3 bg-blue-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">AI</span>
-                </div>
+              <div className="mb-6">
                 <h3 className="text-2xl font-bold text-gray-900">AI Tools</h3>
               </div>
               
               <div className="grid grid-cols-1 gap-4">
                 {/* AI Tools List */}
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-emerald-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">C</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/openai.com" alt="OpenAI logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">ChatGPT, Claude, Gemini</span>
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-blue-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">M</span>
-                    </div>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">Midjourney, Veo, Sora, Nano Banana, NotebookLM</span>
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-purple-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">E</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/elevenlabs.io" alt="ElevenLabs logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">ElevenLabs</span>
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-r from-rose-50 to-pink-50 border border-rose-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-rose-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">W</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/wispr.ai" alt="Wispr logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">wispr flow</span>
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-green-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">C</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/cursor.sh" alt="Cursor logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">Cursor</span>
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-orange-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">D</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/dia.so" alt="Dia Browser logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">Dia Browser</span>
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-r from-pink-50 to-rose-50 border border-pink-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-pink-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">P</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/poke.com" alt="Poke logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">Poke (interaction company)</span>
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100 rounded-xl p-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-4">
                   <div className="flex items-center">
-                    <div className="w-5 h-5 mr-3 bg-indigo-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">G</span>
-                    </div>
+                    <img src="https://logo.clearbit.com/gumloop.com" alt="Gumloop logo" className="w-5 h-5 mr-3" />
                     <span className="text-gray-900 font-medium">Gumloop</span>
                   </div>
                 </div>
@@ -813,30 +770,150 @@ export default function Portfolio() {
 
       case 'Who Am I Really':
         return (
-          <div className="text-center py-12">
-            <div className="text-gray-500">
-              <svg className="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
-              <p className="text-lg font-medium mb-2">Who Am I Really?</p>
-              <p className="text-sm">Personal stories and deeper insights will appear here</p>
+          <div className="space-y-8">
+            {/* Opening Story */}
+            <div className="space-y-6">
+              <div className="bg-white border border-gray-200 rounded-xl p-6">
+                <div className="prose prose-gray max-w-none">
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    The first time I ever held a digital camera in my hand was in grade 10. My best friend's dad had just got him the{' '}
+                    <a href="https://en.wikipedia.org/wiki/Canon_EOS_1100D" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 underline">
+                      Canon 1100D
+                    </a>
+                    ; it was the coolest thing I'd ever seen. Unsurprisingly, we said 'fuck it' to whatever teenagers do at that age and went about the city, clicking away every strange thing we encountered. Slowly....and don't ask me how, but we started capturing people.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Very quickly, it turned into capturing regular people with oddly simple jobs. You know, the people most of us forget to think about or even acknowledge? The street vendors, the security guards, the maids? We started talking to them and highlighting a part of our—often very spiritual—conversations with them. This was HONY before we even knew what HONY was.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    We called it{' '}
+                    <a href="https://www.facebook.com/Notjustanotherwish" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 underline">
+                      Not Just Another
+                    </a>
+                    . Cuz nobody is not just another person. We're more. Much more.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Passions Header */}
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold text-gray-900">These are the things that I'm passionate about</h3>
+            </div>
+
+            {/* Passions Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Travel */}
+              <div className="bg-white border border-gray-200 rounded-xl p-6">
+                <div className="mb-4">
+                  <h4 className="text-xl font-semibold text-gray-900">Travel</h4>
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  Some of my most profound experiences have come through my backpacking trips. There's a humbling aspect to traveling to a new place and hanging out with the locals. I don't mean humbling in the material sense of the word; I mean it in an existential way. I plan to continue exploring more new places this year.
+                </p>
+              </div>
+
+              {/* Spirituality */}
+              <div className="bg-white border border-gray-200 rounded-xl p-6">
+                <div className="mb-4">
+                  <h4 className="text-xl font-semibold text-gray-900">Spirituality</h4>
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  The most valuable asset I've earned is my spirituality. I say 'earned' because those who know will understand that you don't just wake up one day and find your meaning. It takes years and years of{' '}
+                  <a href="https://en.wikipedia.org/wiki/Tapas_(Indian_religions)" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:text-purple-800 underline">
+                    tapasya
+                  </a>
+                  {' '}and the blessings of a guru.{' '}
+                  <a href="https://en.wikipedia.org/wiki/Ram_Dass" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:text-purple-800 underline">
+                    Baba Ram Dass
+                  </a>
+                  {' '}has been my north star and guiding light.
+                </p>
+              </div>
+
+              {/* Music */}
+              <div className="bg-white border border-gray-200 rounded-xl p-6">
+                <div className="mb-4">
+                  <h4 className="text-xl font-semibold text-gray-900">Music</h4>
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  Through music, I've had the gift of connecting with some of the most creatively gifted people I've ever encountered. Music has helped me connect with parts of myself that I didn't know existed. I love listening to and mixing deep house, trance, techno, and progressive house.
+                </p>
+              </div>
+
+              {/* Education */}
+              <div className="bg-white border border-gray-200 rounded-xl p-6">
+                <div className="mb-4">
+                  <h4 className="text-xl font-semibold text-gray-900">Education</h4>
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  Everything I am, and most of what I've achieved is because I had opportunities that I was lucky to pursue. Don't get me wrong, I had to fight for what I wanted, but once I persevered, education opened up doors that I never knew existed. I want to help open up these doors for those who come from not-so-fortunate backgrounds like me.
+                </p>
+              </div>
+
+              {/* Love & Serve */}
+              <div className="bg-white border border-gray-200 rounded-xl p-6">
+                <div className="mb-4">
+                  <h4 className="text-xl font-semibold text-gray-900">Love & Serve</h4>
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  I've learned that to get the most out of my life, I have to pursue expertise in these two areas. In a world where most everyone is trying to get ahead of the rest, I believe, we can only move forward, as long as we ALL can move forward. Loving unconditionally and devoting myself to my community helps me stay focused and in tune with my purpose.
+                </p>
+              </div>
+
+              {/* Writing */}
+              <div className="bg-white border border-gray-200 rounded-xl p-6">
+                <div className="mb-4">
+                  <h4 className="text-xl font-semibold text-gray-900">Writing</h4>
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  I've found writing to be tremendously liberating. I never thought that I was going to end up at journalism school as a kid. I really enjoy writing poetry, profiles, long-form research essays and love letters.
+                </p>
+              </div>
+
+              {/* Psychedelics */}
+              <div className="bg-white border border-gray-200 rounded-xl p-6">
+                <div className="mb-4">
+                  <h4 className="text-xl font-semibold text-gray-900">Psychedelics</h4>
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  Plant medicines have helped me explore the deepest parts of myself. I am a big supporter of self-exploration. They have helped me be a better version of myself. Because of them, I'm a better friend, partner, colleague, son, and brother.
+                </p>
+              </div>
+
+              {/* Adventure */}
+              <div className="bg-white border border-gray-200 rounded-xl p-6">
+                <div className="mb-4">
+                  <h4 className="text-xl font-semibold text-gray-900">Adventure</h4>
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  The first time I realized I had an adventurous itch to me was when I went on an 8-hour hike with my friends in the Parvati Valley, in the heart of the Himalayas. It was adventurous because we were just 15; our families didn't know and there was no connectivity for days. Since then, my life has been a series of adventures, one day at a time.
+                </p>
+              </div>
+
+              {/* Art */}
+              <div className="bg-white border border-gray-200 rounded-xl p-6">
+                <div className="mb-4">
+                  <h4 className="text-xl font-semibold text-gray-900">Art</h4>
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  I'm a self-proclaimed art collector. A beginner. That part is not self-proclaimed, just fact. I don't collect for investment reasons or to 'own a piece of history.' I just love to support the work of artists whose work has spoken to me at a deeper level. I've collected quite a few Alex Grey works, especially his works on the experience of dying. I'm a new owner of Chris Dyer's Galaktic Gang (also an NFT).
+                </p>
+              </div>
+
+              {/* Curiosity & Innovation */}
+              <div className="bg-white border border-gray-200 rounded-xl p-6">
+                <div className="mb-4">
+                  <h4 className="text-xl font-semibold text-gray-900">Curiosity & Innovation</h4>
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  Life is a continuous journey of learning and reiterating. I can't imagine a single day in my life when I'm not trying to learn something new or solve a new problem. Curiosity is the basis of all new frontiers, and most importantly, it is the seed that sustains us.
+                </p>
+              </div>
             </div>
           </div>
         );
 
-      case 'Links':
-        return (
-          <div className="text-center py-12">
-            <div className="text-gray-500">
-              <svg className="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-              </svg>
-              <p className="text-lg font-medium mb-2">Links</p>
-              <p className="text-sm">Important links and resources will appear here</p>
-            </div>
-          </div>
-        );
-      
       default:
         return (
           <div className="text-center py-12">
