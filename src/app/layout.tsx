@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Abhi Raheja" }],
   creator: "Abhi Raheja",
   icons: {
-    icon: null,
+    icon: 'data:,',
   },
 };
 
