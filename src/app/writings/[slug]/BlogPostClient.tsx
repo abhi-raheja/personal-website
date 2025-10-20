@@ -27,7 +27,7 @@ export default function BlogPostClient({ slug }: BlogPostClientProps) {
         // In production, the content would be pre-generated at build time
         const postsModule = await import('@/data/posts.json');
         const posts = postsModule.default;
-        const postMetadata = posts.find((p: any) => p.slug === slug);
+        const postMetadata = posts.find((p) => p.slug === slug);
         
         if (!postMetadata) {
           throw new Error('Post not found');

@@ -1,12 +1,10 @@
-import { motion } from 'framer-motion';
-import Link from 'next/link';
 import BlogPostClient from './BlogPostClient';
+import postsData from '@/data/posts.json';
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
   try {
-    const postsData = require('@/data/posts.json');
-    return postsData.map((post: any) => ({
+    return postsData.map((post) => ({
       slug: post.slug,
     }));
   } catch (error) {
