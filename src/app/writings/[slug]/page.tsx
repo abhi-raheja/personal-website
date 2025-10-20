@@ -22,21 +22,26 @@ export default function BlogPost() {
   useEffect(() => {
     async function loadPost() {
       try {
-        // Import the blog functions dynamically
-        const { getPostBySlug, getPostContent } = await import('@/lib/blog');
+        // For now, we'll load a basic post structure
+        // In production, the content would be pre-generated at build time
+        const postsModule = await import('@/data/posts.json');
+        const posts = postsModule.default;
+        const postMetadata = posts.find(p => p.slug === slug);
         
-        const postData = getPostBySlug(slug);
-        if (!postData) {
+        if (!postMetadata) {
           throw new Error('Post not found');
         }
 
-        const content = await getPostContent(slug);
-        
+        // For now, we'll show a placeholder content
+        // In production, this would be the actual markdown content
         setPost({
-          title: postData.title,
-          date: postData.date,
-          readTime: postData.readTime,
-          content,
+          title: postMetadata.title,
+          date: postMetadata.date,
+          readTime: postMetadata.readTime,
+          content: `<p>This post is available in the markdown file: <code>content/posts/${slug}.md</code></p>
+                   <p>The full markdown rendering system will be available once the build system is properly configured.</p>
+                   <p><strong>Title:</strong> ${postMetadata.title}</p>
+                   <p><strong>Excerpt:</strong> ${postMetadata.excerpt}</p>`,
         });
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to load post');

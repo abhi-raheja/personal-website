@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import postsData from '@/data/posts.json';
+// Posts data will be loaded dynamically to avoid fs issues
 
 interface PostMetadata {
   slug: string;
@@ -26,8 +26,14 @@ export default function Home() {
   const [recentPosts, setRecentPosts] = useState<PostMetadata[]>([]);
 
   useEffect(() => {
-    // Load posts from static JSON data
-    setRecentPosts(postsData.slice(0, 3));
+    // Load posts from static JSON data dynamically
+    import('@/data/posts.json').then((module) => {
+      const posts = module.default;
+      setRecentPosts(posts.slice(0, 3));
+    }).catch((error) => {
+      console.error('Error loading posts:', error);
+      setRecentPosts([]);
+    });
   }, []);
 
   return (
