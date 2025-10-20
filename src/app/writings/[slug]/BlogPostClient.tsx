@@ -155,7 +155,9 @@ export default function BlogPostClient({ slug }: BlogPostClientProps) {
   }
 
   const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
+    // Parse the date string and ensure it's treated as local date
+    const [year, month, day] = dateString.split('-').map(Number);
+    const date = new Date(year, month - 1, day); // month is 0-indexed
     return date.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
