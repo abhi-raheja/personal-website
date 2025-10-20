@@ -3,27 +3,91 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { useParams } from 'next/navigation';
 
-export default function TheProductivityMythFtVibeCoding() {
-  const [content, setContent] = useState('');
+interface Post {
+  title: string;
+  date: string;
+  readTime: string;
+  content: string;
+}
+
+export default function BlogPost() {
+  const params = useParams();
+  const slug = params.slug as string;
+  const [post, setPost] = useState<Post | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // In a real app, you'd fetch this from your markdown file
-    // For now, we'll include the content directly
-    setContent(`
-Lately, I've been building small apps using Cursor. It's been oddly satisfying. I guess the kids call it 'vibe coding,' when you speak to the app (using wispr) and describe (to it) what you want and watch (it) spin your thought into existence. It's really fun. However, something strange started happening to me recently that I couldn't ignore.
+    async function fetchPost() {
+      try {
+        const response = await fetch(`/api/posts/${slug}`);
+        if (!response.ok) {
+          throw new Error('Post not found');
+        }
+        const postData = await response.json();
+        setPost(postData);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Failed to load post');
+      } finally {
+        setLoading(false);
+      }
+    }
 
-The moment I hit enter and Cursor starts generating, my hand automatically reaches for my phone. Or I open X. Within seconds, I'm scrolling through tweets about things that have nothing to do with what I'm building. It's kind of a reflex.
+    if (slug) {
+      fetchPost();
+    }
+  }, [slug]);
 
-My definition of productivity has always been about maximizing output. Something like, more output per unit of time. But this workflow, where AI writes as I wait (actually doomscroll), while technically makes me more productive, makes me feel somewhat uneasy. 
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-gray-600">Loading...</div>
+      </div>
+    );
+  }
 
-It's weird, even when I'm doing more work, it's not necessarily more focused work. 
+  if (error || !post) {
+    return (
+      <div className="min-h-screen bg-white">
+        <nav className="w-full py-6 px-6 md:px-12">
+          <div className="max-w-4xl mx-auto">
+            <Link 
+              href="/writings" 
+              className="flex items-center text-gray-700 hover:text-black transition-colors font-normal"
+            >
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Back to Writings
+            </Link>
+          </div>
+        </nav>
+        <div className="px-6 md:px-12 py-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-2xl font-bold text-gray-900 mb-4">Post Not Found</h1>
+            <p className="text-gray-600 mb-8">{error}</p>
+            <Link 
+              href="/writings"
+              className="text-blue-600 hover:text-blue-800 underline"
+            >
+              Return to Writings
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
-There's something unsettling about those 30 seconds between instruction and output. The void feels expensive. So I fill it, with distraction. The irony is that the more powerful these tools become, I feel weaker, not stronger, in my capacity to be with and think for myself. I feel like I am no longer optimizing for results, instead just to get the task done. This reminds me of how TikTok makes me feel (I do not use it btw). But I see how it has trained all my friends' brains for micro-dopamine. I think Cursor may be training me (us?) for micro-dopamine at work. Actually, when you think about it, this might be the next stage of the same attention economy that sucked the soul out of 'leisure time,' now creeping into our knowledge work and creative process. 
-
-In the past, waiting was part of the craft. A render took time. A compile took time. Thinking took time. Now, waiting feels like failure.
-    `);
-  }, []);
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -80,24 +144,21 @@ In the past, waiting was part of the craft. A render took time. A compile took t
             {/* Article Header */}
             <header className="mb-12">
               <h1 className="text-3xl md:text-4xl font-bold text-black mb-4 leading-tight">
-                The Productivity Myth (ft. Vibe Coding)
+                {post.title}
               </h1>
               
               <div className="flex items-center text-gray-600 text-sm">
-                <time dateTime="2025-10-10">October 10, 2025</time>
+                <time dateTime={post.date}>{formatDate(post.date)}</time>
                 <span className="mx-2">•</span>
-                <span>3 min read</span>
+                <span>{post.readTime}</span>
               </div>
             </header>
 
             {/* Article Content */}
-            <div className="prose prose-lg max-w-none">
-              {content.split('\n\n').map((paragraph, index) => (
-                <p key={index} className="text-gray-800 font-normal leading-relaxed mb-6">
-                  {paragraph.trim()}
-                </p>
-              ))}
-            </div>
+            <div 
+              className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-p:leading-relaxed prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-em:text-gray-700"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
 
             {/* Article Footer */}
             <footer className="mt-12 pt-8 border-t border-gray-200">
