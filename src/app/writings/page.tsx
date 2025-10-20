@@ -30,6 +30,13 @@ export default function Writings() {
     // For static export, we'll use hardcoded sample data
     const samplePosts = [
       {
+        slug: 'elons-algorithm-a-spacex-engineers-perspective',
+        title: 'Elon\'s Algorithm: A SpaceX Engineer\'s Perspective',
+        excerpt: 'This is a copy of a review of Elon\'s \'algorithm\' by an anonymous SpaceX engineer. A deep dive into how SpaceX\'s engineering culture evolved from individual responsibility to systematized processes.',
+        date: '2025-01-17',
+        readTime: '15 min read'
+      },
+      {
         slug: 'the-productivity-myth-ft-vibe-coding',
         title: 'The Productivity Myth (ft. Vibe Coding)',
         excerpt: 'Lately, I\'ve been building small apps using Cursor. It\'s been oddly satisfying. I guess the kids call it \'vibe coding,\' but something strange started happening that I couldn\'t ignore.',
