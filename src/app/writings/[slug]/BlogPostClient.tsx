@@ -46,7 +46,7 @@ export default function BlogPostClient({ slug }: BlogPostClientProps) {
           const content = contentMatch ? contentMatch[2].trim() : markdownContent;
           
           // Convert markdown to HTML (improved conversion)
-          let processedContent = content
+          const processedContent = content
             // Handle headers
             .replace(/^### (.*$)/gm, '<h3 class="text-xl font-semibold text-gray-900 mt-8 mb-4">$1</h3>')
             .replace(/^## (.*$)/gm, '<h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-6">$1</h2>')
@@ -90,7 +90,7 @@ export default function BlogPostClient({ slug }: BlogPostClientProps) {
             readTime: postMetadata.readTime,
             content: processedContent,
           });
-        } catch (markdownError) {
+        } catch {
           // Fallback to placeholder if markdown loading fails
           setPost({
             title: postMetadata.title,

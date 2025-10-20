@@ -1,8 +1,5 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import postsData from '@/data/posts.json';
 
 interface PostMetadata {
   slug: string;
@@ -25,28 +22,7 @@ function formatDate(dateString: string): string {
 }
 
 export default function Writings() {
-  const [posts, setPosts] = useState<PostMetadata[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Load posts from static JSON data
-    import('@/data/posts.json').then((module) => {
-      setPosts(module.default);
-      setLoading(false);
-    }).catch((error) => {
-      console.error('Error loading posts:', error);
-      setPosts([]);
-      setLoading(false);
-    });
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-gray-600 font-light">Loading...</div>
-      </div>
-    );
-  }
+  const posts = postsData;
   return (
     <div className="min-h-screen bg-white">
       {/* Skip to main content - accessibility feature */}

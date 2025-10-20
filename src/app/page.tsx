@@ -1,9 +1,5 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-// Posts data will be loaded dynamically to avoid fs issues
+import postsData from '@/data/posts.json';
 
 interface PostMetadata {
   slug: string;
@@ -25,18 +21,7 @@ function formatDate(dateString: string): string {
 }
 
 export default function Home() {
-  const [recentPosts, setRecentPosts] = useState<PostMetadata[]>([]);
-
-  useEffect(() => {
-    // Load posts from static JSON data dynamically
-    import('@/data/posts.json').then((module) => {
-      const posts = module.default;
-      setRecentPosts(posts.slice(0, 3));
-    }).catch((error) => {
-      console.error('Error loading posts:', error);
-      setRecentPosts([]);
-    });
-  }, []);
+  const recentPosts = postsData.slice(0, 3);
 
   return (
     <div className="min-h-screen bg-white">
@@ -75,12 +60,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           
           {/* Hero Section with Profile Photo */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="mb-16"
-          >
+        <div className="mb-16">
             <div className="flex flex-col md:flex-row items-center gap-8 mb-8">
               {/* Profile Photo */}
               <div className="flex-shrink-0">
@@ -183,15 +163,10 @@ export default function Home() {
               </div>
             </div>
             
-          </motion.div>
+          </div>
 
           {/* About Me Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="mb-16"
-          >
+          <div className="mb-16">
             <h2 className="text-xl md:text-2xl font-semibold text-black mb-6">
               About Me
             </h2>
@@ -204,7 +179,7 @@ export default function Home() {
                 I'm passionate about history, technology, the underground dance music scene, anti-authoritarian technology, prediction markets, game and information theory, space, consciousness, psychedelics, and formula one racing.
               </p>
             </div>
-          </motion.div>
+          </div>
 
           {/* Recent Writing Section - nikunjk.com style */}
           <motion.div
@@ -259,15 +234,10 @@ export default function Home() {
                 View all writings
               </Link>
             </div>
-          </motion.div>
+          </div>
 
           {/* Currently Reading Section - compact version */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-            className="mb-16"
-          >
+          <div className="mb-16">
             <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">
               Currently Reading
             </h2>
@@ -303,7 +273,7 @@ export default function Home() {
                 Books I've met + like to revisit often, and recommend
               </Link>
             </div>
-          </motion.div>
+          </div>
 
 
 
