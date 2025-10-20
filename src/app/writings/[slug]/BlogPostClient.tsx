@@ -23,8 +23,7 @@ export default function BlogPostClient({ slug }: BlogPostClientProps) {
   useEffect(() => {
     async function loadPost() {
       try {
-        // For now, we'll load a basic post structure
-        // In production, the content would be pre-generated at build time
+        // Load post metadata
         const postsModule = await import('@/data/posts.json');
         const posts = postsModule.default;
         const postMetadata = posts.find((p) => p.slug === slug);
@@ -33,17 +32,65 @@ export default function BlogPostClient({ slug }: BlogPostClientProps) {
           throw new Error('Post not found');
         }
 
-        // For now, we'll show a placeholder content
-        // In production, this would be the actual markdown content
-        setPost({
-          title: postMetadata.title,
-          date: postMetadata.date,
-          readTime: postMetadata.readTime,
-          content: `<p>This post is available in the markdown file: <code>content/posts/${slug}.md</code></p>
-                   <p>The full markdown rendering system will be available once the build system is properly configured.</p>
-                   <p><strong>Title:</strong> ${postMetadata.title}</p>
-                   <p><strong>Excerpt:</strong> ${postMetadata.excerpt}</p>`,
-        });
+        // Load the actual markdown content
+        try {
+          const response = await fetch(`/content/posts/${slug}.md`);
+          if (!response.ok) {
+            throw new Error('Markdown file not found');
+          }
+          
+          const markdownContent = await response.text();
+          
+          // Extract content after frontmatter (simple approach)
+          const contentMatch = markdownContent.match(/^---\s*\n.*?\n---\s*\n([\s\S]*)$/);
+          const content = contentMatch ? contentMatch[1] : markdownContent;
+          
+          // Convert markdown to HTML (basic conversion)
+          const htmlContent = content
+            .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+            .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+            .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+            .replace(/^\* (.*$)/gm, '<li>$1</li>')
+            .replace(/^• (.*$)/gm, '<li>$1</li>')
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*(.*?)\*/g, '<em>$1</em>')
+            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+            .replace(/^---$/gm, '<hr>')
+            .replace(/\n\n/g, '</p><p>')
+            .replace(/^(.+)$/gm, function(match) {
+              if (match.startsWith('<h') || match.startsWith('<li') || match.startsWith('<hr') || match.trim() === '') {
+                return match;
+              }
+              return match;
+            });
+
+          // Wrap in paragraphs and handle lists
+          let processedContent = htmlContent
+            .replace(/(<li>.*?<\/li>)/gs, function(match) {
+              return match;
+            })
+            .replace(/(<li>.*?<\/li>(?:\s*<li>.*?<\/li>)*)/gs, '<ul>$1</ul>')
+            .replace(/^(?!<[hul]|<hr)(.+)$/gm, '<p>$1</p>')
+            .replace(/<p><\/p>/g, '');
+
+          setPost({
+            title: postMetadata.title,
+            date: postMetadata.date,
+            readTime: postMetadata.readTime,
+            content: processedContent,
+          });
+        } catch (markdownError) {
+          // Fallback to placeholder if markdown loading fails
+          setPost({
+            title: postMetadata.title,
+            date: postMetadata.date,
+            readTime: postMetadata.readTime,
+            content: `<p>This post is available in the markdown file: <code>content/posts/${slug}.md</code></p>
+                     <p>The full markdown rendering system will be available once the build system is properly configured.</p>
+                     <p><strong>Title:</strong> ${postMetadata.title}</p>
+                     <p><strong>Excerpt:</strong> ${postMetadata.excerpt}</p>`,
+          });
+        }
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to load post');
       } finally {
