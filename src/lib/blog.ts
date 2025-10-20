@@ -71,6 +71,21 @@ export function getAllPosts(): PostMetadata[] {
   return posts.map(({ content, ...metadata }) => metadata);
 }
 
+// For static generation compatibility
+export function getAllPostsStatic(): PostMetadata[] {
+  try {
+    if (typeof window !== 'undefined') {
+      // Client-side: try to get posts, but handle gracefully if fs is not available
+      return getAllPosts();
+    }
+    // Server-side: return actual posts
+    return getAllPosts();
+  } catch (error) {
+    console.warn('Could not load posts:', error);
+    return [];
+  }
+}
+
 export function getLatestPosts(count: number = 3): PostMetadata[] {
   return getAllPosts().slice(0, count);
 }

@@ -27,25 +27,15 @@ export default function Writings() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchPosts() {
-      try {
-        const response = await fetch('/api/posts');
-        if (response.ok) {
-          const postsData = await response.json();
-          setPosts(postsData);
-        } else {
-          console.error('Failed to fetch posts');
-          setPosts([]);
-        }
-      } catch (error) {
-        console.error('Error fetching posts:', error);
-        setPosts([]);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchPosts();
+    // Load posts from static JSON data
+    import('@/data/posts.json').then((module) => {
+      setPosts(module.default);
+      setLoading(false);
+    }).catch((error) => {
+      console.error('Error loading posts:', error);
+      setPosts([]);
+      setLoading(false);
+    });
   }, []);
 
   if (loading) {

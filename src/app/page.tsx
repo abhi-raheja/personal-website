@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import postsData from '@/data/posts.json';
 
 interface PostMetadata {
   slug: string;
@@ -25,24 +26,8 @@ export default function Home() {
   const [recentPosts, setRecentPosts] = useState<PostMetadata[]>([]);
 
   useEffect(() => {
-    async function fetchLatestPosts() {
-      try {
-        const response = await fetch('/api/posts');
-        if (response.ok) {
-          const allPosts = await response.json();
-          // Get the latest 3 posts
-          setRecentPosts(allPosts.slice(0, 3));
-        } else {
-          console.error('Failed to fetch posts');
-          setRecentPosts([]);
-        }
-      } catch (error) {
-        console.error('Error fetching posts:', error);
-        setRecentPosts([]);
-      }
-    }
-
-    fetchLatestPosts();
+    // Load posts from static JSON data
+    setRecentPosts(postsData.slice(0, 3));
   }, []);
 
   return (

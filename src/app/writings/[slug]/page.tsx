@@ -20,14 +20,24 @@ export default function BlogPost() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    async function fetchPost() {
+    async function loadPost() {
       try {
-        const response = await fetch(`/api/posts/${slug}`);
-        if (!response.ok) {
+        // Import the blog functions dynamically
+        const { getPostBySlug, getPostContent } = await import('@/lib/blog');
+        
+        const postData = getPostBySlug(slug);
+        if (!postData) {
           throw new Error('Post not found');
         }
-        const postData = await response.json();
-        setPost(postData);
+
+        const content = await getPostContent(slug);
+        
+        setPost({
+          title: postData.title,
+          date: postData.date,
+          readTime: postData.readTime,
+          content,
+        });
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to load post');
       } finally {
@@ -36,7 +46,7 @@ export default function BlogPost() {
     }
 
     if (slug) {
-      fetchPost();
+      loadPost();
     }
   }, [slug]);
 

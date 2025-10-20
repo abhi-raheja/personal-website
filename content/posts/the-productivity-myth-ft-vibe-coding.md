@@ -1,6 +1,11 @@
-# The Productivity Myth (ft. Vibe Coding)
+---
+title: "The Productivity Myth (ft. Vibe Coding)"
+date: "2025-10-10"
+excerpt: "Lately, I've been building small apps using Cursor. It's been oddly satisfying. I guess the kids call it 'vibe coding,' but something strange started happening that I couldn't ignore."
+readTime: "3 min read"
+---
 
-**Date:** October 10, 2025
+# The Productivity Myth (ft. Vibe Coding)
 
 Lately, I've been building small apps using Cursor. It's been oddly satisfying. I guess the kids call it 'vibe coding,' when you speak to the app (using wispr) and describe (to it) what you want and watch (it) spin your thought into existence. It's really fun. However, something strange started happening to me recently that I couldn't ignore.
 
