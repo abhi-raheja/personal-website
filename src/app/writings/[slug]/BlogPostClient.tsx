@@ -41,37 +41,48 @@ export default function BlogPostClient({ slug }: BlogPostClientProps) {
           
           const markdownContent = await response.text();
           
-          // Extract content after frontmatter (simple approach)
-          const contentMatch = markdownContent.match(/^---\s*\n.*?\n---\s*\n([\s\S]*)$/);
-          const content = contentMatch ? contentMatch[1] : markdownContent;
+          // Extract content after frontmatter (improved approach)
+          const contentMatch = markdownContent.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
+          const content = contentMatch ? contentMatch[2].trim() : markdownContent;
           
-          // Convert markdown to HTML (basic conversion)
-          const htmlContent = content
-            .replace(/^### (.*$)/gm, '<h3>$1</h3>')
-            .replace(/^## (.*$)/gm, '<h2>$1</h2>')
-            .replace(/^# (.*$)/gm, '<h1>$1</h1>')
-            .replace(/^\* (.*$)/gm, '<li>$1</li>')
-            .replace(/^• (.*$)/gm, '<li>$1</li>')
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-            .replace(/\*(.*?)\*/g, '<em>$1</em>')
-            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-            .replace(/^---$/gm, '<hr>')
-            .replace(/\n\n/g, '</p><p>')
-            .replace(/^(.+)$/gm, function(match) {
-              if (match.startsWith('<h') || match.startsWith('<li') || match.startsWith('<hr') || match.trim() === '') {
-                return match;
+          // Convert markdown to HTML (improved conversion)
+          let processedContent = content
+            // Handle headers
+            .replace(/^### (.*$)/gm, '<h3 class="text-xl font-semibold text-gray-900 mt-8 mb-4">$1</h3>')
+            .replace(/^## (.*$)/gm, '<h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-6">$1</h2>')
+            .replace(/^# (.*$)/gm, '<h1 class="text-3xl font-bold text-gray-900 mt-12 mb-8">$1</h1>')
+            // Handle horizontal rules
+            .replace(/^---$/gm, '<hr class="my-8 border-gray-300">')
+            // Handle bold and italic
+            .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-gray-900">$1</strong>')
+            .replace(/\*(.*?)\*/g, '<em class="italic text-gray-700">$1</em>')
+            // Handle links
+            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">$1</a>')
+            // Split into paragraphs
+            .split('\n\n')
+            .map(paragraph => {
+              paragraph = paragraph.trim();
+              if (!paragraph) return '';
+              
+              // Skip if already HTML
+              if (paragraph.startsWith('<h') || paragraph.startsWith('<hr')) {
+                return paragraph;
               }
-              return match;
-            });
-
-          // Wrap in paragraphs and handle lists
-          let processedContent = htmlContent
-            .replace(/(<li>.*?<\/li>)/gs, function(match) {
-              return match;
+              
+              // Handle bullet points
+              if (paragraph.includes('\n• ') || paragraph.includes('\n* ')) {
+                const listItems = paragraph
+                  .split(/\n[•*] /)
+                  .filter(item => item.trim())
+                  .map(item => `<li class="mb-2">${item.replace(/^[•*] /, '')}</li>`)
+                  .join('');
+                return `<ul class="list-disc list-inside space-y-2 my-6 text-gray-700">${listItems}</ul>`;
+              }
+              
+              // Regular paragraph
+              return `<p class="mb-6 text-gray-700 leading-relaxed">${paragraph}</p>`;
             })
-            .replace(/(<li>.*?<\/li>(?:\s*<li>.*?<\/li>)*)/gs, '<ul>$1</ul>')
-            .replace(/^(?!<[hul]|<hr)(.+)$/gm, '<p>$1</p>')
-            .replace(/<p><\/p>/g, '');
+            .join('');
 
           setPost({
             title: postMetadata.title,
