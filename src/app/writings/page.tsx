@@ -32,7 +32,7 @@ export default function Writings() {
       {
         slug: 'elons-algorithm-a-spacex-engineers-perspective',
         title: 'Elon\'s Algorithm: A SpaceX Engineer\'s Perspective',
-        excerpt: 'This is a copy of a review of Elon\'s \'algorithm\' by an anonymous SpaceX engineer. A deep dive into how SpaceX\'s engineering culture evolved from individual responsibility to systematized processes.',
+        excerpt: 'This is a copy of a review of Elon\'s \'algorithm\' by an anonymous SpaceX engineer',
         date: '2025-01-17',
         readTime: '15 min read'
       },

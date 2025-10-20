@@ -1,15 +1,13 @@
 ---
 title: "Elon's Algorithm: A SpaceX Engineer's Perspective"
 date: "2025-01-17"
-excerpt: "This is a copy of a review of Elon's 'algorithm' by an anonymous SpaceX engineer. A deep dive into how SpaceX's engineering culture evolved from individual responsibility to systematized processes, and what that means for the future of innovation."
+excerpt: "This is a copy of a review of Elon's 'algorithm' by an anonymous SpaceX engineer"
 readTime: "15 min read"
 ---
 
-# Elon's Algorithm: A SpaceX Engineer's Perspective
+"This is a copy of a review of Elon's 'algorithm' by an anonymous SpaceX engineer"
 
-*"This is a copy of a review of Elon's 'algorithm' by an anonymous SpaceX engineer"*
-
-## Elon Musk's Engineering Algorithm
+Elon Musk's Engineering Algorithm
 
 • Make the requirements less dumb.
 • Delete parts or process.
