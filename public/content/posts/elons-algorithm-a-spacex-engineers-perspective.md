@@ -1,6 +1,6 @@
 ---
-title: "Elon's Algorithm: A SpaceX Engineer's Perspective"
-date: "2025-01-17"
+title: "On Elon's Algorithm"
+date: "2025-10-20"
 excerpt: "This is a copy of a review of Elon's 'algorithm' by an anonymous SpaceX engineer"
 readTime: "15 min read"
 ---

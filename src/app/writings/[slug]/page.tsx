@@ -55,9 +55,12 @@ export default async function BlogPost({ params }: BlogPostProps) {
     // Extract content after frontmatter
     const contentMatch = markdownContent.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
     const rawContent = contentMatch ? contentMatch[2].trim() : markdownContent;
+
+    // Remove a leading H1 heading (markdown #) to avoid duplicate titles
+    const contentWithoutLeadingH1 = rawContent.replace(/^#\s+[^\n]+\n+/, '');
     
     // Convert markdown to HTML (improved conversion)
-    content = rawContent
+    content = contentWithoutLeadingH1
       // Handle headers
       .replace(/^### (.*$)/gm, '<h3 class="text-xl font-semibold text-gray-900 mt-8 mb-4">$1</h3>')
       .replace(/^## (.*$)/gm, '<h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-6">$1</h2>')

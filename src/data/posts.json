@@ -1,5 +1,12 @@
 [
   {
+    "slug": "elons-algorithm-a-spacex-engineers-perspective",
+    "title": "On Elon's Algorithm",
+    "date": "2025-10-20",
+    "excerpt": "This is a copy of a review of Elon's 'algorithm' by an anonymous SpaceX engineer",
+    "readTime": "15 min read"
+  },
+  {
     "slug": "the-productivity-myth-ft-vibe-coding",
     "title": "The Productivity Myth (ft. Vibe Coding)",
     "date": "2025-10-10",
@@ -47,26 +54,5 @@
     "date": "2025-08-09",
     "excerpt": "Imagine being able to compute on secrets, without ever seeing them. That's the magic of Fully Homomorphic Encryption (FHE), a cryptography technique that lets you process encrypted data as if it were unlocked. It's privacy's holy grail.",
     "readTime": "7 min read"
-  },
-  {
-    "slug": "elons-algorithm-a-spacex-engineers-perspective",
-    "title": "Elon's Algorithm: A SpaceX Engineer's Perspective",
-    "date": "2025-01-17",
-    "excerpt": "This is a copy of a review of Elon's 'algorithm' by an anonymous SpaceX engineer",
-    "readTime": "15 min read"
-  },
-  {
-    "slug": "first-thoughts",
-    "title": "First Thoughts",
-    "date": "2025-01-15",
-    "excerpt": "An introduction to this space and what you can expect to find here. Thoughts on writing, creating, and sharing ideas in the digital age.",
-    "readTime": "3 min read"
-  },
-  {
-    "slug": "on-creativity",
-    "title": "On Creativity and Daily Practice",
-    "date": "2025-01-12",
-    "excerpt": "Exploring the relationship between consistent practice and creative breakthrough. How small daily actions compound into meaningful work.",
-    "readTime": "5 min read"
   }
 ]

@@ -7,7 +7,6 @@ interface PostMetadata {
   date: string;
   excerpt: string;
   readTime: string;
-  externalLink?: string;
 }
 
 function formatDate(dateString: string): string {
@@ -69,14 +68,6 @@ export default function Home() {
                     src="/profile-photo.jpg" 
                     alt="Abhi Raheja"
                     className="w-full h-full object-cover"
-                    onError={(e) => {
-                      // Fallback to styled initials if image doesn't exist
-                      const target = e.currentTarget as HTMLImageElement;
-                      target.style.display = 'none';
-                      if (target.parentElement) {
-                        target.parentElement.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-2xl md:text-3xl font-bold tracking-wide">AR</div>';
-                      }
-                    }}
                   />
                 </div>
               </div>
@@ -182,12 +173,7 @@ export default function Home() {
           </div>
 
           {/* Recent Writing Section - nikunjk.com style */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-            className="mb-16"
-          >
+          <div className="mb-16">
             <h2 className="text-xl md:text-2xl font-semibold text-black mb-8">
               Recent Writing
             </h2>
@@ -195,33 +181,20 @@ export default function Home() {
             <div className="space-y-6">
               {recentPosts.map((post, index) => (
                 <div key={post.slug} className="group">
-                  {post.externalLink ? (
-                    <a 
-                      href={post.externalLink} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="block hover:bg-gray-50 -mx-4 px-4 py-3 rounded-sm transition-colors"
-                    >
-                      <h3 className="text-lg font-normal text-black group-hover:text-gray-800 transition-colors mb-2">
-                        {post.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm">
-                        {formatDate(post.date)}
-                      </p>
-                    </a>
-                  ) : (
-                    <Link 
-                      href={`/writings/${post.slug}`}
-                      className="block hover:bg-gray-50 -mx-4 px-4 py-3 rounded-sm transition-colors"
-                    >
-                      <h3 className="text-lg font-normal text-black group-hover:text-gray-800 transition-colors mb-2">
-                        {post.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm">
-                        {formatDate(post.date)}
-                      </p>
-                    </Link>
-                  )}
+                  <Link 
+                    href={`/writings/${post.slug}`}
+                    className="block hover:bg-gray-50 -mx-4 px-4 py-3 rounded-sm transition-colors"
+                  >
+                    <h3 className="text-lg font-normal text-black group-hover:text-gray-800 transition-colors mb-2">
+                      {post.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-2">
+                      {formatDate(post.date)} • {post.readTime}
+                    </p>
+                    <p className="text-gray-700 font-normal leading-relaxed">
+                      {post.excerpt}
+                    </p>
+                  </Link>
                 </div>
               ))}
             </div>
