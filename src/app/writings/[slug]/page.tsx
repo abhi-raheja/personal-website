@@ -2,6 +2,7 @@ import Link from 'next/link';
 import postsData from '@/data/posts.json';
 import fs from 'fs';
 import path from 'path';
+import { Metadata } from 'next';
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
@@ -19,6 +20,49 @@ interface BlogPostProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+// Generate metadata for each blog post
+export async function generateMetadata({ params }: BlogPostProps): Promise<Metadata> {
+  const { slug } = await params;
+  const postMetadata = postsData.find((post) => post.slug === slug);
+  
+  if (!postMetadata) {
+    return {
+      title: 'Post Not Found',
+      description: 'The requested blog post could not be found.',
+    };
+  }
+
+  const postUrl = `https://abhiraheja.com/writings/${slug}/`;
+  
+  return {
+    title: postMetadata.title,
+    description: postMetadata.excerpt,
+    openGraph: {
+      title: postMetadata.title,
+      description: postMetadata.excerpt,
+      url: postUrl,
+      siteName: "Abhi Raheja",
+      images: [
+        {
+          url: "https://abhiraheja.com/social-preview.jpg",
+          width: 1200,
+          height: 630,
+          alt: `${postMetadata.title} - Abhi Raheja`,
+        },
+      ],
+      locale: "en_US",
+      type: "article",
+      publishedTime: postMetadata.date,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: postMetadata.title,
+      description: postMetadata.excerpt,
+      images: ["https://abhiraheja.com/social-preview.jpg"],
+    },
+  };
 }
 
 function formatDate(dateString: string): string {
