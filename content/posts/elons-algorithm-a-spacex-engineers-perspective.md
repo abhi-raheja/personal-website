@@ -15,8 +15,6 @@ Elon Musk's Engineering Algorithm
 • Accelerate cycle time.
 • Automate.
 
-*- ModelThinkers.com, summarizing an interview with Elon Musk in 2021.*
-
 From the moment I became interested in the aerospace industry, my understanding of it had been dominated by one story. It went like this:
 
 Long ago, in the Space Race, people were willing to test a lot, fail fast and learn. The US and USSR exploded dozens of rockets in each test program, using their generational engineering talents to refine them to perfection. In doing so, they achieved the transcendental results of the Apollo program.
