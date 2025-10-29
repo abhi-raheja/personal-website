@@ -157,6 +157,27 @@ export default function Home() {
             
           </div>
 
+          {/* Subscribe Section */}
+          <div className="mb-16">
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              {/* Spacer to align with profile image on left */}
+              <div className="w-32 md:w-40 flex-shrink-0"></div>
+              
+              {/* Subscription form content - matches text content area, explicitly left-aligned */}
+              <div className="flex-1 w-full min-w-0 flex flex-col items-start">
+                <h2 className="text-xl md:text-2xl font-semibold text-black mb-6 text-left w-full">
+                  Subscribe to my posts
+                </h2>
+                <div className="w-full flex justify-start">
+                  <SubscriptionForm />
+                </div>
+              </div>
+              
+              {/* Spacer to align with social icons on right */}
+              <div className="hidden md:block w-20 flex-shrink-0"></div>
+            </div>
+          </div>
+
           {/* About Me Section */}
           <div className="mb-16">
             <h2 className="text-xl md:text-2xl font-semibold text-black mb-6">
@@ -208,17 +229,6 @@ export default function Home() {
                 View all writings
               </Link>
             </div>
-          </div>
-
-          {/* Subscribe Section */}
-          <div className="mb-16">
-            <h2 className="text-xl md:text-2xl font-semibold text-black mb-3">
-              Subscribe
-            </h2>
-            <p className="text-sm text-gray-600 mb-6 font-normal">
-              Get my latest writing delivered to your inbox.
-            </p>
-            <SubscriptionForm />
           </div>
 
           {/* Currently Reading Section - compact version */}

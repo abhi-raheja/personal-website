@@ -51,22 +51,22 @@ export default function SubscriptionForm() {
   };
 
   return (
-    <div className="w-full max-w-[480px]">
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="flex flex-col sm:flex-row gap-2">
+    <div className="w-full">
+      <form onSubmit={handleSubmit} className="space-y-3 w-full">
+        <div className="flex flex-col sm:flex-row gap-2 justify-start items-start">
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
             disabled={status === 'loading'}
-            className="flex-1 px-4 py-3 border border-gray-300 rounded-md text-base font-normal text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
+            className="flex-1 px-4 py-2 border border-gray-300 rounded-md text-base font-normal text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
             required
           />
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="px-6 py-3 bg-black text-white rounded-md text-base font-normal hover:bg-gray-800 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed whitespace-nowrap"
+            className="px-6 py-2 bg-black text-white rounded-md text-base font-normal hover:bg-gray-800 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed whitespace-nowrap"
           >
             {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
           </button>
@@ -86,10 +86,6 @@ export default function SubscriptionForm() {
           </p>
         )}
       </form>
-      
-      <p className="text-xs text-gray-500 mt-3 font-normal">
-        Unsubscribe at any time. Your email will be used solely for newsletter updates.
-      </p>
     </div>
   );
 }

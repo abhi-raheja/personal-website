@@ -14,14 +14,16 @@ Your domains `abhiraheja.com` and `www.abhiraheja.com` are added to Vercel but s
 You need to update DNS records where you registered `abhiraheja.com` (e.g., Namecheap, GoDaddy, Google Domains, etc.)
 
 **For `abhiraheja.com` (apex domain):**
-- Add an **A record** pointing to one of Vercel's IP addresses:
-  - `76.76.21.21` 
-  - (Vercel will provide the exact IP in their dashboard)
+- Add/Update an **A record**:
+  - Type: A
+  - Name: `@` (or leave blank)
+  - Value: `216.198.79.1`
 
 **For `www.abhiraheja.com` (www subdomain):**
-- Add a **CNAME record** pointing to:
-  - `cname.vercel-dns.com`
-  - (Vercel will provide the exact CNAME target in their dashboard)
+- Add/Update a **CNAME record**:
+  - Type: CNAME
+  - Name: `www`
+  - Value: `79ed5e7725d2dec7.vercel-dns-017.com.` (note the trailing dot!)
 
 ### 3. DNS Propagation
 - DNS changes can take 24-48 hours to propagate globally
