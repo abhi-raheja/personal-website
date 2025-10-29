@@ -1,7 +1,7 @@
 ---
 title: "On Elon's Algorithm"
 date: "2025-10-20"
-excerpt: "This is a copy of a review of Elon's 'algorithm' by an anonymous SpaceX engineer"
+excerpt: "Elon has a 5-step algorithm to run companies and build products. But what does it really do?"
 readTime: "15 min read"
 ---
 
@@ -14,8 +14,6 @@ Elon Musk's Engineering Algorithm
 • Simplify and optimize.
 • Accelerate cycle time.
 • Automate.
-
-*- ModelThinkers.com, summarizing an interview with Elon Musk in 2021.*
 
 From the moment I became interested in the aerospace industry, my understanding of it had been dominated by one story. It went like this:
 
