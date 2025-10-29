@@ -1,93 +1,70 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function SubscriptionForm() {
-  const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [message, setMessage] = useState('');
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    
-    if (!email.trim()) {
-      setStatus('error');
-      setMessage('Please enter your email address');
-      return;
+  useEffect(() => {
+    // Inject CSS to hide Substack branding and style the form
+    const iframe = iframeRef.current;
+    if (iframe) {
+      const handleLoad = () => {
+        try {
+          const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
+          if (iframeDoc) {
+            // Hide Substack watermark and terms text
+            const style = iframeDoc.createElement('style');
+            style.textContent = `
+              .substack-watermark,
+              .embed-tos,
+              .publication-logo,
+              .publication-name,
+              .publication-tagline,
+              .publication-meta {
+                display: none !important;
+              }
+              .subscribe-widget {
+                padding: 0 !important;
+              }
+              .form {
+                margin: 0 !important;
+              }
+            `;
+            iframeDoc.head.appendChild(style);
+          }
+        } catch (e) {
+          // Cross-origin restrictions - this is expected
+          console.log('Cannot access iframe content due to CORS');
+        }
+      };
+
+      iframe.addEventListener('load', handleLoad);
+      return () => iframe.removeEventListener('load', handleLoad);
     }
-
-    setStatus('loading');
-    setMessage('');
-
-    try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email: email.trim() }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok && data.success) {
-        setStatus('success');
-        setMessage(data.message || 'Subscription successful! Please check your email to confirm.');
-        setEmail('');
-        
-        // Reset to idle after 5 seconds
-        setTimeout(() => {
-          setStatus('idle');
-          setMessage('');
-        }, 5000);
-      } else {
-        setStatus('error');
-        // Show helpful message with link to subscribe directly
-        const errorMsg = data.message || data.error || 'Unable to subscribe at this time.';
-        setMessage(`${errorMsg} Alternatively, subscribe directly at https://abhiraheja.substack.com`);
-      }
-    } catch (error) {
-      setStatus('error');
-      setMessage('Network error. Please subscribe directly at https://abhiraheja.substack.com');
-    }
-  };
+  }, []);
 
   return (
     <div className="w-full">
-      <form onSubmit={handleSubmit} className="space-y-3 w-full">
-        <div className="flex flex-col sm:flex-row gap-2 justify-start items-start">
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
-            disabled={status === 'loading'}
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-md text-base font-normal text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
-            required
-          />
-          <button
-            type="submit"
-            disabled={status === 'loading'}
-            className="px-6 py-2 bg-black text-white rounded-md text-base font-normal hover:bg-gray-800 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed whitespace-nowrap"
-          >
-            {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
-          </button>
-        </div>
-        
-        {message && (
-          <p
-            className={`text-sm font-normal ${
-              status === 'success'
-                ? 'text-green-700'
-                : status === 'error'
-                ? 'text-red-700'
-                : 'text-gray-600'
-            }`}
-          >
-            {message}
-          </p>
-        )}
-      </form>
+      {/* Substack embed iframe - minimal styling */}
+      <iframe
+        ref={iframeRef}
+        src="https://abhiraheja.substack.com/embed"
+        width="100%"
+        height="140"
+        style={{ 
+          border: 'none',
+          background: 'transparent',
+          overflow: 'hidden'
+        }}
+        frameBorder="0"
+        scrolling="no"
+        title="Subscribe to newsletter"
+        className="w-full"
+      />
+      <p className="text-xs text-gray-500 mt-2">
+        Powered by <a href="https://substack.com" target="_blank" rel="noopener noreferrer" className="underline">Substack</a>
+      </p>
     </div>
   );
 }

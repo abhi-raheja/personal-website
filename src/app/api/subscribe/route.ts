@@ -45,58 +45,102 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/x-www-form-urlencoded',
         'Referer': SUBSTACK_URL,
         'Origin': SUBSTACK_URL,
-        'User-Agent': 'Mozilla/5.0 (compatible; Newsletter/1.0)',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
       },
       body: formData.toString(),
     });
 
-    // Substack returns HTML even on success, so we check status code
-    if (response.ok || response.status === 302 || response.status === 200) {
-      // Check response text for error messages
-      const responseText = await response.text();
+    const responseText = await response.text();
+    
+    // Check for Cloudflare blocking
+    if (response.status === 403 || responseText.includes('Cloudflare') || responseText.includes('challenge') || responseText.includes('blocked')) {
+      console.error('Substack API blocked by Cloudflare');
+      return NextResponse.json(
+        { 
+          success: false,
+          error: 'Service unavailable',
+          message: 'Subscription service is temporarily unavailable. Please subscribe directly at https://abhiraheja.substack.com'
+        },
+        { status: 503 }
+      );
+    }
+
+    // Check if response is JSON (Substack sometimes returns JSON errors)
+    let responseData;
+    try {
+      responseData = JSON.parse(responseText);
+    } catch {
+      responseData = null;
+    }
+
+    // If we got JSON response, check for errors
+    if (responseData && responseData.errors) {
+      const errors = responseData.errors;
+      console.error('Substack API errors:', errors);
       
-      // If response contains error indicators
-      if (responseText.includes('error') || responseText.includes('invalid')) {
-        // Check if it's an "already subscribed" type error
-        if (responseText.includes('already') || responseText.includes('exists') || responseText.includes('subscribed')) {
-          return NextResponse.json(
-            { 
-              success: false, 
-              error: 'This email is already subscribed',
-              message: 'You are already subscribed to the newsletter.'
-            },
-            { status: 409 }
-          );
-        }
-        
+      // Check if it's an "already subscribed" error
+      const alreadySubscribed = errors.some((err: any) => 
+        err.msg?.toLowerCase().includes('already') || 
+        err.msg?.toLowerCase().includes('subscribed') ||
+        err.msg?.toLowerCase().includes('exists')
+      );
+      
+      if (alreadySubscribed) {
         return NextResponse.json(
           { 
-            success: false,
-            error: 'Subscription failed',
-            message: 'Unable to subscribe. Please check your email and try again, or subscribe directly at https://abhiraheja.substack.com'
+            success: false, 
+            error: 'This email is already subscribed',
+            message: 'You are already subscribed to the newsletter.'
           },
-          { status: 400 }
+          { status: 409 }
         );
       }
 
-      return NextResponse.json({
-        success: true,
-        message: 'Subscription successful! Please check your email to confirm.',
-      });
-    } else {
-      // Non-200 response
-      const responseText = await response.text();
-      console.error('Substack API error:', response.status, responseText.substring(0, 500));
-      
+      // Other validation errors
+      const errorMsg = errors.map((err: any) => err.msg || 'Validation error').join(', ');
       return NextResponse.json(
         { 
           success: false,
           error: 'Subscription failed',
-          message: 'Unable to subscribe at this time. Please try subscribing directly at https://abhiraheja.substack.com'
+          message: errorMsg || 'Unable to subscribe. Please check your email and try again, or subscribe directly at https://abhiraheja.substack.com'
         },
-        { status: response.status || 500 }
+        { status: response.status || 400 }
       );
     }
+
+    // Check for HTML error messages in response text
+    if (responseText.includes('error') || responseText.includes('invalid')) {
+      // Check if it's an "already subscribed" type error
+      if (responseText.includes('already') || responseText.includes('exists') || responseText.includes('subscribed')) {
+        return NextResponse.json(
+          { 
+            success: false, 
+            error: 'This email is already subscribed',
+            message: 'You are already subscribed to the newsletter.'
+          },
+          { status: 409 }
+        );
+      }
+    }
+
+    // Success (200, 201, 302, or successful redirects)
+    if (response.ok || response.status === 302 || response.status === 201) {
+      return NextResponse.json({
+        success: true,
+        message: 'Subscription successful! Please check your email to confirm.',
+      });
+    }
+
+    // Non-success response
+    console.error('Substack API error:', response.status, responseText.substring(0, 500));
+    return NextResponse.json(
+      { 
+        success: false,
+        error: 'Subscription failed',
+        message: 'Unable to subscribe at this time. Please try subscribing directly at https://abhiraheja.substack.com'
+      },
+      { status: response.status || 500 }
+    );
   } catch (error: unknown) {
     console.error('Subscription error:', error);
     
