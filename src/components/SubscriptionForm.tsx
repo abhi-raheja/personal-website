@@ -44,11 +44,11 @@ export default function SubscriptionForm() {
         setStatus('error');
         // Show helpful message with link to subscribe directly
         const errorMsg = data.message || data.error || 'Unable to subscribe at this time.';
-        setMessage(`${errorMsg} Alternatively, subscribe directly at ${window.location.protocol}//abhiraheja.substack.com`);
+        setMessage(`${errorMsg} Alternatively, subscribe directly at https://abhiraheja.substack.com`);
       }
     } catch (error) {
       setStatus('error');
-      setMessage(`Network error. Please subscribe directly at ${window.location.protocol}//abhiraheja.substack.com`);
+      setMessage('Network error. Please subscribe directly at https://abhiraheja.substack.com');
     }
   };
 
