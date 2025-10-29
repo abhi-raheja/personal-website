@@ -39,8 +39,11 @@ export async function POST(request: NextRequest) {
   } catch (error: unknown) {
     console.error('Subscription error:', error);
     
-    // Handle specific error cases
+    // Log more detailed error info for debugging
     if (error instanceof Error) {
+      console.error('Error message:', error.message);
+      console.error('Error stack:', error.stack);
+      
       // Check if it's already subscribed
       if (error.message.includes('already subscribed') || error.message.includes('exists')) {
         return NextResponse.json(
@@ -52,13 +55,26 @@ export async function POST(request: NextRequest) {
           { status: 409 }
         );
       }
+      
+      // Check for Playwright/browser errors
+      if (error.message.includes('browserType') || error.message.includes('Playwright') || error.message.includes('chromium')) {
+        console.error('Playwright error detected - browser automation not available in serverless environment');
+        return NextResponse.json(
+          { 
+            success: false,
+            error: 'Browser automation not available',
+            message: 'Subscription service temporarily unavailable. Please subscribe directly at https://abhiraheja.substack.com'
+          },
+          { status: 503 }
+        );
+      }
     }
 
     return NextResponse.json(
       { 
-        success: false, 
+        success: false,
         error: 'Failed to subscribe. Please try again later.',
-        message: 'An error occurred while processing your subscription.'
+        message: 'An error occurred while processing your subscription. Please try subscribing directly at https://abhiraheja.substack.com'
       },
       { status: 500 }
     );
