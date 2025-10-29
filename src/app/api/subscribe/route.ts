@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { subscribe } from 'substack-subscriber';
 
+// Force Node.js runtime (required for substack-subscriber package)
+export const runtime = 'nodejs';
+
 const SUBSTACK_URL = 'https://abhiraheja.substack.com';
 
 export async function POST(request: NextRequest) {
