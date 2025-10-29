@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import SubscriptionForm from '@/components/SubscriptionForm';
 
 export default function FirstThoughts() {
   return (
@@ -34,6 +35,17 @@ export default function FirstThoughts() {
       {/* Article Content */}
       <main className="pt-32 pb-20">
         <div className="max-w-3xl mx-auto px-6">
+          {/* Subscribe Section - at the very top, above article */}
+          <div className="mb-12 pb-8 border-b border-gray-200">
+            <h2 className="text-xl md:text-2xl font-semibold text-black mb-3">
+              Subscribe to my posts
+            </h2>
+            <p className="text-sm text-gray-600 mb-6 font-normal">
+              Get my latest writing delivered to your inbox.
+            </p>
+            <SubscriptionForm />
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

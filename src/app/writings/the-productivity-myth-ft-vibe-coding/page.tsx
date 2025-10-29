@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import SubscriptionForm from '@/components/SubscriptionForm';
 
 export default function TheProductivityMythFtVibeCoding() {
   const [content, setContent] = useState('');
@@ -72,6 +73,17 @@ In the past, waiting was part of the craft. A render took time. A compile took t
       {/* Main Content */}
       <main id="main-content" className="px-6 md:px-12 py-8">
         <div className="max-w-3xl mx-auto">
+          {/* Subscribe Section - at the very top, above article */}
+          <div className="mb-12 pb-8 border-b border-gray-200">
+            <h2 className="text-xl md:text-2xl font-semibold text-black mb-3">
+              Subscribe to my posts
+            </h2>
+            <p className="text-sm text-gray-600 mb-6 font-normal">
+              Get my latest writing delivered to your inbox.
+            </p>
+            <SubscriptionForm />
+          </div>
+
           <motion.article
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

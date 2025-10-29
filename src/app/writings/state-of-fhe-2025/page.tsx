@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import SubscriptionForm from '@/components/SubscriptionForm';
 
 export default function StateOfFHE2025Post() {
   return (
@@ -51,6 +52,17 @@ export default function StateOfFHE2025Post() {
       {/* Main Content */}
       <main id="main-content" className="px-6 md:px-12 py-12">
         <div className="max-w-4xl mx-auto">
+          {/* Subscribe Section - at the very top, above article */}
+          <div className="mb-12 pb-8 border-b border-gray-200">
+            <h2 className="text-xl md:text-2xl font-semibold text-black mb-3">
+              Subscribe to my posts
+            </h2>
+            <p className="text-sm text-gray-600 mb-6 font-normal">
+              Get my latest writing delivered to your inbox.
+            </p>
+            <SubscriptionForm />
+          </div>
+
           <motion.article
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -62,7 +74,7 @@ export default function StateOfFHE2025Post() {
               <h1 className="text-2xl md:text-3xl font-semibold text-black mb-4 leading-tight">
                 State of FHE | 2025
               </h1>
-              <div className="flex items-center text-gray-600 text-sm mb-6">
+              <div className="flex items-center text-gray-600 text-sm">
                 <time dateTime="2025-08-09">August 9, 2025</time>
                 <span className="mx-2">•</span>
                 <span>7 min read</span>

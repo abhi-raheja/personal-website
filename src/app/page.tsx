@@ -164,13 +164,11 @@ export default function Home() {
               <div className="w-32 md:w-40 flex-shrink-0"></div>
               
               {/* Subscription form content - matches text content area, explicitly left-aligned */}
-              <div className="flex-1 w-full min-w-0 flex flex-col items-start">
-                <h2 className="text-xl md:text-2xl font-semibold text-black mb-6 text-left w-full">
+              <div className="flex-1">
+                <h2 className="text-xl md:text-2xl font-semibold text-black mb-6">
                   Subscribe to my posts
                 </h2>
-                <div className="w-full flex justify-start">
-                  <SubscriptionForm />
-                </div>
+                <SubscriptionForm />
               </div>
               
               {/* Spacer to align with social icons on right */}

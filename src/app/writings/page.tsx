@@ -70,6 +70,17 @@ export default function Writings() {
       {/* Main Content */}
       <main id="main-content" className="px-6 md:px-12 py-12">
         <div className="max-w-4xl mx-auto">
+          {/* Subscribe Section - at the very top */}
+          <div className="mb-16 pb-8 border-b border-gray-200">
+            <h2 className="text-xl md:text-2xl font-semibold text-black mb-3">
+              Subscribe to my posts
+            </h2>
+            <p className="text-sm text-gray-600 mb-6 font-normal">
+              Get my latest writing delivered to your inbox.
+            </p>
+            <SubscriptionForm />
+          </div>
+
           <div className="mb-16">
             {/* Page Title */}
             <h1 className="text-xl md:text-2xl font-semibold text-black mb-8">
@@ -105,17 +116,6 @@ export default function Writings() {
                 ))
               )}
             </div>
-          </div>
-
-          {/* Subscribe Section */}
-          <div className="mb-16">
-            <h2 className="text-xl md:text-2xl font-semibold text-black mb-3">
-              Subscribe
-            </h2>
-            <p className="text-sm text-gray-600 mb-6 font-normal">
-              Get my latest writing delivered to your inbox.
-            </p>
-            <SubscriptionForm />
           </div>
 
         </div>
