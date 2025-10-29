@@ -1,7 +1,7 @@
 name: Deploy to GitHub Pages
 
-# Disabled - Using Vercel for deployment instead (supports API routes)
-# Uncomment below if you want to use GitHub Pages for static deployment
+# Disabled - Using Vercel for deployment
+# Uncomment below if switching back to GitHub Pages
 on:
   workflow_dispatch:  # Manual trigger only
   # push:
