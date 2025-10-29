@@ -138,7 +138,15 @@ The user wants to adapt their existing personal website to match the framework a
 - Confirmed blog renderer fix removes duplicated H1 headings on `writings/[slug]` pages.
 - Validated local listings show updated dates/titles after JSON regeneration.
 - Dev server running on `127.0.0.1:3003`; Watchpack `EMFILE` warnings noted but site serves correctly.
-- Ready to stage and commit repository changes for deployment parity.
+- Successfully committed and pushed changes (commit `1453c95`) to GitHub repository.
+- GitHub Pages deployment should now reflect the corrected blog rendering.
+
+**Executor Update (Latest)**:
+
+- Added Substack subscribe iframe to homepage, writings page, and individual blog post pages.
+- Converted HTML iframe to JSX format (frameBorder instead of frameborder, added title attribute for accessibility).
+- Made iframe responsive with max-width constraints and proper styling.
+- All three pages now include the "Subscribe" section with the Substack embed form.
 
 ## Lessons
 

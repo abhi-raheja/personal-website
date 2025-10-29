@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { subscribe } from 'substack-subscriber';
 
 // Force Node.js runtime (required for substack-subscriber package)
 export const runtime = 'nodejs';
@@ -28,7 +27,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Subscribe to Substack
+    // Subscribe to Substack (dynamic import for serverless compatibility)
+    const { subscribe } = await import('substack-subscriber');
     const result = await subscribe(email, SUBSTACK_URL);
 
     return NextResponse.json({

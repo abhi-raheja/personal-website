@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
+  // Ensure substack-subscriber is bundled correctly for serverless
+  serverExternalPackages: ['substack-subscriber'],
   // Add basePath if deploying to GitHub Pages with a repository name
   // basePath: '/repository-name',
 };
