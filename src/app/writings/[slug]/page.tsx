@@ -3,6 +3,7 @@ import postsData from '@/data/posts.json';
 import fs from 'fs';
 import path from 'path';
 import { Metadata } from 'next';
+import SubscriptionForm from '@/components/SubscriptionForm';
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
@@ -204,6 +205,17 @@ export default async function BlogPost({ params }: BlogPostProps) {
               className="prose prose-lg max-w-none text-gray-700 font-normal leading-relaxed"
               dangerouslySetInnerHTML={{ __html: content }} 
             />
+          </div>
+
+          {/* Subscribe Section */}
+          <div className="mb-16">
+            <h2 className="text-xl md:text-2xl font-semibold text-black mb-3">
+              Subscribe
+            </h2>
+            <p className="text-sm text-gray-600 mb-6 font-normal">
+              Get my latest writing delivered to your inbox.
+            </p>
+            <SubscriptionForm />
           </div>
         </div>
       </main>

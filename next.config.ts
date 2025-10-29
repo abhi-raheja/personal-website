@@ -1,7 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  // Only use static export when building for GitHub Pages
+  // Vercel will automatically handle API routes as serverless functions
+  // Uncomment the line below if you want to also build static exports for GitHub Pages
+  // output: process.env.NODE_ENV === 'production' && process.env.BUILD_TARGET === 'static' ? 'export' : undefined,
+  
+  // For Vercel deployment, remove output: 'export' to allow API routes
+  // output: 'export',
   trailingSlash: true,
   images: {
     unoptimized: true

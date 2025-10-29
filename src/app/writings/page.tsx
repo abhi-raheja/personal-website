@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import postsData from '@/data/posts.json';
+import SubscriptionForm from '@/components/SubscriptionForm';
 
 interface PostMetadata {
   slug: string;
@@ -106,6 +107,16 @@ export default function Writings() {
             </div>
           </div>
 
+          {/* Subscribe Section */}
+          <div className="mb-16">
+            <h2 className="text-xl md:text-2xl font-semibold text-black mb-3">
+              Subscribe
+            </h2>
+            <p className="text-sm text-gray-600 mb-6 font-normal">
+              Get my latest writing delivered to your inbox.
+            </p>
+            <SubscriptionForm />
+          </div>
 
         </div>
       </main>
