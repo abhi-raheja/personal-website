@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/generate-posts-data.js",
+    "prebuild": "node scripts/generate-posts-data.js && node scripts/generate-journal-data.js",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "new-post": "node scripts/new-post.js"
+    "new-post": "node scripts/new-post.js",
+    "journal": "node scripts/add-journal-entry.js"
   },
   "dependencies": {
     "framer-motion": "^12.23.12",

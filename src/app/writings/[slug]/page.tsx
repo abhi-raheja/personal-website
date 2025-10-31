@@ -181,6 +181,12 @@ export default async function BlogPost({ params }: BlogPostProps) {
                 Writings
               </Link>
               <Link 
+                href="/journal" 
+                className="text-gray-700 hover:text-black transition-colors font-normal"
+              >
+                Journal
+              </Link>
+              <Link 
                 href="/reading" 
                 className="text-gray-700 hover:text-black transition-colors font-normal"
               >

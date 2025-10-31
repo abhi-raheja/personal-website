@@ -1,19 +1,16 @@
 import Link from 'next/link';
-import postsData from '@/data/posts.json';
-import SubscriptionForm from '@/components/SubscriptionForm';
+import journalData from '@/data/journal.json';
 
-interface PostMetadata {
-  slug: string;
-  title: string;
+interface JournalEntry {
+  id: string;
   date: string;
-  excerpt: string;
-  readTime: string;
+  time: string;
+  content: string;
 }
 
 function formatDate(dateString: string): string {
-  // Parse the date string and ensure it's treated as local date
   const [year, month, day] = dateString.split('-').map(Number);
-  const date = new Date(year, month - 1, day); // month is 0-indexed
+  const date = new Date(year, month - 1, day);
   return date.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
@@ -21,8 +18,17 @@ function formatDate(dateString: string): string {
   });
 }
 
-export default function Writings() {
-  const posts = postsData;
+function formatTime(timeString: string): string {
+  const [hours, minutes] = timeString.split(':');
+  const hour = parseInt(hours);
+  const ampm = hour >= 12 ? 'PM' : 'AM';
+  const displayHour = hour % 12 || 12;
+  return `${displayHour}:${minutes} ${ampm}`;
+}
+
+export default function Journal() {
+  const entries = journalData as JournalEntry[];
+  
   return (
     <div className="min-h-screen bg-white">
       {/* Skip to main content - accessibility feature */}
@@ -52,13 +58,13 @@ export default function Writings() {
             <div className="flex items-center space-x-8">
               <Link 
                 href="/writings" 
-                className="text-black font-normal"
+                className="text-gray-700 hover:text-black transition-colors font-normal"
               >
                 Writings
               </Link>
               <Link 
                 href="/journal" 
-                className="text-gray-700 hover:text-black transition-colors font-normal"
+                className="text-black font-normal"
               >
                 Journal
               </Link>
@@ -76,48 +82,32 @@ export default function Writings() {
       {/* Main Content */}
       <main id="main-content" className="px-6 md:px-12 py-12">
         <div className="max-w-4xl mx-auto">
-          {/* Subscribe Section - at the very top */}
-          <div className="mb-16 pb-8 border-b border-gray-200">
-            <h2 className="text-xl md:text-2xl font-semibold text-black mb-3">
-              Subscribe to my posts
-            </h2>
-            <p className="text-sm text-gray-600 mb-6 font-normal">
-              Get my latest writing delivered to your inbox.
-            </p>
-            <SubscriptionForm />
-          </div>
-
           <div className="mb-16">
             {/* Page Title */}
             <h1 className="text-xl md:text-2xl font-semibold text-black mb-8">
-              Writings
+              Journal
             </h1>
             <p className="text-base text-gray-700 font-normal leading-relaxed mb-8 max-w-2xl">
-              Musings, jumbled thoughts, commentary and thought experiments in no particular order.
+              Casual thoughts, observations, and daily musings in no particular order.
             </p>
           </div>
 
-          {/* Posts List */}
+          {/* Journal Entries List */}
           <div className="mb-16">
-            <div className="space-y-6">
-              {posts.length === 0 ? (
+            <div className="space-y-8">
+              {entries.length === 0 ? (
                 <div className="text-center py-12">
-                  <p className="text-gray-600 font-normal">No posts yet. Check back soon!</p>
+                  <p className="text-gray-600 font-normal">No entries yet. Check back soon!</p>
                 </div>
               ) : (
-                posts.map((post, index) => (
-                  <div key={post.slug} className="group">
-                    <Link href={`/writings/${post.slug}`} className="block hover:bg-gray-50 -mx-4 px-4 py-3 rounded-sm transition-colors border-l-2 border-transparent hover:border-gray-300 cursor-pointer">
-                      <h3 className="text-lg font-normal text-black group-hover:text-gray-800 transition-colors underline underline-offset-4 decoration-gray-300 hover:decoration-gray-600 mb-2">
-                        {post.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-2">
-                        {formatDate(post.date)} • {post.readTime}
-                      </p>
-                      <p className="text-gray-700 font-normal leading-relaxed">
-                        {post.excerpt}
-                      </p>
-                    </Link>
+                entries.map((entry) => (
+                  <div key={entry.id} className="border-l-2 border-gray-200 pl-6 pb-8">
+                    <div className="text-gray-500 text-sm mb-3 font-medium">
+                      {formatDate(entry.date)} • {formatTime(entry.time)}
+                    </div>
+                    <div className="text-gray-800 font-normal leading-relaxed whitespace-pre-wrap">
+                      {entry.content}
+                    </div>
                   </div>
                 ))
               )}
