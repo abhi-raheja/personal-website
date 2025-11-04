@@ -628,5 +628,11 @@ Sequential chronological feed (newest first), casual design
 - Had to handle Git rebase when local branch diverged from remote
 - Feature is now live at https://abhiraheja.com/journal
 
+### Bug Fixes (Oct 31, 2025):
+- Fixed blog post creation issue: User created post via GitHub web editor without `.md` extension
+- Issue: "Write more to think more" missing `.md` extension, causing build to skip it
+- Solution: Renamed file to `write-more-to-think-more.md` and regenerated posts data
+- Lesson: All blog posts MUST end with `.md` extension for the system to pick them up
+
 **✅ FEATURE COMPLETE AND TESTED**
 
