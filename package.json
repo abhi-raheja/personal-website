@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "new-post": "node scripts/new-post.js",
-    "journal": "node scripts/add-journal-entry.js"
+    "journal": "node scripts/add-journal-entry.js",
+    "delete-journal": "node scripts/delete-journal-entry.js"
   },
   "dependencies": {
     "framer-motion": "^12.23.12",
