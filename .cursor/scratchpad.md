@@ -526,6 +526,14 @@ What's on your mind?
 - [ ] Execute Phase 1 tasks (font migration, typography setup)
 - [ ] Begin homepage redesign to match nikunjk.com layout
 
+### Completed (Nov 13, 2025): Publish "Castles of Worry"
+- [x] Draft markdown with frontmatter
+- [x] Add post to `content/posts/`
+- [x] Mirror post to `public/content/posts/`
+- [x] Regenerate `src/data/posts.json`
+- [x] Verify generated listings
+- [x] Commit (`Add Castles of Worry blog post`) and push to `origin/main`
+
 ## Current Status / Progress Tracking
 
 **Status (Dec 2025)**: Planning Journal feature for casual daily thoughts posting
@@ -548,6 +556,13 @@ What's on your mind?
 - ✅ Substack subscription form added to all pages
 - ✅ Vercel deployment configured and working
 - ✅ New blog post creation workflow established
+- ✅ Published "Castles of Worry" post and synchronized journal updates
+
+**Executor Progress (Nov 13, 2025)**:
+- Pulled remote commit `4660a1d` (journal cleanup) to fast-forward local `main`.
+- Restored stashed blog draft, recreated `content/posts/castles-of-worry.md` and `public/content/posts/castles-of-worry.md`.
+- Regenerated `src/data/posts.json` (now 11 entries) to include the new article.
+- Committed and pushed `5a81789 Add Castles of Worry blog post`; Vercel deploy triggered.
 
 **Next Milestone**: Get user approval on Journal approach, then implement.
 
@@ -569,6 +584,7 @@ What's on your mind?
 - Converted HTML iframe to JSX format (frameBorder instead of frameborder, added title attribute for accessibility).
 - Made iframe responsive with max-width constraints and proper styling.
 - All three pages now include the "Subscribe" section with the Substack embed form.
+- Nov 13 2025: Fast-forwarded local branch to include remote journal updates, restored saved post draft, regenerated posts data, and pushed "Castles of Worry" article live (commit `5a81789`).
 
 ## Lessons
 
