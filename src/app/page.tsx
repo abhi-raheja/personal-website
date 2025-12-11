@@ -243,14 +243,14 @@ export default function Home() {
             
             <div className="space-y-3">
               <p className="text-gray-700 hover:text-black transition-colors">
-                <a href="https://www.amazon.ca/Penguin-Classics-Beginning-Infinity-Deutsch/dp/0140278168/ref=sr_1_1?crid=1KXCIGG2MPTFX&dib=eyJ2IjoiMSJ9.Ogz5FJ8ecrkHzz23XpIovbt3aKuI3OXHdVK7mQL9c44tS2Y10w8BGvRusrpcPvLhc6cRygmznez6iWCqPtcRAUIiQv3l1nBLGEb-MQPFioGx0xlhngCm81oCaJuxTA7EjrnhgxBTkP-j5DLKqDKuNGPVwkZE7SPPhZ5BVizBiEsD8VFq3dKH2LCABQEpmt7hw18A4dLjJqTdicdbjlrXCA.RWGiEMJuimylDk9RzBH9pg23eAyN0NcO9lzNsRWtc9Y&dib_tag=se&keywords=the+beginning+of+infinity&qid=1765482437&sprefix=the+beginning+of+infinitiy%2Caps%2C111&sr=8-1" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
+                <a href="https://www.amazon.ca/dp/0140278168" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
                   The Beginning of Infinity
                 </a>
                 <span className="text-gray-500 text-sm ml-2">by David Deutsch</span>
               </p>
               
               <p className="text-gray-700 hover:text-black transition-colors">
-                <a href="https://www.amazon.ca/dp/0465043577?ref=ppx_yo2ov_dt_b_fed_asin_title" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
+                <a href="https://www.amazon.ca/dp/0465043577" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
                   The Misbehavior of Markets: A Fractal View of Financial Turbulence
                 </a>
                 <span className="text-gray-500 text-sm ml-2">by Benoit Mandelbrot</span>
