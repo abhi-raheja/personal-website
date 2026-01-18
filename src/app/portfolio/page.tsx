@@ -999,10 +999,10 @@ export default function Portfolio() {
               {/* Profile Photo - Overlapping the cover */}
               <div className="relative -mt-16 mb-4">
                 <div className="w-32 h-32 rounded-full border-4 border-white overflow-hidden bg-gray-100 shadow-lg">
-                  <img 
-                    src="/profile-photo.jpg" 
-                    alt="Abhi Raheja" 
-                    className="w-full h-full object-cover"
+                  <img
+                    src="/profile-photo.jpg"
+                    alt="Abhi Raheja"
+                    className="w-full h-full object-cover object-top"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.style.display = 'none';

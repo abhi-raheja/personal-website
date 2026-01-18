@@ -74,7 +74,7 @@ export default function Home() {
                   <img 
                     src="/profile-photo.jpg" 
                     alt="Abhi Raheja"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
               </div>
