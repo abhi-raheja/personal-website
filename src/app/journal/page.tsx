@@ -1,12 +1,8 @@
 import Link from 'next/link';
-import journalData from '@/data/journal.json';
+import { getJournalEntries, JournalEntry } from '@/lib/notion';
 
-interface JournalEntry {
-  id: string;
-  date: string;
-  time: string;
-  content: string;
-}
+// Revalidate every 60 seconds to pick up new Notion entries
+export const revalidate = 60;
 
 function formatDate(dateString: string): string {
   const [year, month, day] = dateString.split('-').map(Number);
@@ -26,14 +22,14 @@ function formatTime(timeString: string): string {
   return `${displayHour}:${minutes} ${ampm}`;
 }
 
-export default function Journal() {
-  const entries = journalData as JournalEntry[];
-  
+export default async function Journal() {
+  const entries: JournalEntry[] = await getJournalEntries();
+
   return (
     <div className="min-h-screen bg-white">
       {/* Skip to main content - accessibility feature */}
-      <a 
-        href="#main-content" 
+      <a
+        href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-black text-white px-4 py-2 rounded z-50"
       >
         Skip to main content
@@ -44,8 +40,8 @@ export default function Journal() {
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-between items-center">
             {/* Back Button */}
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="flex items-center text-gray-700 hover:text-black transition-colors font-normal"
             >
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -53,23 +49,23 @@ export default function Journal() {
               </svg>
               Back
             </Link>
-            
+
             {/* Navigation Links */}
             <div className="flex items-center space-x-8">
-              <Link 
-                href="/writings" 
+              <Link
+                href="/writings"
                 className="text-gray-700 hover:text-black transition-colors font-normal"
               >
                 Writings
               </Link>
-              <Link 
-                href="/journal" 
+              <Link
+                href="/journal"
                 className="text-black font-normal"
               >
                 Journal
               </Link>
-              <Link 
-                href="/reading" 
+              <Link
+                href="/reading"
                 className="text-gray-700 hover:text-black transition-colors font-normal"
               >
                 Reading
@@ -116,7 +112,7 @@ export default function Journal() {
 
         </div>
       </main>
-      
+
       {/* Footer */}
       <footer className="px-6 md:px-12 py-8">
         <div className="max-w-4xl mx-auto">

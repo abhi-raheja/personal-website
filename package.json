@@ -4,15 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/generate-posts-data.js && node scripts/generate-journal-data.js",
+    "prebuild": "node scripts/generate-posts-data.js",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "new-post": "node scripts/new-post.js",
-    "journal": "node scripts/add-journal-entry.js",
-    "delete-journal": "node scripts/delete-journal-entry.js"
+    "new-post": "node scripts/new-post.js"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.15",
     "framer-motion": "^12.23.12",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.544.0",
