@@ -1,9 +1,18 @@
 import Link from 'next/link';
 import { getWritingsPosts, WritingsPost } from '@/lib/notion';
+import postsData from '@/data/posts.json';
 import SubscriptionForm from '@/components/SubscriptionForm';
 
 // Revalidate every 60 seconds to pick up new Notion entries
 export const revalidate = 60;
+
+interface MarkdownPost {
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  readTime: string;
+}
 
 function formatDate(dateString: string): string {
   const [year, month, day] = dateString.split('-').map(Number);
@@ -16,7 +25,34 @@ function formatDate(dateString: string): string {
 }
 
 export default async function Writings() {
-  const posts: WritingsPost[] = await getWritingsPosts();
+  // Get posts from both sources
+  const notionPosts: WritingsPost[] = await getWritingsPosts();
+  const markdownPosts: MarkdownPost[] = postsData;
+
+  // Combine and normalize posts
+  const allPosts = [
+    ...notionPosts.map(post => ({
+      id: post.id,
+      slug: post.slug,
+      title: post.title,
+      date: post.date,
+      excerpt: post.excerpt,
+      readTime: post.readTime,
+      source: 'notion' as const,
+    })),
+    ...markdownPosts.map(post => ({
+      id: post.slug,
+      slug: post.slug,
+      title: post.title,
+      date: post.date,
+      excerpt: post.excerpt,
+      readTime: post.readTime,
+      source: 'markdown' as const,
+    })),
+  ];
+
+  // Sort by date descending (newest first)
+  allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
     <div className="min-h-screen bg-white">
@@ -95,12 +131,12 @@ export default async function Writings() {
           {/* Posts List */}
           <div className="mb-16">
             <div className="space-y-6">
-              {posts.length === 0 ? (
+              {allPosts.length === 0 ? (
                 <div className="text-center py-12">
                   <p className="text-gray-600 font-normal">No posts yet. Check back soon!</p>
                 </div>
               ) : (
-                posts.map((post) => (
+                allPosts.map((post) => (
                   <div key={post.id} className="group">
                     <Link href={`/writings/${post.slug}`} className="block hover:bg-gray-50 -mx-4 px-4 py-3 rounded-sm transition-colors border-l-2 border-transparent hover:border-gray-300 cursor-pointer">
                       <h3 className="text-lg font-normal text-black group-hover:text-gray-800 transition-colors underline underline-offset-4 decoration-gray-300 hover:decoration-gray-600 mb-2">
