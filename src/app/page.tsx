@@ -1,8 +1,12 @@
 import Link from 'next/link';
 import postsData from '@/data/posts.json';
+import { getWritingsPosts, WritingsPost } from '@/lib/notion';
 import SubscriptionForm from '@/components/SubscriptionForm';
 
-interface PostMetadata {
+// Revalidate every 60 seconds to pick up new Notion entries
+export const revalidate = 60;
+
+interface MarkdownPost {
   slug: string;
   title: string;
   date: string;
@@ -20,14 +24,38 @@ function formatDate(dateString: string): string {
   });
 }
 
-export default function Home() {
-  const recentPosts = postsData.slice(0, 3);
+export default async function Home() {
+  // Get posts from both sources
+  const notionPosts: WritingsPost[] = await getWritingsPosts();
+  const markdownPosts: MarkdownPost[] = postsData;
+
+  // Combine and normalize posts
+  const allPosts = [
+    ...notionPosts.map(post => ({
+      slug: post.slug,
+      title: post.title,
+      date: post.date,
+      excerpt: post.excerpt,
+      readTime: post.readTime,
+    })),
+    ...markdownPosts.map(post => ({
+      slug: post.slug,
+      title: post.title,
+      date: post.date,
+      excerpt: post.excerpt,
+      readTime: post.readTime,
+    })),
+  ];
+
+  // Sort by date descending (newest first) and take top 3
+  allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const recentPosts = allPosts.slice(0, 3);
 
   return (
     <div className="min-h-screen bg-white">
       {/* Skip to main content - accessibility feature like nikunjk.com */}
-      <a 
-        href="#main-content" 
+      <a
+        href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-black text-white px-4 py-2 rounded z-50"
       >
         Skip to main content
@@ -38,20 +66,20 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-end items-center">
             <div className="flex items-center space-x-8">
-              <Link 
-                href="/writings" 
+              <Link
+                href="/writings"
                 className="text-gray-700 hover:text-black transition-colors font-normal"
               >
                 Writings
               </Link>
-              <Link 
-                href="/journal" 
+              <Link
+                href="/journal"
                 className="text-gray-700 hover:text-black transition-colors font-normal"
               >
                 Journal
               </Link>
-              <Link 
-                href="/reading" 
+              <Link
+                href="/reading"
                 className="text-gray-700 hover:text-black transition-colors font-normal"
               >
                 Reading
@@ -64,27 +92,27 @@ export default function Home() {
       {/* Main Content - nikunjk.com style */}
       <main id="main-content" className="px-6 md:px-12 py-12">
         <div className="max-w-4xl mx-auto">
-          
+
           {/* Hero Section with Profile Photo */}
         <div className="mb-16">
             <div className="flex flex-col md:flex-row items-center gap-8 mb-8">
               {/* Profile Photo */}
               <div className="flex-shrink-0">
                 <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg border-4 border-white">
-                  <img 
-                    src="/profile-photo.jpg" 
+                  <img
+                    src="/profile-photo.jpg"
                     alt="Abhi Raheja"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
               </div>
-              
+
               {/* Text Info (Center Aligned on Mobile, Left on Desktop) */}
               <div className="flex-1 flex flex-col justify-center text-center md:text-left">
                 <h1 className="text-xl md:text-2xl lg:text-3xl font-normal tracking-tight text-black mb-3 leading-tight">
                   Abhi Raheja
                 </h1>
-                
+
                 {/* Location */}
                 <div className="flex items-center justify-center md:justify-start text-gray-600 mb-4">
                   <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -92,25 +120,25 @@ export default function Home() {
                   </svg>
                   <span className="text-base font-normal">Montreal, QC</span>
                 </div>
-                
+
                 {/* Professional Info */}
                 <div className="mb-2">
                   <h2 className="text-lg md:text-xl font-medium text-gray-900">
                     COO at <a href="https://www.sunscreen.tech" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors underline underline-offset-4">Sunscreen</a>
                   </h2>
                 </div>
-                
+
                 <div className="text-sm text-gray-600">
                   <span>Prev. <a href="https://cyber.co" target="_blank" rel="noopener noreferrer" className="hover:text-gray-800 transition-colors underline underline-offset-4">Cyber</a>, <a href="https://caldera.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-gray-800 transition-colors underline underline-offset-4">Caldera</a>, <a href="https://goodable.co" target="_blank" rel="noopener noreferrer" className="hover:text-gray-800 transition-colors underline underline-offset-4">Goodable</a></span>
                 </div>
               </div>
-              
+
               {/* Social Media Icons (Right Side) */}
               <div className="flex-shrink-0 flex flex-col justify-center">
                 <div className="flex items-center space-x-4">
                   {/* Email */}
-                  <a 
-                    href="mailto:a@earlyasaservice.com" 
+                  <a
+                    href="mailto:a@earlyasaservice.com"
                     className="text-gray-600 hover:text-black transition-colors"
                     aria-label="Email"
                   >
@@ -118,11 +146,11 @@ export default function Home() {
                       <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                     </svg>
                   </a>
-                  
+
                   {/* X (Twitter) */}
-                  <a 
-                    href="https://x.com/abhihereandnow" 
-                    target="_blank" 
+                  <a
+                    href="https://x.com/abhihereandnow"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-black transition-colors"
                     aria-label="X (Twitter)"
@@ -131,11 +159,11 @@ export default function Home() {
                       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                     </svg>
                   </a>
-                  
+
                   {/* LinkedIn */}
-                  <a 
-                    href="https://www.linkedin.com/in/abhiraheja" 
-                    target="_blank" 
+                  <a
+                    href="https://www.linkedin.com/in/abhiraheja"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-black transition-colors"
                     aria-label="LinkedIn"
@@ -144,11 +172,11 @@ export default function Home() {
                       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                     </svg>
                   </a>
-                  
+
                   {/* GitHub */}
-                  <a 
-                    href="https://github.com/abhi-raheja" 
-                    target="_blank" 
+                  <a
+                    href="https://github.com/abhi-raheja"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-black transition-colors"
                     aria-label="GitHub"
@@ -160,7 +188,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            
+
           </div>
 
           {/* Subscribe Section */}
@@ -168,7 +196,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row gap-8 items-start">
               {/* Spacer to align with profile image on left */}
               <div className="w-32 md:w-40 flex-shrink-0"></div>
-              
+
               {/* Subscription form content - matches text content area, explicitly left-aligned */}
               <div className="flex-1">
                 <h2 className="text-xl md:text-2xl font-semibold text-black mb-6">
@@ -176,7 +204,7 @@ export default function Home() {
                 </h2>
                 <SubscriptionForm />
               </div>
-              
+
               {/* Spacer to align with social icons on right */}
               <div className="hidden md:block w-20 flex-shrink-0"></div>
             </div>
@@ -187,7 +215,7 @@ export default function Home() {
             <h2 className="text-xl md:text-2xl font-semibold text-black mb-6">
               About Me
             </h2>
-            
+
             <div className="prose prose-lg max-w-none">
               <p className="text-base text-gray-700 font-normal leading-relaxed mb-6">
                 I'm a former journalist, producer, writer and tech founder. I was born and raised in India and graduated from the Ryerson School of Journalism in Toronto.
@@ -203,11 +231,11 @@ export default function Home() {
             <h2 className="text-xl md:text-2xl font-semibold text-black mb-8">
               Recent Writing
             </h2>
-            
+
             <div className="space-y-6">
-              {recentPosts.map((post, index) => (
+              {recentPosts.map((post) => (
                 <div key={post.slug} className="group">
-                  <Link 
+                  <Link
                     href={`/writings/${post.slug}`}
                     className="block hover:bg-gray-50 -mx-4 px-4 py-3 rounded-sm transition-colors"
                   >
@@ -224,10 +252,10 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            
+
             <div className="mt-6">
-              <Link 
-                href="/writings" 
+              <Link
+                href="/writings"
                 className="text-gray-600 hover:text-black  transition-colors font-normal underline underline-offset-4"
               >
                 View all writings
@@ -240,7 +268,7 @@ export default function Home() {
             <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">
               Currently Reading
             </h2>
-            
+
             <div className="space-y-3">
               <p className="text-gray-700 hover:text-black transition-colors">
                 <a href="https://www.amazon.ca/dp/0140278168" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
@@ -248,21 +276,21 @@ export default function Home() {
                 </a>
                 <span className="text-gray-500 text-sm ml-2">by David Deutsch</span>
               </p>
-              
+
               <p className="text-gray-700 hover:text-black transition-colors">
                 <a href="https://www.amazon.ca/dp/0465043577" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
                   The Misbehavior of Markets: A Fractal View of Financial Turbulence
                 </a>
                 <span className="text-gray-500 text-sm ml-2">by Benoit Mandelbrot</span>
               </p>
-              
+
               <p className="text-gray-700 hover:text-black transition-colors">
                 <a href="https://www.amazon.com/When-Everyone-Knows-That-Knowledge-ebook/dp/B0DV6FDFT6" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
                   When Everyone Knows that Everyone Knows
                 </a>
                 <span className="text-gray-500 text-sm ml-2">by Stephen Pinker</span>
               </p>
-              
+
               <p className="text-gray-700 hover:text-black transition-colors">
                 <a href="https://www.amazon.com/Platform-Revolution-Networked-Markets-Transforming/dp/0393249131" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
                   Platform Revolution: How Networked Markets Are Transforming the Economy
@@ -270,10 +298,10 @@ export default function Home() {
                 <span className="text-gray-500 text-sm ml-2">by Geoffrey G. Parker, Marshall W. Van Alstyne, Sangeet Paul Choudary</span>
               </p>
             </div>
-            
+
             <div className="mt-6">
-              <Link 
-                href="/reading" 
+              <Link
+                href="/reading"
                 className="text-gray-600 hover:text-black transition-colors font-normal underline underline-offset-4"
               >
                 Books I've met + like to revisit often, and recommend
@@ -285,7 +313,7 @@ export default function Home() {
 
         </div>
       </main>
-      
+
       {/* Footer */}
       <footer className="px-6 md:px-12 py-8">
         <div className="max-w-4xl mx-auto">
