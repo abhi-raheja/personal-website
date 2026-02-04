@@ -1,19 +1,13 @@
 import Link from 'next/link';
-import postsData from '@/data/posts.json';
+import { getWritingsPosts, WritingsPost } from '@/lib/notion';
 import SubscriptionForm from '@/components/SubscriptionForm';
 
-interface PostMetadata {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  readTime: string;
-}
+// Revalidate every 60 seconds to pick up new Notion entries
+export const revalidate = 60;
 
 function formatDate(dateString: string): string {
-  // Parse the date string and ensure it's treated as local date
   const [year, month, day] = dateString.split('-').map(Number);
-  const date = new Date(year, month - 1, day); // month is 0-indexed
+  const date = new Date(year, month - 1, day);
   return date.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
@@ -21,13 +15,14 @@ function formatDate(dateString: string): string {
   });
 }
 
-export default function Writings() {
-  const posts = postsData;
+export default async function Writings() {
+  const posts: WritingsPost[] = await getWritingsPosts();
+
   return (
     <div className="min-h-screen bg-white">
       {/* Skip to main content - accessibility feature */}
-      <a 
-        href="#main-content" 
+      <a
+        href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-black text-white px-4 py-2 rounded z-50"
       >
         Skip to main content
@@ -38,8 +33,8 @@ export default function Writings() {
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-between items-center">
             {/* Back Button */}
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="flex items-center text-gray-700 hover:text-black transition-colors font-normal"
             >
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,23 +42,23 @@ export default function Writings() {
               </svg>
               Back
             </Link>
-            
+
             {/* Navigation Links */}
             <div className="flex items-center space-x-8">
-              <Link 
-                href="/writings" 
+              <Link
+                href="/writings"
                 className="text-black font-normal"
               >
                 Writings
               </Link>
-              <Link 
-                href="/journal" 
+              <Link
+                href="/journal"
                 className="text-gray-700 hover:text-black transition-colors font-normal"
               >
                 Journal
               </Link>
-              <Link 
-                href="/reading" 
+              <Link
+                href="/reading"
                 className="text-gray-700 hover:text-black transition-colors font-normal"
               >
                 Reading
@@ -105,8 +100,8 @@ export default function Writings() {
                   <p className="text-gray-600 font-normal">No posts yet. Check back soon!</p>
                 </div>
               ) : (
-                posts.map((post, index) => (
-                  <div key={post.slug} className="group">
+                posts.map((post) => (
+                  <div key={post.id} className="group">
                     <Link href={`/writings/${post.slug}`} className="block hover:bg-gray-50 -mx-4 px-4 py-3 rounded-sm transition-colors border-l-2 border-transparent hover:border-gray-300 cursor-pointer">
                       <h3 className="text-lg font-normal text-black group-hover:text-gray-800 transition-colors underline underline-offset-4 decoration-gray-300 hover:decoration-gray-600 mb-2">
                         {post.title}
@@ -126,7 +121,7 @@ export default function Writings() {
 
         </div>
       </main>
-      
+
       {/* Footer */}
       <footer className="px-6 md:px-12 py-8">
         <div className="max-w-4xl mx-auto">
