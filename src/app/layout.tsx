@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Quicksand } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const quicksand = Quicksand({
-  variable: "--font-quicksand",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
   display: 'swap',
 });
 
@@ -48,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={quicksand.variable}>
+    <html lang="en" className={inter.variable}>
       <body className="font-sans antialiased text-gray-900 bg-white">
         {children}
       </body>

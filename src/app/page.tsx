@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import postsData from '@/data/posts.json';
 import { getWritingsPosts, WritingsPost } from '@/lib/notion';
+import { getContributions } from '@/lib/github';
 import SubscriptionForm from '@/components/SubscriptionForm';
+import GitHubContributions from '@/components/GitHubContributions';
 
 // Revalidate every 60 seconds to pick up new Notion entries
 export const revalidate = 60;
@@ -25,8 +27,11 @@ function formatDate(dateString: string): string {
 }
 
 export default async function Home() {
-  // Get posts from both sources
-  const notionPosts: WritingsPost[] = await getWritingsPosts();
+  // Fetch all data in parallel
+  const [notionPosts, contributions] = await Promise.all([
+    getWritingsPosts(),
+    getContributions(),
+  ]);
   const markdownPosts: MarkdownPost[] = postsData;
 
   // Combine and normalize posts
@@ -225,6 +230,16 @@ export default async function Home() {
               </p>
             </div>
           </div>
+
+          {/* GitHub Activity Section */}
+          {contributions && (
+            <div className="mb-16">
+              <h2 className="text-xl md:text-2xl font-semibold text-black mb-6">
+                GitHub Activity
+              </h2>
+              <GitHubContributions calendar={contributions} />
+            </div>
+          )}
 
           {/* Recent Writing Section - nikunjk.com style */}
           <div className="mb-16">
