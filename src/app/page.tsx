@@ -71,6 +71,14 @@ export default async function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-end items-center">
             <div className="flex items-center space-x-8">
+              <a
+                href="https://abhiraheja.substack.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 hover:text-black transition-colors font-normal"
+              >
+                Early as a Service
+              </a>
               <Link
                 href="/writings"
                 className="text-gray-700 hover:text-black transition-colors font-normal"
@@ -190,6 +198,19 @@ export default async function Home() {
                       <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                     </svg>
                   </a>
+
+                  {/* Substack */}
+                  <a
+                    href="https://abhiraheja.substack.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-black transition-colors"
+                    aria-label="Substack"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
@@ -198,21 +219,7 @@ export default async function Home() {
 
           {/* Subscribe Section */}
           <div className="mb-16">
-            <div className="flex flex-col md:flex-row gap-8 items-start">
-              {/* Spacer to align with profile image on left */}
-              <div className="w-32 md:w-40 flex-shrink-0"></div>
-
-              {/* Subscription form content - matches text content area, explicitly left-aligned */}
-              <div className="flex-1">
-                <h2 className="text-xl md:text-2xl font-semibold text-black mb-6">
-                  Subscribe to my posts
-                </h2>
-                <SubscriptionForm />
-              </div>
-
-              {/* Spacer to align with social icons on right */}
-              <div className="hidden md:block w-20 flex-shrink-0"></div>
-            </div>
+            <SubscriptionForm />
           </div>
 
           {/* About Me Section */}
@@ -227,6 +234,9 @@ export default async function Home() {
               </p>
               <p className="text-base text-gray-700 font-normal leading-relaxed mb-6">
                 I'm passionate about history, technology, the underground dance music scene, anti-authoritarian technology, prediction markets, game and information theory, space, consciousness, psychedelics, and formula one racing.
+              </p>
+              <p className="text-base text-gray-700 font-normal leading-relaxed mb-6">
+                I also write regularly on my blog, <a href="https://abhiraheja.substack.com" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-black underline underline-offset-4">Early as a Service</a>, where I share research-driven thesis, predictions, musings on AI, crypto, spirituality, consciousness, religion, and both the inner and outer world at large.
               </p>
             </div>
           </div>

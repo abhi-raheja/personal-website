@@ -1,16 +1,36 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { Client } from '@notionhq/client';
 
-// Force Node.js runtime (required for substack-subscriber package)
 export const runtime = 'nodejs';
 
 const SUBSTACK_URL = 'https://abhiraheja.substack.com';
+
+const notion = new Client({
+  auth: process.env.NOTION_API_KEY,
+});
+
+async function saveToNotion(email: string) {
+  const databaseId = process.env.NOTION_SUBSCRIBERS_DATABASE_ID;
+  if (!databaseId || !process.env.NOTION_API_KEY) return;
+
+  await notion.pages.create({
+    parent: { database_id: databaseId },
+    properties: {
+      Email: {
+        title: [{ text: { content: email } }],
+      },
+      Date: {
+        date: { start: new Date().toISOString() },
+      },
+    },
+  });
+}
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const { email } = body;
 
-    // Validate email
     if (!email || typeof email !== 'string') {
       return NextResponse.json(
         { error: 'Email is required' },
@@ -18,7 +38,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Simple email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
@@ -27,41 +46,44 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Subscribe to Substack (dynamic import for serverless compatibility)
-    const { subscribe } = await import('substack-subscriber');
-    const result = await subscribe(email, SUBSTACK_URL);
+    // Run both in parallel — if one fails, the other still succeeds
+    const [substackResult, notionResult] = await Promise.allSettled([
+      import('substack-subscriber').then(({ subscribe }) =>
+        subscribe(email, SUBSTACK_URL)
+      ),
+      saveToNotion(email),
+    ]);
 
-    return NextResponse.json({
-      success: true,
-      message: 'Subscription successful! Please check your email to confirm.',
-      data: result,
-    });
-  } catch (error: unknown) {
-    console.error('Subscription error:', error);
-    
-    // Handle specific error cases
-    if (error instanceof Error) {
-      // Check if it's already subscribed
-      if (error.message.includes('already subscribed') || error.message.includes('exists')) {
+    if (substackResult.status === 'rejected') {
+      const err = substackResult.reason;
+      if (err?.message?.includes('already subscribed') || err?.message?.includes('exists')) {
         return NextResponse.json(
-          { 
-            success: false, 
-            error: 'This email is already subscribed',
-            message: 'You are already subscribed to the newsletter.'
-          },
+          { success: false, error: 'This email is already subscribed.' },
           { status: 409 }
         );
       }
     }
 
+    // As long as at least one succeeded, we're good
+    const anySuccess =
+      substackResult.status === 'fulfilled' || notionResult.status === 'fulfilled';
+
+    if (!anySuccess) {
+      return NextResponse.json(
+        { success: false, error: 'Failed to subscribe. Please try again later.' },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({
+      success: true,
+      message: 'Subscribed! Check your email to confirm.',
+    });
+  } catch (error: unknown) {
+    console.error('Subscription error:', error);
     return NextResponse.json(
-      { 
-        success: false, 
-        error: 'Failed to subscribe. Please try again later.',
-        message: 'An error occurred while processing your subscription.'
-      },
+      { success: false, error: 'Failed to subscribe. Please try again later.' },
       { status: 500 }
     );
   }
 }
-
