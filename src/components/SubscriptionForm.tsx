@@ -17,22 +17,20 @@ export default function SubscriptionForm() {
     setMessage('');
 
     try {
-      const res = await fetch('/api/subscribe', {
+      // Save to Notion (best-effort, don't block)
+      fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: email.trim() }),
-      });
+      }).catch(() => {});
 
-      const data = await res.json();
+      // Redirect to Substack with email pre-filled (browser handles Cloudflare)
+      const substackUrl = `https://abhiraheja.substack.com/subscribe?email=${encodeURIComponent(email.trim())}`;
+      window.open(substackUrl, '_blank');
 
-      if (res.ok && data.success) {
-        setStatus('success');
-        setMessage('You\'re in. Check your inbox to confirm.');
-        setEmail('');
-      } else {
-        setStatus('error');
-        setMessage(data.error || 'Something went wrong. Try again.');
-      }
+      setStatus('success');
+      setMessage('Redirected to Substack — confirm your subscription there.');
+      setEmail('');
     } catch {
       setStatus('error');
       setMessage('Something went wrong. Try again.');
