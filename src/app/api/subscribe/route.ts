@@ -1,17 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Client } from '@notionhq/client';
 
 export const runtime = 'nodejs';
 
 const SUBSTACK_URL = 'https://abhiraheja.substack.com';
 
-const notion = new Client({
-  auth: process.env.NOTION_API_KEY,
-});
-
 async function saveToNotion(email: string) {
   const databaseId = process.env.NOTION_SUBSCRIBERS_DATABASE_ID;
   if (!databaseId || !process.env.NOTION_API_KEY) return;
+
+  const { Client } = await import('@notionhq/client');
+  const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
   await notion.pages.create({
     parent: { database_id: databaseId },
@@ -24,6 +22,11 @@ async function saveToNotion(email: string) {
       },
     },
   });
+}
+
+async function subscribeToSubstack(email: string) {
+  const { subscribe } = await import('substack-subscriber');
+  return subscribe(email, SUBSTACK_URL);
 }
 
 export async function POST(request: NextRequest) {
@@ -48,11 +51,12 @@ export async function POST(request: NextRequest) {
 
     // Run both in parallel — if one fails, the other still succeeds
     const [substackResult, notionResult] = await Promise.allSettled([
-      import('substack-subscriber').then(({ subscribe }) =>
-        subscribe(email, SUBSTACK_URL)
-      ),
+      subscribeToSubstack(email),
       saveToNotion(email),
     ]);
+
+    console.log('Substack result:', substackResult.status, substackResult.status === 'rejected' ? substackResult.reason?.message : 'ok');
+    console.log('Notion result:', notionResult.status, notionResult.status === 'rejected' ? notionResult.reason?.message : 'ok');
 
     if (substackResult.status === 'rejected') {
       const err = substackResult.reason;
