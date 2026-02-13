@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
 
-const SUBSTACK_URL = 'https://abhiraheja.substack.com';
-
 async function saveToNotion(email: string) {
   const databaseId = process.env.NOTION_SUBSCRIBERS_DATABASE_ID;
   if (!databaseId || !process.env.NOTION_API_KEY) return;
@@ -25,8 +23,21 @@ async function saveToNotion(email: string) {
 }
 
 async function subscribeToSubstack(email: string) {
-  const { subscribe } = await import('substack-subscriber');
-  return subscribe(email, SUBSTACK_URL);
+  const res = await fetch('https://us-central1-substackapi.cloudfunctions.net/subscribe', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email,
+      domain: 'abhiraheja.substack.com/',
+    }),
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`Substack subscribe failed: ${res.status} ${text}`);
+  }
+
+  return res.json();
 }
 
 export async function POST(request: NextRequest) {
@@ -49,14 +60,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Run both in parallel — if one fails, the other still succeeds
     const [substackResult, notionResult] = await Promise.allSettled([
       subscribeToSubstack(email),
       saveToNotion(email),
     ]);
 
-    console.log('Substack result:', substackResult.status, substackResult.status === 'rejected' ? substackResult.reason?.message : 'ok');
-    console.log('Notion result:', notionResult.status, notionResult.status === 'rejected' ? notionResult.reason?.message : 'ok');
+    console.log('Substack:', substackResult.status, substackResult.status === 'rejected' ? substackResult.reason?.message : 'ok');
+    console.log('Notion:', notionResult.status, notionResult.status === 'rejected' ? notionResult.reason?.message : 'ok');
 
     if (substackResult.status === 'rejected') {
       const err = substackResult.reason;
@@ -68,7 +78,6 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // As long as at least one succeeded, we're good
     const anySuccess =
       substackResult.status === 'fulfilled' || notionResult.status === 'fulfilled';
 
