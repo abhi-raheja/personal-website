@@ -311,7 +311,7 @@ export default function Reading() {
       <footer className="px-6 md:px-12 py-8">
         <div className="max-w-4xl mx-auto">
           <p className="text-sm text-gray-500 text-center">
-            © 2025 Abhi Raheja
+            © 2026 Abhi Raheja
           </p>
         </div>
       </footer>
