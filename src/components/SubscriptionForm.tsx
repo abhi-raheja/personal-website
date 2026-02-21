@@ -58,7 +58,7 @@ export default function SubscriptionForm() {
               Early as a Service
             </h2>
           </div>
-          <p className="text-xs text-gray-500 font-mono mt-2 leading-none">
+          <p className="text-xs text-gray-500 font-mono mt-3 md:mt-2 leading-relaxed md:leading-none">
             Exploring why we chase what&apos;s next &amp; what we find when we get there
           </p>
         </div>

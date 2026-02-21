@@ -70,14 +70,15 @@ export default async function Home() {
       <nav className="w-full py-6 px-6 md:px-12">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-end items-center">
-            <div className="flex items-center space-x-8">
+            <div className="flex items-center space-x-4 md:space-x-8">
               <a
                 href="https://abhiraheja.substack.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-700 hover:text-black transition-colors font-normal"
+                className="text-gray-700 hover:text-black transition-colors font-normal whitespace-nowrap"
               >
-                Early as a Service
+                <span className="sm:hidden">Substack</span>
+                <span className="hidden sm:inline">Early as a Service</span>
               </a>
               <Link
                 href="/writings"
