@@ -203,6 +203,37 @@ export async function getWritingsPostBySlug(slug: string): Promise<WritingsPostW
   }
 }
 
+export async function getNotionImageUrl(blockId: string): Promise<string | null> {
+  if (!process.env.NOTION_API_KEY) {
+    console.warn('Notion credentials not configured');
+    return null;
+  }
+
+  try {
+    const block: any = await notion.blocks.retrieve({
+      block_id: blockId,
+    });
+
+    if (block.type !== 'image') {
+      return null;
+    }
+
+    const image = block.image;
+    if (image.type === 'external') {
+      return image.external.url;
+    }
+
+    if (image.type === 'file') {
+      return image.file.url;
+    }
+
+    return null;
+  } catch (error) {
+    console.error('Error fetching Notion image:', error);
+    return null;
+  }
+}
+
 async function getPageBlocks(pageId: string): Promise<any[]> {
   const blocks: any[] = [];
   let cursor: string | undefined;
@@ -286,7 +317,19 @@ function escapeHtml(text: string): string {
     .replace(/'/g, '&#039;');
 }
 
-function blocksToHtml(blocks: any[]): string {
+function getImageSrc(block: any, content: any): string {
+  if (content.type === 'external') {
+    return content.external.url;
+  }
+
+  if (content.type === 'file') {
+    return `/api/notion-image/${encodeURIComponent(block.id)}`;
+  }
+
+  return '';
+}
+
+export function blocksToHtml(blocks: any[]): string {
   let html = '';
   let i = 0;
 
@@ -357,12 +400,7 @@ function blocksToHtml(blocks: any[]): string {
         break;
 
       case 'image':
-        let imageUrl = '';
-        if (content.type === 'external') {
-          imageUrl = content.external.url;
-        } else if (content.type === 'file') {
-          imageUrl = content.file.url;
-        }
+        const imageUrl = getImageSrc(block, content);
         const caption = content.caption ? richTextToHtml(content.caption) : '';
         html += `<figure class="my-8"><img src="${imageUrl}" alt="${caption || 'Blog image'}" class="w-full rounded-lg" />${caption ? `<figcaption class="text-center text-sm text-gray-500 mt-2">${caption}</figcaption>` : ''}</figure>`;
         break;
