@@ -138,12 +138,12 @@ export default async function Home() {
                 {/* Professional Info */}
                 <div className="mb-2">
                   <h2 className="text-lg md:text-xl font-medium text-gray-900">
-                    COO at <a href="https://www.sunscreen.tech" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors underline underline-offset-4">Sunscreen</a>
+                    CEO at <a href="https://tmrw.credit" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors underline underline-offset-4">TMRW</a>
                   </h2>
                 </div>
 
                 <div className="text-sm text-gray-600">
-                  <span>Prev. <a href="https://cyber.co" target="_blank" rel="noopener noreferrer" className="hover:text-gray-800 transition-colors underline underline-offset-4">Cyber</a>, <a href="https://caldera.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-gray-800 transition-colors underline underline-offset-4">Caldera</a>, <a href="https://goodable.co" target="_blank" rel="noopener noreferrer" className="hover:text-gray-800 transition-colors underline underline-offset-4">Goodable</a></span>
+                  <span>Prev. <a href="https://www.sunscreen.tech" target="_blank" rel="noopener noreferrer" className="hover:text-gray-800 transition-colors underline underline-offset-4">Sunscreen</a>, <a href="https://cyber.co" target="_blank" rel="noopener noreferrer" className="hover:text-gray-800 transition-colors underline underline-offset-4">Cyber</a>, <a href="https://caldera.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-gray-800 transition-colors underline underline-offset-4">Caldera</a>, <a href="https://goodable.co" target="_blank" rel="noopener noreferrer" className="hover:text-gray-800 transition-colors underline underline-offset-4">Goodable</a></span>
                 </div>
               </div>
 
